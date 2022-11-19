@@ -1,0 +1,15 @@
+
+
+# AisStreamMessage
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**metaData** | **Object** |  |  |
+|**messageType** | **AisMessageTypes** |  |  |
+|**message** | **String** |  |  |
+
+
+

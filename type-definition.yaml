@@ -1,0 +1,1454 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Ais-Stream WebsocketObjects
+  description: A sample API to illustrate OpenAPI concepts
+paths:
+
+components:
+  schemas:
+
+    AisMessageTypes:
+      type: string
+      enum:
+        - PositionReport
+        - UnknownMessageType
+        - AddressedSafetyMessage
+        - AddressedBinaryMessage
+        - AidsToNavigationReport
+        - AssignedModeCommand
+        - AssignedModeCommandData
+        - BaseStationReport
+        - BinaryAcknowledge
+        - BinaryBroadcastMessage
+        - ChannelManagement
+        - CommunicationStateItdma
+        - CommunicationStateNoItdma
+        - CoordinatedUTCInquiry
+        - DataLinkManagementMessage
+        - DataLinkManagementMessageData
+        - ExtendedClassBPositionReport
+        - GnssBroadcastBinaryMessageType
+        - GroupAssignmentCommand
+        - Interrogation
+        - LongRangeAisBroadcastMessage
+        - MultiSlotBinaryMessage
+        - SafetyBroadcastMessage
+        - ShipStaticData
+        - SingleSlotBinaryMessage
+        - StandardClassBPositionReport
+        - StandardSearchAndRescueAircraftReport
+        - StaticDataReport
+
+    AisStreamMessage:
+      required:
+        - MetaData
+        - MessageType
+        - Message
+      properties:
+        MetaData:
+          type: object
+        MessageType:
+          $ref: '#/components/schemas/AisMessageTypes'
+        Message:
+          type: string
+
+    SubscriptionMessage:
+      required:
+        - BoundingBoxes
+        - APIKey
+      properties:
+        APIKey:
+          type: string
+        BoundingBoxes:
+          type: array
+          items:
+            type: array
+            items:
+              type: array
+              items:
+                type: number
+                format: double
+              oneOf:
+                - minItems: 2
+                  maxItems: 2
+    PositionReport:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - NavigationalStatus
+        - RateOfTurn
+        - Sog
+        - PositionAccuracy
+        - Longitude
+        - Latitude
+        - Cog
+        - TrueHeading
+        - Timestamp
+        - SpecialManoeuvreIndicator
+        - Spare
+        - Raim
+        - CommunicationState
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        NavigationalStatus:
+          type: integer
+        RateOfTurn:
+          type: integer
+        Sog:
+          type: number
+          format: double
+        PositionAccuracy:
+          type: boolean
+        Longitude:
+          type: number
+          format: double
+        Latitude:
+          type: number
+          format: double
+        Cog:
+          type: number
+          format: double
+        TrueHeading:
+          type: integer
+        Timestamp:
+          type: integer
+        SpecialManoeuvreIndicator:
+          type: integer
+        Spare:
+          type: integer
+        Raim:
+          type: boolean
+        CommunicationState:
+          type: integer
+
+    BaseStationReport:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - UtcYear
+        - UtcMonth
+        - UtcDay
+        - UtcHour
+        - UtcMinute
+        - UtcSecond
+        - PositionAccuracy
+        - Longitude
+        - Latitude
+        - FixType
+        - LongRangeEnable
+        - Spare
+        - Raim
+        - CommunicationState
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        UtcYear:
+          type: integer
+        UtcMonth:
+          type: integer
+        UtcDay:
+          type: integer
+        UtcHour:
+          type: integer
+        UtcMinute:
+          type: integer
+        UtcSecond:
+          type: integer
+        PositionAccuracy:
+          type: boolean
+        Longitude:
+          type: number
+          format: double
+        Latitude:
+          type: number
+          format: double
+        FixType:
+          type: integer
+        LongRangeEnable:
+          type: boolean
+        Spare:
+          type: integer
+        Raim:
+          type: boolean
+        CommunicationState:
+          type: integer
+
+    ShipStaticData:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - AisVersion
+        - ImoNumber
+        - CallSign
+        - Name
+        - Type
+        - Dimension
+        - FixType
+        - Eta
+        - MaximumStaticDraught
+        - Destination
+        - Dte
+        - Spare
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        AisVersion:
+          type: integer
+        ImoNumber:
+          type: integer
+        CallSign:
+          type: string
+        Name:
+          type: string
+        Type:
+          type: integer
+        Dimension:
+          required:
+            - A
+            - B
+            - C
+            - D
+          properties:
+            A:
+              type: integer
+            B:
+              type: integer
+            C:
+              type: integer
+            D:
+              type: integer
+          type: object
+        FixType:
+          type: integer
+        Eta:
+          required:
+            - Month
+            - Day
+            - Hour
+            - Minute
+          properties:
+            Month:
+              type: integer
+            Day:
+              type: integer
+            Hour:
+              type: integer
+            Minute:
+              type: integer
+          type: object
+        MaximumStaticDraught:
+          type: number
+          format: double
+        Destination:
+          type: string
+        Dte:
+          type: boolean
+        Spare:
+          type: boolean
+
+    AddressedBinaryMessage:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Sequenceinteger
+        - DestinationID
+        - Retransmission
+        - Spare
+        - ApplicationID
+        - BinaryData
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Sequenceinteger:
+          type: integer
+        DestinationID:
+          type: integer
+        Retransmission:
+          type: boolean
+        Spare:
+          type: boolean
+        ApplicationID:
+          required:
+            - Valid
+            - DesignatedAreaCode
+            - FunctionIdentifier
+          properties:
+            Valid:
+              type: boolean
+            DesignatedAreaCode:
+              type: integer
+            FunctionIdentifier:
+              type: integer
+          type: object
+        BinaryData:
+          type: string
+
+    BinaryBroadcastMessage:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare
+        - ApplicationID
+        - BinaryData
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare:
+          type: integer
+        ApplicationID:
+          required:
+            - Valid
+            - DesignatedAreaCode
+            - FunctionIdentifier
+          properties:
+            Valid:
+              type: boolean
+            DesignatedAreaCode:
+              type: integer
+            FunctionIdentifier:
+              type: integer
+          type: object
+        BinaryData:
+          type: string
+
+    StandardSearchAndRescueAircraftReport:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Altitude
+        - Sog
+        - PositionAccuracy
+        - Longitude
+        - Latitude
+        - Cog
+        - Timestamp
+        - AltFromBaro
+        - Spare1
+        - Dte
+        - Spare2
+        - AssignedMode
+        - Raim
+        - CommunicationStateIsItdma
+        - CommunicationState
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Altitude:
+          type: integer
+        Sog:
+          type: number
+          format: double
+        PositionAccuracy:
+          type: boolean
+        Longitude:
+          type: number
+          format: double
+        Latitude:
+          type: number
+          format: double
+        Cog:
+          type: number
+          format: double
+        Timestamp:
+          type: integer
+        AltFromBaro:
+          type: boolean
+        Spare1:
+          type: integer
+        Dte:
+          type: boolean
+        Spare2:
+          type: integer
+        AssignedMode:
+          type: boolean
+        Raim:
+          type: boolean
+        CommunicationStateIsItdma:
+          type: boolean
+        CommunicationState:
+          type: integer
+
+    CoordinatedUTCInquiry:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare1
+        - DestinationID
+        - Spare2
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare1:
+          type: integer
+        DestinationID:
+          type: integer
+        Spare2:
+          type: integer
+
+    AddressedSafetyMessage:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Sequenceinteger
+        - DestinationID
+        - Retransmission
+        - Spare
+        - Text
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Sequenceinteger:
+          type: integer
+        DestinationID:
+          type: integer
+        Retransmission:
+          type: boolean
+        Spare:
+          type: boolean
+        Text:
+          type: string
+
+    SafetyBroadcastMessage:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare
+        - Text
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare:
+          type: integer
+        Text:
+          type: string
+
+    GnssBroadcastBinaryMessage:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare1
+        - Longitude
+        - Latitude
+        - Spare2
+        - Data
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare1:
+          type: integer
+        Longitude:
+          type: number
+          format: double
+        Latitude:
+          type: number
+          format: double
+        Spare2:
+          type: integer
+        Data:
+          type: string
+
+    StandardClassBPositionReport:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare1
+        - Sog
+        - PositionAccuracy
+        - Longitude
+        - Latitude
+        - Cog
+        - TrueHeading
+        - Timestamp
+        - Spare2
+        - ClassBUnit
+        - ClassBDisplay
+        - ClassBDsc
+        - ClassBBand
+        - ClassBMsg22
+        - AssignedMode
+        - Raim
+        - CommunicationStateIsItdma
+        - CommunicationState
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare1:
+          type: integer
+        Sog:
+          type: number
+          format: double
+        PositionAccuracy:
+          type: boolean
+        Longitude:
+          type: number
+          format: double
+        Latitude:
+          type: number
+          format: double
+        Cog:
+          type: number
+          format: double
+        TrueHeading:
+          type: integer
+        Timestamp:
+          type: integer
+        Spare2:
+          type: integer
+        ClassBUnit:
+          type: boolean
+        ClassBDisplay:
+          type: boolean
+        ClassBDsc:
+          type: boolean
+        ClassBBand:
+          type: boolean
+        ClassBMsg22:
+          type: boolean
+        AssignedMode:
+          type: boolean
+        Raim:
+          type: boolean
+        CommunicationStateIsItdma:
+          type: boolean
+        CommunicationState:
+          type: integer
+
+    ExtendedClassBPositionReport:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare1
+        - Sog
+        - PositionAccuracy
+        - Longitude
+        - Latitude
+        - Cog
+        - TrueHeading
+        - Timestamp
+        - Spare2
+        - Name
+        - Type
+        - Dimension
+        - FixType
+        - Raim
+        - Dte
+        - AssignedMode
+        - Spare3
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare1:
+          type: integer
+        Sog:
+          type: number
+          format: double
+        PositionAccuracy:
+          type: boolean
+        Longitude:
+          type: number
+          format: double
+        Latitude:
+          type: number
+          format: double
+        Cog:
+          type: number
+          format: double
+        TrueHeading:
+          type: integer
+        Timestamp:
+          type: integer
+        Spare2:
+          type: integer
+        Name:
+          type: string
+        Type:
+          type: integer
+        Dimension:
+          required:
+            - A
+            - B
+            - C
+            - D
+          properties:
+            A:
+              type: integer
+            B:
+              type: integer
+            C:
+              type: integer
+            D:
+              type: integer
+          type: object
+        FixType:
+          type: integer
+        Raim:
+          type: boolean
+        Dte:
+          type: boolean
+        AssignedMode:
+          type: boolean
+        Spare3:
+          type: integer
+
+    AidsToNavigationReport:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Type
+        - Name
+        - PositionAccuracy
+        - Longitude
+        - Latitude
+        - Dimension
+        - Fixtype
+        - Timestamp
+        - OffPosition
+        - AtoN
+        - Raim
+        - VirtualAtoN
+        - AssignedMode
+        - Spare
+        - NameExtension
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Type:
+          type: integer
+        Name:
+          type: string
+        PositionAccuracy:
+          type: boolean
+        Longitude:
+          type: number
+          format: double
+        Latitude:
+          type: number
+          format: double
+        Dimension:
+          required:
+            - A
+            - B
+            - C
+            - D
+          properties:
+            A:
+              type: integer
+            B:
+              type: integer
+            C:
+              type: integer
+            D:
+              type: integer
+          type: object
+        Fixtype:
+          type: integer
+        Timestamp:
+          type: integer
+        OffPosition:
+          type: boolean
+        AtoN:
+          type: integer
+        Raim:
+          type: boolean
+        VirtualAtoN:
+          type: boolean
+        AssignedMode:
+          type: boolean
+        Spare:
+          type: boolean
+        NameExtension:
+          type: string
+
+    GroupAssignmentCommand:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare1
+        - Longitude1
+        - Latitude1
+        - Longitude2
+        - Latitude2
+        - StationType
+        - ShipType
+        - Spare2
+        - TxRxMode
+        - ReportingInterval
+        - QuietTime
+        - Spare3
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare1:
+          type: integer
+        Longitude1:
+          type: number
+          format: double
+        Latitude1:
+          type: number
+          format: double
+        Longitude2:
+          type: number
+          format: double
+        Latitude2:
+          type: number
+          format: double
+        StationType:
+          type: integer
+        ShipType:
+          type: integer
+        Spare2:
+          type: integer
+        TxRxMode:
+          type: integer
+        ReportingInterval:
+          type: integer
+        QuietTime:
+          type: integer
+        Spare3:
+          type: integer
+
+    StaticDataReport:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Reserved
+        - PartNumber
+        - ReportA
+        - ReportB
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Reserved:
+          type: integer
+        PartNumber:
+          type: boolean
+        ReportA:
+          required:
+            - Valid
+            - Name
+          properties:
+            Valid:
+              type: boolean
+            Name:
+              type: string
+          type: object
+        ReportB:
+          required:
+            - Valid
+            - ShipType
+            - VendorIDName
+            - VenderIDModel
+            - VenderIDSerial
+            - CallSign
+            - Dimension
+            - FixType
+            - Spare
+          properties:
+            Valid:
+              type: boolean
+            ShipType:
+              type: integer
+            VendorIDName:
+              type: string
+            VenderIDModel:
+              type: integer
+            VenderIDSerial:
+              type: integer
+            CallSign:
+              type: string
+            Dimension:
+              required:
+                - A
+                - B
+                - C
+                - D
+              properties:
+                A:
+                  type: integer
+                B:
+                  type: integer
+                C:
+                  type: integer
+                D:
+                  type: integer
+              type: object
+            FixType:
+              type: integer
+            Spare:
+              type: integer
+          type: object
+
+    LongRangeAisBroadcastMessage:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - PositionAccuracy
+        - Raim
+        - NavigationalStatus
+        - Longitude
+        - Latitude
+        - Sog
+        - Cog
+        - PositionLatency
+        - Spare
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        PositionAccuracy:
+          type: boolean
+        Raim:
+          type: boolean
+        NavigationalStatus:
+          type: integer
+        Longitude:
+          type: number
+          format: double
+        Latitude:
+          type: number
+          format: double
+        Sog:
+          type: number
+          format: double
+        Cog:
+          type: number
+          format: double
+        PositionLatency:
+          type: boolean
+        Spare:
+          type: boolean
+
+    BinaryAcknowledge:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare
+        - Destinations
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare:
+          type: integer
+        Destinations:
+          required:
+            - "0"
+            - "1"
+            - "2"
+            - "3"
+          properties:
+            "0":
+              required:
+                - Valid
+                - DestinationID
+                - Sequenceinteger
+              properties:
+                Valid:
+                  type: boolean
+                DestinationID:
+                  type: integer
+                Sequenceinteger:
+                  type: integer
+              type: object
+            "1":
+              required:
+                - Valid
+                - DestinationID
+                - Sequenceinteger
+              properties:
+                Valid:
+                  type: boolean
+                DestinationID:
+                  type: integer
+                Sequenceinteger:
+                  type: integer
+              type: object
+            "2":
+              required:
+                - Valid
+                - DestinationID
+                - Sequenceinteger
+              properties:
+                Valid:
+                  type: boolean
+                DestinationID:
+                  type: integer
+                Sequenceinteger:
+                  type: integer
+              type: object
+            "3":
+              required:
+                - Valid
+                - DestinationID
+                - Sequenceinteger
+              properties:
+                Valid:
+                  type: boolean
+                DestinationID:
+                  type: integer
+                Sequenceinteger:
+                  type: integer
+              type: object
+          type: object
+
+    Interrogation:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare
+        - Station1Msg1
+        - Station1Msg2
+        - Station2
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare:
+          type: integer
+        Station1Msg1:
+          required:
+            - Valid
+            - StationID
+            - MessageID
+            - SlotOffset
+          properties:
+            Valid:
+              type: boolean
+            StationID:
+              type: integer
+            MessageID:
+              type: integer
+            SlotOffset:
+              type: integer
+          type: object
+        Station1Msg2:
+          required:
+            - Valid
+            - Spare
+            - MessageID
+            - SlotOffset
+          properties:
+            Valid:
+              type: boolean
+            Spare:
+              type: integer
+            MessageID:
+              type: integer
+            SlotOffset:
+              type: integer
+          type: object
+        Station2:
+          required:
+            - Valid
+            - Spare1
+            - StationID
+            - MessageID
+            - SlotOffset
+            - Spare2
+          properties:
+            Valid:
+              type: boolean
+            Spare1:
+              type: integer
+            StationID:
+              type: integer
+            MessageID:
+              type: integer
+            SlotOffset:
+              type: integer
+            Spare2:
+              type: integer
+          type: object
+
+    AssignedModeCommand:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare
+        - Commands
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare:
+          type: integer
+        Commands:
+          required:
+            - "0"
+            - "1"
+          properties:
+            "0":
+              required:
+                - Valid
+                - DestinationID
+                - Offset
+                - Increment
+              properties:
+                Valid:
+                  type: boolean
+                DestinationID:
+                  type: integer
+                Offset:
+                  type: integer
+                Increment:
+                  type: integer
+              type: object
+            "1":
+              required:
+                - Valid
+                - DestinationID
+                - Offset
+                - Increment
+              properties:
+                Valid:
+                  type: boolean
+                DestinationID:
+                  type: integer
+                Offset:
+                  type: integer
+                Increment:
+                  type: integer
+              type: object
+          type: object
+
+    DataLinkManagementMessage:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare
+        - Data
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare:
+          type: integer
+        Data:
+          required:
+            - "0"
+            - "1"
+            - "2"
+            - "3"
+          properties:
+            "0":
+              required:
+                - Valid
+                - Offset
+                - integerOfSlots
+                - TimeOut
+                - Increment
+              properties:
+                Valid:
+                  type: boolean
+                Offset:
+                  type: integer
+                integerOfSlots:
+                  type: integer
+                TimeOut:
+                  type: integer
+                Increment:
+                  type: integer
+              type: object
+            "1":
+              required:
+                - Valid
+                - Offset
+                - integerOfSlots
+                - TimeOut
+                - Increment
+              properties:
+                Valid:
+                  type: boolean
+                Offset:
+                  type: integer
+                integerOfSlots:
+                  type: integer
+                TimeOut:
+                  type: integer
+                Increment:
+                  type: integer
+              type: object
+            "2":
+              required:
+                - Valid
+                - Offset
+                - integerOfSlots
+                - TimeOut
+                - Increment
+              properties:
+                Valid:
+                  type: boolean
+                Offset:
+                  type: integer
+                integerOfSlots:
+                  type: integer
+                TimeOut:
+                  type: integer
+                Increment:
+                  type: integer
+              type: object
+            "3":
+              required:
+                - Valid
+                - Offset
+                - integerOfSlots
+                - TimeOut
+                - Increment
+              properties:
+                Valid:
+                  type: boolean
+                Offset:
+                  type: integer
+                integerOfSlots:
+                  type: integer
+                TimeOut:
+                  type: integer
+                Increment:
+                  type: integer
+              type: object
+          type: object
+
+    ChannelManagement:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - Spare1
+        - ChannelA
+        - ChannelB
+        - TxRxMode
+        - LowPower
+        - Area
+        - Unicast
+        - IsAddressed
+        - BwA
+        - BwB
+        - TransitionalZoneSize
+        - Spare4
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        Spare1:
+          type: integer
+        ChannelA:
+          type: integer
+        ChannelB:
+          type: integer
+        TxRxMode:
+          type: integer
+        LowPower:
+          type: boolean
+        Area:
+          required:
+            - Longitude1
+            - Latitude1
+            - Longitude2
+            - Latitude2
+          properties:
+            Longitude1:
+              type: number
+              format: double
+            Latitude1:
+              type: number
+              format: double
+            Longitude2:
+              type: number
+              format: double
+            Latitude2:
+              type: number
+              format: double
+          type: object
+        Unicast:
+          required:
+            - AddressStation1
+            - Spare2
+            - AddressStation2
+            - Spare3
+          properties:
+            AddressStation1:
+              type: integer
+            Spare2:
+              type: integer
+            AddressStation2:
+              type: integer
+            Spare3:
+              type: integer
+          type: object
+        IsAddressed:
+          type: boolean
+        BwA:
+          type: boolean
+        BwB:
+          type: boolean
+        TransitionalZoneSize:
+          type: integer
+        Spare4:
+          type: integer
+
+    SingleSlotBinaryMessage:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - DestinationIDValid
+        - ApplicationIDValid
+        - DestinationID
+        - Spare
+        - ApplicationID
+        - Payload
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        DestinationIDValid:
+          type: boolean
+        ApplicationIDValid:
+          type: boolean
+        DestinationID:
+          type: integer
+        Spare:
+          type: integer
+        ApplicationID:
+          required:
+            - Valid
+            - DesignatedAreaCode
+            - FunctionIdentifier
+          properties:
+            Valid:
+              type: boolean
+            DesignatedAreaCode:
+              type: integer
+            FunctionIdentifier:
+              type: integer
+          type: object
+        Payload:
+          type: string
+
+    MultiSlotBinaryMessage:
+      required:
+        - MessageID
+        - RepeatIndicator
+        - UserID
+        - Valid
+        - DestinationIDValid
+        - ApplicationIDValid
+        - DestinationID
+        - Spare1
+        - ApplicationID
+        - Payload
+        - Spare2
+        - CommunicationStateIsItdma
+        - CommunicationState
+      properties:
+        MessageID:
+          type: integer
+        RepeatIndicator:
+          type: integer
+        UserID:
+          type: integer
+        Valid:
+          type: boolean
+        DestinationIDValid:
+          type: boolean
+        ApplicationIDValid:
+          type: boolean
+        DestinationID:
+          type: integer
+        Spare1:
+          type: integer
+        ApplicationID:
+          required:
+            - Valid
+            - DesignatedAreaCode
+            - FunctionIdentifier
+          properties:
+            Valid:
+              type: boolean
+            DesignatedAreaCode:
+              type: integer
+            FunctionIdentifier:
+              type: integer
+          type: object
+        Payload:
+          type: string
+        Spare2:
+          type: integer
+        CommunicationStateIsItdma:
+          type: boolean
+        CommunicationState:
+          type: integer
+
+    UnknownMessage:
+      properties:
+        Error:
+          type: string

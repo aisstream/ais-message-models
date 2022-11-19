@@ -1,0 +1,26 @@
+# BaseStationReport
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+| **MessageID** | **Integer** |  | [default to null] |
+| **RepeatIndicator** | **Integer** |  | [default to null] |
+| **UserID** | **Integer** |  | [default to null] |
+| **Valid** | **Boolean** |  | [default to null] |
+| **UtcYear** | **Integer** |  | [default to null] |
+| **UtcMonth** | **Integer** |  | [default to null] |
+| **UtcDay** | **Integer** |  | [default to null] |
+| **UtcHour** | **Integer** |  | [default to null] |
+| **UtcMinute** | **Integer** |  | [default to null] |
+| **UtcSecond** | **Integer** |  | [default to null] |
+| **PositionAccuracy** | **Boolean** |  | [default to null] |
+| **Longitude** | **Double** |  | [default to null] |
+| **Latitude** | **Double** |  | [default to null] |
+| **FixType** | **Integer** |  | [default to null] |
+| **LongRangeEnable** | **Boolean** |  | [default to null] |
+| **Spare** | **Integer** |  | [default to null] |
+| **Raim** | **Boolean** |  | [default to null] |
+| **CommunicationState** | **Integer** |  | [default to null] |
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
