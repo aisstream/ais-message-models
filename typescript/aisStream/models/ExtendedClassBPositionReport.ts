@@ -11,7 +11,6 @@
  */
 
 import { ShipStaticDataDimension } from './ShipStaticDataDimension';
-import { HttpFile } from '../http/http';
 
 export class ExtendedClassBPositionReport {
     'messageID': number;

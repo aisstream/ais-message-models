@@ -1,0 +1,9 @@
+{
+  "name": "@aisstream/aisstream",
+  "version": "1.0.0",
+  "description": "typescript types for aisstream.io.",
+  "main": "index.ts",
+  "keywords": [],
+  "author": "aisstream.io",
+  "license": "ISC"
+}
