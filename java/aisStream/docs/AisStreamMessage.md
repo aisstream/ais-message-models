@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**metaData** | **Object** |  |  |
 |**messageType** | **AisMessageTypes** |  |  |
-|**message** | **String** |  |  |
+|**message** | [**AisStreamMessageMessage**](AisStreamMessageMessage.md) |  |  |
 
 
 

@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MetaData** | **map[string]interface{}** |  | 
 **MessageType** | [**AisMessageTypes**](AisMessageTypes.md) |  | 
-**Message** | **string** |  | 
+**Message** | [**AisStreamMessageMessage**](AisStreamMessageMessage.md) |  | 
 
 ## Methods
 
 ### NewAisStreamMessage
 
-`func NewAisStreamMessage(metaData map[string]interface{}, messageType AisMessageTypes, message string, ) *AisStreamMessage`
+`func NewAisStreamMessage(metaData map[string]interface{}, messageType AisMessageTypes, message AisStreamMessageMessage, ) *AisStreamMessage`
 
 NewAisStreamMessage instantiates a new AisStreamMessage object
 This constructor will assign default values to properties that have it defined,
@@ -69,20 +69,20 @@ SetMessageType sets MessageType field to given value.
 
 ### GetMessage
 
-`func (o *AisStreamMessage) GetMessage() string`
+`func (o *AisStreamMessage) GetMessage() AisStreamMessageMessage`
 
 GetMessage returns the Message field if non-nil, zero value otherwise.
 
 ### GetMessageOk
 
-`func (o *AisStreamMessage) GetMessageOk() (*string, bool)`
+`func (o *AisStreamMessage) GetMessageOk() (*AisStreamMessageMessage, bool)`
 
 GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessage
 
-`func (o *AisStreamMessage) SetMessage(v string)`
+`func (o *AisStreamMessage) SetMessage(v AisStreamMessageMessage)`
 
 SetMessage sets Message field to given value.
 

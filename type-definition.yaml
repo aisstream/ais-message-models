@@ -2,34 +2,30 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: Ais-Stream WebsocketObjects
-  description: A sample API to illustrate OpenAPI concepts
+  description: OpenAPI 3.0 definitions for the data models used by aisstream.io.
 paths:
 
 components:
   schemas:
-
     AisMessageTypes:
       type: string
       enum:
         - PositionReport
-        - UnknownMessageType
+        - UnknownMessage
         - AddressedSafetyMessage
         - AddressedBinaryMessage
         - AidsToNavigationReport
         - AssignedModeCommand
-        - AssignedModeCommandData
         - BaseStationReport
         - BinaryAcknowledge
         - BinaryBroadcastMessage
         - ChannelManagement
-        - CommunicationStateItdma
-        - CommunicationStateNoItdma
         - CoordinatedUTCInquiry
         - DataLinkManagementMessage
         - DataLinkManagementMessageData
         - ExtendedClassBPositionReport
-        - GnssBroadcastBinaryMessageType
         - GroupAssignmentCommand
+        - GnssBroadcastBinaryMessage
         - Interrogation
         - LongRangeAisBroadcastMessage
         - MultiSlotBinaryMessage
@@ -51,7 +47,58 @@ components:
         MessageType:
           $ref: '#/components/schemas/AisMessageTypes'
         Message:
-          type: string
+          type: object
+          properties:
+            PositionReport:
+              $ref: '#/components/schemas/PositionReport'
+            UnknownMessage:
+              $ref: '#/components/schemas/UnknownMessage'
+            AddressedSafetyMessage:
+              $ref: '#/components/schemas/AddressedSafetyMessage'
+            AddressedBinaryMessage:
+              $ref: '#/components/schemas/AddressedBinaryMessage'
+            AidsToNavigationReport:
+              $ref: '#/components/schemas/AidsToNavigationReport'
+            AssignedModeCommand:
+              $ref: '#/components/schemas/AssignedModeCommand'
+            BaseStationReport:
+              $ref: '#/components/schemas/BaseStationReport'
+            BinaryAcknowledge:
+              $ref: '#/components/schemas/BinaryAcknowledge'
+            BinaryBroadcastMessage:
+              $ref: '#/components/schemas/BinaryBroadcastMessage'
+            ChannelManagement:
+              $ref: '#/components/schemas/ChannelManagement'
+            CoordinatedUTCInquiry:
+              $ref: '#/components/schemas/CoordinatedUTCInquiry'
+            DataLinkManagementMessage:
+              $ref: '#/components/schemas/DataLinkManagementMessage'
+            DataLinkManagementMessageData:
+              $ref: '#/components/schemas/DataLinkManagementMessageData'
+            ExtendedClassBPositionReport:
+              $ref: '#/components/schemas/ExtendedClassBPositionReport'
+            GnssBroadcastBinaryMessage:
+              $ref: '#/components/schemas/GnssBroadcastBinaryMessage'
+            GroupAssignmentCommand:
+              $ref: '#/components/schemas/GroupAssignmentCommand'
+            Interrogation:
+              $ref: '#/components/schemas/Interrogation'
+            LongRangeAisBroadcastMessage:
+              $ref: '#/components/schemas/LongRangeAisBroadcastMessage'
+            MultiSlotBinaryMessage:
+              $ref: '#/components/schemas/MultiSlotBinaryMessage'
+            SafetyBroadcastMessage:
+              $ref: '#/components/schemas/SafetyBroadcastMessage'
+            ShipStaticData:
+              $ref: '#/components/schemas/ShipStaticData'
+            SingleSlotBinaryMessage:
+              $ref: '#/components/schemas/SingleSlotBinaryMessage'
+            StandardClassBPositionReport:
+              $ref: '#/components/schemas/StandardClassBPositionReport'
+            StandardSearchAndRescueAircraftReport:
+              $ref: '#/components/schemas/StandardSearchAndRescueAircraftReport'
+            StaticDataReport:
+              $ref: '#/components/schemas/StaticDataReport'
 
     SubscriptionMessage:
       required:

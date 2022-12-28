@@ -1,6 +1,6 @@
 /*
  * Ais-Stream WebsocketObjects
- * A sample API to illustrate OpenAPI concepts
+ * OpenAPI 3.0 definitions for the data models used by aisstream.io.
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -31,7 +31,7 @@ public enum AisMessageTypes {
   
   POSITIONREPORT("PositionReport"),
   
-  UNKNOWNMESSAGETYPE("UnknownMessageType"),
+  UNKNOWNMESSAGE("UnknownMessage"),
   
   ADDRESSEDSAFETYMESSAGE("AddressedSafetyMessage"),
   
@@ -41,8 +41,6 @@ public enum AisMessageTypes {
   
   ASSIGNEDMODECOMMAND("AssignedModeCommand"),
   
-  ASSIGNEDMODECOMMANDDATA("AssignedModeCommandData"),
-  
   BASESTATIONREPORT("BaseStationReport"),
   
   BINARYACKNOWLEDGE("BinaryAcknowledge"),
@@ -50,10 +48,6 @@ public enum AisMessageTypes {
   BINARYBROADCASTMESSAGE("BinaryBroadcastMessage"),
   
   CHANNELMANAGEMENT("ChannelManagement"),
-  
-  COMMUNICATIONSTATEITDMA("CommunicationStateItdma"),
-  
-  COMMUNICATIONSTATENOITDMA("CommunicationStateNoItdma"),
   
   COORDINATEDUTCINQUIRY("CoordinatedUTCInquiry"),
   
@@ -63,13 +57,13 @@ public enum AisMessageTypes {
   
   EXTENDEDCLASSBPOSITIONREPORT("ExtendedClassBPositionReport"),
   
-  GNSSBROADCASTBINARYMESSAGETYPE("GnssBroadcastBinaryMessageType"),
-  
   GROUPASSIGNMENTCOMMAND("GroupAssignmentCommand"),
+  
+  GNSSBROADCASTBINARYMESSAGE("GnssBroadcastBinaryMessage"),
   
   INTERROGATION("Interrogation"),
   
-  LONGRANGEBROADCASTMESSAGE("LongRangeBroadcastMessage"),
+  LONGRANGEAISBROADCASTMESSAGE("LongRangeAisBroadcastMessage"),
   
   MULTISLOTBINARYMESSAGE("MultiSlotBinaryMessage"),
   

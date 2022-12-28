@@ -1,6 +1,6 @@
 /**
  * Ais-Stream WebsocketObjects
- * A sample API to illustrate OpenAPI concepts
+ * OpenAPI 3.0 definitions for the data models used by aisstream.io.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -12,4 +12,4 @@
 
 import { HttpFile } from '../http/http';
 
-export type AisMessageTypes = "PositionReport" | "UnknownMessageType" | "AddressedSafetyMessage" | "AddressedBinaryMessage" | "AidsToNavigationReport" | "AssignedModeCommand" | "AssignedModeCommandData" | "BaseStationReport" | "BinaryAcknowledge" | "BinaryBroadcastMessage" | "ChannelManagement" | "CommunicationStateItdma" | "CommunicationStateNoItdma" | "CoordinatedUTCInquiry" | "DataLinkManagementMessage" | "DataLinkManagementMessageData" | "ExtendedClassBPositionReport" | "GnssBroadcastBinaryMessageType" | "GroupAssignmentCommand" | "Interrogation" | "LongRangeBroadcastMessage" | "MultiSlotBinaryMessage" | "SafetyBroadcastMessage" | "ShipStaticData" | "SingleSlotBinaryMessage" | "StandardClassBPositionReport" | "StandardSearchAndRescueAircraftReport" | "StaticDataReport" ;
+export type AisMessageTypes = "PositionReport" | "UnknownMessage" | "AddressedSafetyMessage" | "AddressedBinaryMessage" | "AidsToNavigationReport" | "AssignedModeCommand" | "BaseStationReport" | "BinaryAcknowledge" | "BinaryBroadcastMessage" | "ChannelManagement" | "CoordinatedUTCInquiry" | "DataLinkManagementMessage" | "DataLinkManagementMessageData" | "ExtendedClassBPositionReport" | "GroupAssignmentCommand" | "GnssBroadcastBinaryMessage" | "Interrogation" | "LongRangeAisBroadcastMessage" | "MultiSlotBinaryMessage" | "SafetyBroadcastMessage" | "ShipStaticData" | "SingleSlotBinaryMessage" | "StandardClassBPositionReport" | "StandardSearchAndRescueAircraftReport" | "StaticDataReport" ;

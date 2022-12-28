@@ -1,6 +1,6 @@
 /**
  * Ais-Stream WebsocketObjects
- * A sample API to illustrate OpenAPI concepts
+ * OpenAPI 3.0 definitions for the data models used by aisstream.io.
  *
  * OpenAPI spec version: 1.0.0
  * 

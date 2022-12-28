@@ -1,6 +1,6 @@
 /*
  * Ais-Stream WebsocketObjects
- * A sample API to illustrate OpenAPI concepts
+ * OpenAPI 3.0 definitions for the data models used by aisstream.io.
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -24,6 +24,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.AisMessageTypes;
+import org.openapitools.client.model.AisStreamMessageMessage;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * AisStreamMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-10T11:29:39.227367-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-12-27T20:06:28.639799-05:00[America/Toronto]")
 public class AisStreamMessage {
   public static final String SERIALIZED_NAME_META_DATA = "MetaData";
   @SerializedName(SERIALIZED_NAME_META_DATA)
@@ -60,7 +61,7 @@ public class AisStreamMessage {
 
   public static final String SERIALIZED_NAME_MESSAGE = "Message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
-  private String message;
+  private AisStreamMessageMessage message;
 
   public AisStreamMessage() { 
   }
@@ -111,7 +112,7 @@ public class AisStreamMessage {
   }
 
 
-  public AisStreamMessage message(String message) {
+  public AisStreamMessage message(AisStreamMessageMessage message) {
     
     this.message = message;
     return this;
@@ -124,12 +125,12 @@ public class AisStreamMessage {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public String getMessage() {
+  public AisStreamMessageMessage getMessage() {
     return message;
   }
 
 
-  public void setMessage(String message) {
+  public void setMessage(AisStreamMessageMessage message) {
     this.message = message;
   }
 
@@ -223,8 +224,9 @@ public class AisStreamMessage {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
-      if (jsonObj.get("Message") != null && !jsonObj.get("Message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `Message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Message").toString()));
+      // validate the optional field `Message`
+      if (jsonObj.getAsJsonObject("Message") != null) {
+        AisStreamMessageMessage.validateJsonObject(jsonObj.getAsJsonObject("Message"));
       }
   }
 

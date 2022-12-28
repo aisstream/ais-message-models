@@ -1,6 +1,6 @@
 /*
  * Ais-Stream WebsocketObjects
- * A sample API to illustrate OpenAPI concepts
+ * OpenAPI 3.0 definitions for the data models used by aisstream.io.
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * MultiSlotBinaryMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-10T11:29:39.227367-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-12-27T20:06:28.639799-05:00[America/Toronto]")
 public class MultiSlotBinaryMessage {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)

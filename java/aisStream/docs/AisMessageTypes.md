@@ -7,7 +7,7 @@
 
 * `POSITIONREPORT` (value: `"PositionReport"`)
 
-* `UNKNOWNMESSAGETYPE` (value: `"UnknownMessageType"`)
+* `UNKNOWNMESSAGE` (value: `"UnknownMessage"`)
 
 * `ADDRESSEDSAFETYMESSAGE` (value: `"AddressedSafetyMessage"`)
 
@@ -17,8 +17,6 @@
 
 * `ASSIGNEDMODECOMMAND` (value: `"AssignedModeCommand"`)
 
-* `ASSIGNEDMODECOMMANDDATA` (value: `"AssignedModeCommandData"`)
-
 * `BASESTATIONREPORT` (value: `"BaseStationReport"`)
 
 * `BINARYACKNOWLEDGE` (value: `"BinaryAcknowledge"`)
@@ -26,10 +24,6 @@
 * `BINARYBROADCASTMESSAGE` (value: `"BinaryBroadcastMessage"`)
 
 * `CHANNELMANAGEMENT` (value: `"ChannelManagement"`)
-
-* `COMMUNICATIONSTATEITDMA` (value: `"CommunicationStateItdma"`)
-
-* `COMMUNICATIONSTATENOITDMA` (value: `"CommunicationStateNoItdma"`)
 
 * `COORDINATEDUTCINQUIRY` (value: `"CoordinatedUTCInquiry"`)
 
@@ -39,13 +33,13 @@
 
 * `EXTENDEDCLASSBPOSITIONREPORT` (value: `"ExtendedClassBPositionReport"`)
 
-* `GNSSBROADCASTBINARYMESSAGETYPE` (value: `"GnssBroadcastBinaryMessageType"`)
-
 * `GROUPASSIGNMENTCOMMAND` (value: `"GroupAssignmentCommand"`)
+
+* `GNSSBROADCASTBINARYMESSAGE` (value: `"GnssBroadcastBinaryMessage"`)
 
 * `INTERROGATION` (value: `"Interrogation"`)
 
-* `LONGRANGEBROADCASTMESSAGE` (value: `"LongRangeBroadcastMessage"`)
+* `LONGRANGEAISBROADCASTMESSAGE` (value: `"LongRangeAisBroadcastMessage"`)
 
 * `MULTISLOTBINARYMESSAGE` (value: `"MultiSlotBinaryMessage"`)
 

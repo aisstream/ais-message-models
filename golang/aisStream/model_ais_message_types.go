@@ -1,7 +1,7 @@
 /*
 Ais-Stream WebsocketObjects
 
-A sample API to illustrate OpenAPI concepts
+OpenAPI 3.0 definitions for the data models used by aisstream.io.
 
 API version: 1.0.0
 */
@@ -21,24 +21,21 @@ type AisMessageTypes string
 // List of AisMessageTypes
 const (
 	POSITION_REPORT AisMessageTypes = "PositionReport"
-	UNKNOWN_MESSAGE_TYPE AisMessageTypes = "UnknownMessageType"
+	UNKNOWN_MESSAGE AisMessageTypes = "UnknownMessage"
 	ADDRESSED_SAFETY_MESSAGE AisMessageTypes = "AddressedSafetyMessage"
 	ADDRESSED_BINARY_MESSAGE AisMessageTypes = "AddressedBinaryMessage"
 	AIDS_TO_NAVIGATION_REPORT AisMessageTypes = "AidsToNavigationReport"
 	ASSIGNED_MODE_COMMAND AisMessageTypes = "AssignedModeCommand"
-	ASSIGNED_MODE_COMMAND_DATA AisMessageTypes = "AssignedModeCommandData"
 	BASE_STATION_REPORT AisMessageTypes = "BaseStationReport"
 	BINARY_ACKNOWLEDGE AisMessageTypes = "BinaryAcknowledge"
 	BINARY_BROADCAST_MESSAGE AisMessageTypes = "BinaryBroadcastMessage"
 	CHANNEL_MANAGEMENT AisMessageTypes = "ChannelManagement"
-	COMMUNICATION_STATE_ITDMA AisMessageTypes = "CommunicationStateItdma"
-	COMMUNICATION_STATE_NO_ITDMA AisMessageTypes = "CommunicationStateNoItdma"
 	COORDINATED_UTC_INQUIRY AisMessageTypes = "CoordinatedUTCInquiry"
 	DATA_LINK_MANAGEMENT_MESSAGE AisMessageTypes = "DataLinkManagementMessage"
 	DATA_LINK_MANAGEMENT_MESSAGE_DATA AisMessageTypes = "DataLinkManagementMessageData"
 	EXTENDED_CLASS_B_POSITION_REPORT AisMessageTypes = "ExtendedClassBPositionReport"
-	GNSS_BROADCAST_BINARY_MESSAGE_TYPE AisMessageTypes = "GnssBroadcastBinaryMessageType"
 	GROUP_ASSIGNMENT_COMMAND AisMessageTypes = "GroupAssignmentCommand"
+	GNSS_BROADCAST_BINARY_MESSAGE AisMessageTypes = "GnssBroadcastBinaryMessage"
 	INTERROGATION AisMessageTypes = "Interrogation"
 	LONG_RANGE_AIS_BROADCAST_MESSAGE AisMessageTypes = "LongRangeAisBroadcastMessage"
 	MULTI_SLOT_BINARY_MESSAGE AisMessageTypes = "MultiSlotBinaryMessage"
@@ -53,24 +50,21 @@ const (
 // All allowed values of AisMessageTypes enum
 var AllowedAisMessageTypesEnumValues = []AisMessageTypes{
 	"PositionReport",
-	"UnknownMessageType",
+	"UnknownMessage",
 	"AddressedSafetyMessage",
 	"AddressedBinaryMessage",
 	"AidsToNavigationReport",
 	"AssignedModeCommand",
-	"AssignedModeCommandData",
 	"BaseStationReport",
 	"BinaryAcknowledge",
 	"BinaryBroadcastMessage",
 	"ChannelManagement",
-	"CommunicationStateItdma",
-	"CommunicationStateNoItdma",
 	"CoordinatedUTCInquiry",
 	"DataLinkManagementMessage",
 	"DataLinkManagementMessageData",
 	"ExtendedClassBPositionReport",
-	"GnssBroadcastBinaryMessageType",
 	"GroupAssignmentCommand",
+	"GnssBroadcastBinaryMessage",
 	"Interrogation",
 	"LongRangeAisBroadcastMessage",
 	"MultiSlotBinaryMessage",

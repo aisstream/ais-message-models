@@ -1,7 +1,7 @@
 /*
 Ais-Stream WebsocketObjects
 
-A sample API to illustrate OpenAPI concepts
+OpenAPI 3.0 definitions for the data models used by aisstream.io.
 
 API version: 1.0.0
 */
@@ -18,14 +18,14 @@ import (
 type AisStreamMessage struct {
 	MetaData map[string]interface{} `json:"MetaData"`
 	MessageType AisMessageTypes `json:"MessageType"`
-	Message string `json:"Message"`
+	Message AisStreamMessageMessage `json:"Message"`
 }
 
 // NewAisStreamMessage instantiates a new AisStreamMessage object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAisStreamMessage(metaData map[string]interface{}, messageType AisMessageTypes, message string) *AisStreamMessage {
+func NewAisStreamMessage(metaData map[string]interface{}, messageType AisMessageTypes, message AisStreamMessageMessage) *AisStreamMessage {
 	this := AisStreamMessage{}
 	this.MetaData = metaData
 	this.MessageType = messageType
@@ -90,9 +90,9 @@ func (o *AisStreamMessage) SetMessageType(v AisMessageTypes) {
 }
 
 // GetMessage returns the Message field value
-func (o *AisStreamMessage) GetMessage() string {
+func (o *AisStreamMessage) GetMessage() AisStreamMessageMessage {
 	if o == nil {
-		var ret string
+		var ret AisStreamMessageMessage
 		return ret
 	}
 
@@ -101,7 +101,7 @@ func (o *AisStreamMessage) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value
 // and a boolean to check if the value has been set.
-func (o *AisStreamMessage) GetMessageOk() (*string, bool) {
+func (o *AisStreamMessage) GetMessageOk() (*AisStreamMessageMessage, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -109,7 +109,7 @@ func (o *AisStreamMessage) GetMessageOk() (*string, bool) {
 }
 
 // SetMessage sets field value
-func (o *AisStreamMessage) SetMessage(v string) {
+func (o *AisStreamMessage) SetMessage(v AisStreamMessageMessage) {
 	o.Message = v
 }
 

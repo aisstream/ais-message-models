@@ -1,6 +1,6 @@
 /**
  * Ais-Stream WebsocketObjects
- * A sample API to illustrate OpenAPI concepts
+ * OpenAPI 3.0 definitions for the data models used by aisstream.io.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -11,12 +11,13 @@
  */
 
 import { AisMessageTypes } from './AisMessageTypes';
+import { AisStreamMessageMessage } from './AisStreamMessageMessage';
 import { HttpFile } from '../http/http';
 
 export class AisStreamMessage {
     'metaData': any;
     'messageType': AisMessageTypes;
-    'message': string;
+    'message': AisStreamMessageMessage;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -36,7 +37,7 @@ export class AisStreamMessage {
         {
             "name": "message",
             "baseName": "Message",
-            "type": "string",
+            "type": "AisStreamMessageMessage",
             "format": ""
         }    ];
 

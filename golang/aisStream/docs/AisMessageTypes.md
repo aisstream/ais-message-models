@@ -5,7 +5,7 @@
 
 * `POSITION_REPORT` (value: `"PositionReport"`)
 
-* `UNKNOWN_MESSAGE_TYPE` (value: `"UnknownMessageType"`)
+* `UNKNOWN_MESSAGE` (value: `"UnknownMessage"`)
 
 * `ADDRESSED_SAFETY_MESSAGE` (value: `"AddressedSafetyMessage"`)
 
@@ -15,8 +15,6 @@
 
 * `ASSIGNED_MODE_COMMAND` (value: `"AssignedModeCommand"`)
 
-* `ASSIGNED_MODE_COMMAND_DATA` (value: `"AssignedModeCommandData"`)
-
 * `BASE_STATION_REPORT` (value: `"BaseStationReport"`)
 
 * `BINARY_ACKNOWLEDGE` (value: `"BinaryAcknowledge"`)
@@ -24,10 +22,6 @@
 * `BINARY_BROADCAST_MESSAGE` (value: `"BinaryBroadcastMessage"`)
 
 * `CHANNEL_MANAGEMENT` (value: `"ChannelManagement"`)
-
-* `COMMUNICATION_STATE_ITDMA` (value: `"CommunicationStateItdma"`)
-
-* `COMMUNICATION_STATE_NO_ITDMA` (value: `"CommunicationStateNoItdma"`)
 
 * `COORDINATED_UTC_INQUIRY` (value: `"CoordinatedUTCInquiry"`)
 
@@ -37,9 +31,9 @@
 
 * `EXTENDED_CLASS_B_POSITION_REPORT` (value: `"ExtendedClassBPositionReport"`)
 
-* `GNSS_BROADCAST_BINARY_MESSAGE_TYPE` (value: `"GnssBroadcastBinaryMessageType"`)
-
 * `GROUP_ASSIGNMENT_COMMAND` (value: `"GroupAssignmentCommand"`)
+
+* `GNSS_BROADCAST_BINARY_MESSAGE` (value: `"GnssBroadcastBinaryMessage"`)
 
 * `INTERROGATION` (value: `"Interrogation"`)
 
