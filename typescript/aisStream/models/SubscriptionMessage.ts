@@ -10,11 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { AisMessageTypes } from './AisMessageTypes';
 import { HttpFile } from '../http/http';
 
 export class SubscriptionMessage {
     'aPIKey': string;
     'boundingBoxes': Array<Array<Array<number>>>;
+    'filtersShipMMSI'?: Array<string>;
+    'filterMessageTypes'?: Array<AisMessageTypes>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,6 +33,18 @@ export class SubscriptionMessage {
             "baseName": "BoundingBoxes",
             "type": "Array<Array<Array<number>>>",
             "format": "double"
+        },
+        {
+            "name": "filtersShipMMSI",
+            "baseName": "FiltersShipMMSI",
+            "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "filterMessageTypes",
+            "baseName": "FilterMessageTypes",
+            "type": "Array<AisMessageTypes>",
+            "format": ""
         }    ];
 
     static getAttributeTypeMap() {

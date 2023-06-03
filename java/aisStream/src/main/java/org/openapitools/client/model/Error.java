@@ -45,64 +45,37 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * StaticDataReportReportA
+ * Error
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-03T16:23:44.640253-07:00[America/Vancouver]")
-public class StaticDataReportReportA {
-  public static final String SERIALIZED_NAME_VALID = "Valid";
-  @SerializedName(SERIALIZED_NAME_VALID)
-  private Boolean valid;
+public class Error {
+  public static final String SERIALIZED_NAME_ERROR = "error";
+  @SerializedName(SERIALIZED_NAME_ERROR)
+  private String error;
 
-  public static final String SERIALIZED_NAME_NAME = "Name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  public StaticDataReportReportA() { 
+  public Error() { 
   }
 
-  public StaticDataReportReportA valid(Boolean valid) {
+  public Error error(String error) {
     
-    this.valid = valid;
+    this.error = error;
     return this;
   }
 
    /**
-   * Get valid
-   * @return valid
+   * Get error
+   * @return error
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public Boolean getValid() {
-    return valid;
+  public String getError() {
+    return error;
   }
 
 
-  public void setValid(Boolean valid) {
-    this.valid = valid;
-  }
-
-
-  public StaticDataReportReportA name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
+  public void setError(String error) {
+    this.error = error;
   }
 
 
@@ -115,22 +88,20 @@ public class StaticDataReportReportA {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StaticDataReportReportA staticDataReportReportA = (StaticDataReportReportA) o;
-    return Objects.equals(this.valid, staticDataReportReportA.valid) &&
-        Objects.equals(this.name, staticDataReportReportA.name);
+    Error error = (Error) o;
+    return Objects.equals(this.error, error.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(valid, name);
+    return Objects.hash(error);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StaticDataReportReportA {\n");
-    sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("class Error {\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -153,46 +124,44 @@ public class StaticDataReportReportA {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("Valid");
-    openapiFields.add("Name");
+    openapiFields.add("error");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("Name");
+    openapiRequiredFields.add("error");
   }
 
  /**
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StaticDataReportReportA
+  * @throws IOException if the JSON Object is invalid with respect to Error
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (StaticDataReportReportA.openapiRequiredFields.isEmpty()) {
+        if (Error.openapiRequiredFields.isEmpty()) {
           return;
         } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StaticDataReportReportA is not found in the empty JSON string", StaticDataReportReportA.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Error is not found in the empty JSON string", Error.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!StaticDataReportReportA.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StaticDataReportReportA` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!Error.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Error` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : StaticDataReportReportA.openapiRequiredFields) {
+      for (String requiredField : Error.openapiRequiredFields) {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
-      if (jsonObj.get("Name") != null && !jsonObj.get("Name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `Name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Name").toString()));
+      if (jsonObj.get("error") != null && !jsonObj.get("error").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
       }
   }
 
@@ -200,22 +169,22 @@ public class StaticDataReportReportA {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StaticDataReportReportA.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StaticDataReportReportA' and its subtypes
+       if (!Error.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Error' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StaticDataReportReportA> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StaticDataReportReportA.class));
+       final TypeAdapter<Error> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Error.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<StaticDataReportReportA>() {
+       return (TypeAdapter<T>) new TypeAdapter<Error>() {
            @Override
-           public void write(JsonWriter out, StaticDataReportReportA value) throws IOException {
+           public void write(JsonWriter out, Error value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public StaticDataReportReportA read(JsonReader in) throws IOException {
+           public Error read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -226,18 +195,18 @@ public class StaticDataReportReportA {
   }
 
  /**
-  * Create an instance of StaticDataReportReportA given an JSON string
+  * Create an instance of Error given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of StaticDataReportReportA
-  * @throws IOException if the JSON string is invalid with respect to StaticDataReportReportA
+  * @return An instance of Error
+  * @throws IOException if the JSON string is invalid with respect to Error
   */
-  public static StaticDataReportReportA fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StaticDataReportReportA.class);
+  public static Error fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Error.class);
   }
 
  /**
-  * Convert an instance of StaticDataReportReportA to an JSON string
+  * Convert an instance of Error to an JSON string
   *
   * @return JSON string
   */

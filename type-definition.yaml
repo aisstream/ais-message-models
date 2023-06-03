@@ -7,6 +7,14 @@ paths:
 
 components:
   schemas:
+
+    Error:
+      required:
+        - error
+      properties:
+        error:
+          type: string
+
     AisMessageTypes:
       type: string
       enum:
@@ -119,6 +127,17 @@ components:
               oneOf:
                 - minItems: 2
                   maxItems: 2
+        FiltersShipMMSI:
+          type: array
+          items:
+            type: string
+            minLength: 9
+            maxLength: 9
+        FilterMessageTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/AisMessageTypes'
+
     PositionReport:
       required:
         - MessageID

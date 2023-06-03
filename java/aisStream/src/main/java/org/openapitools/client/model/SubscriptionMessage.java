@@ -25,6 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.AisMessageTypes;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * SubscriptionMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-12-27T20:06:28.639799-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-03T16:23:44.640253-07:00[America/Vancouver]")
 public class SubscriptionMessage {
   public static final String SERIALIZED_NAME_AP_I_KEY = "APIKey";
   @SerializedName(SERIALIZED_NAME_AP_I_KEY)
@@ -58,6 +59,14 @@ public class SubscriptionMessage {
   public static final String SERIALIZED_NAME_BOUNDING_BOXES = "BoundingBoxes";
   @SerializedName(SERIALIZED_NAME_BOUNDING_BOXES)
   private List<List<List<Double>>> boundingBoxes = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_FILTERS_SHIP_M_M_S_I = "FiltersShipMMSI";
+  @SerializedName(SERIALIZED_NAME_FILTERS_SHIP_M_M_S_I)
+  private List<String> filtersShipMMSI = null;
+
+  public static final String SERIALIZED_NAME_FILTER_MESSAGE_TYPES = "FilterMessageTypes";
+  @SerializedName(SERIALIZED_NAME_FILTER_MESSAGE_TYPES)
+  private List<AisMessageTypes> filterMessageTypes = null;
 
   public SubscriptionMessage() { 
   }
@@ -113,6 +122,68 @@ public class SubscriptionMessage {
   }
 
 
+  public SubscriptionMessage filtersShipMMSI(List<String> filtersShipMMSI) {
+    
+    this.filtersShipMMSI = filtersShipMMSI;
+    return this;
+  }
+
+  public SubscriptionMessage addFiltersShipMMSIItem(String filtersShipMMSIItem) {
+    if (this.filtersShipMMSI == null) {
+      this.filtersShipMMSI = new ArrayList<>();
+    }
+    this.filtersShipMMSI.add(filtersShipMMSIItem);
+    return this;
+  }
+
+   /**
+   * Get filtersShipMMSI
+   * @return filtersShipMMSI
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getFiltersShipMMSI() {
+    return filtersShipMMSI;
+  }
+
+
+  public void setFiltersShipMMSI(List<String> filtersShipMMSI) {
+    this.filtersShipMMSI = filtersShipMMSI;
+  }
+
+
+  public SubscriptionMessage filterMessageTypes(List<AisMessageTypes> filterMessageTypes) {
+    
+    this.filterMessageTypes = filterMessageTypes;
+    return this;
+  }
+
+  public SubscriptionMessage addFilterMessageTypesItem(AisMessageTypes filterMessageTypesItem) {
+    if (this.filterMessageTypes == null) {
+      this.filterMessageTypes = new ArrayList<>();
+    }
+    this.filterMessageTypes.add(filterMessageTypesItem);
+    return this;
+  }
+
+   /**
+   * Get filterMessageTypes
+   * @return filterMessageTypes
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<AisMessageTypes> getFilterMessageTypes() {
+    return filterMessageTypes;
+  }
+
+
+  public void setFilterMessageTypes(List<AisMessageTypes> filterMessageTypes) {
+    this.filterMessageTypes = filterMessageTypes;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -124,12 +195,14 @@ public class SubscriptionMessage {
     }
     SubscriptionMessage subscriptionMessage = (SubscriptionMessage) o;
     return Objects.equals(this.apIKey, subscriptionMessage.apIKey) &&
-        Objects.equals(this.boundingBoxes, subscriptionMessage.boundingBoxes);
+        Objects.equals(this.boundingBoxes, subscriptionMessage.boundingBoxes) &&
+        Objects.equals(this.filtersShipMMSI, subscriptionMessage.filtersShipMMSI) &&
+        Objects.equals(this.filterMessageTypes, subscriptionMessage.filterMessageTypes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(apIKey, boundingBoxes);
+    return Objects.hash(apIKey, boundingBoxes, filtersShipMMSI, filterMessageTypes);
   }
 
   @Override
@@ -138,6 +211,8 @@ public class SubscriptionMessage {
     sb.append("class SubscriptionMessage {\n");
     sb.append("    apIKey: ").append(toIndentedString(apIKey)).append("\n");
     sb.append("    boundingBoxes: ").append(toIndentedString(boundingBoxes)).append("\n");
+    sb.append("    filtersShipMMSI: ").append(toIndentedString(filtersShipMMSI)).append("\n");
+    sb.append("    filterMessageTypes: ").append(toIndentedString(filterMessageTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -162,6 +237,8 @@ public class SubscriptionMessage {
     openapiFields = new HashSet<String>();
     openapiFields.add("APIKey");
     openapiFields.add("BoundingBoxes");
+    openapiFields.add("FiltersShipMMSI");
+    openapiFields.add("FilterMessageTypes");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -204,6 +281,14 @@ public class SubscriptionMessage {
       // ensure the json data is an array
       if (jsonObj.get("BoundingBoxes") != null && !jsonObj.get("BoundingBoxes").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `BoundingBoxes` to be an array in the JSON string but got `%s`", jsonObj.get("BoundingBoxes").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("FiltersShipMMSI") != null && !jsonObj.get("FiltersShipMMSI").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `FiltersShipMMSI` to be an array in the JSON string but got `%s`", jsonObj.get("FiltersShipMMSI").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("FilterMessageTypes") != null && !jsonObj.get("FilterMessageTypes").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `FilterMessageTypes` to be an array in the JSON string but got `%s`", jsonObj.get("FilterMessageTypes").toString()));
       }
   }
 

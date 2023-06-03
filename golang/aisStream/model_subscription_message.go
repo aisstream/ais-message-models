@@ -18,6 +18,8 @@ import (
 type SubscriptionMessage struct {
 	APIKey string `json:"APIKey"`
 	BoundingBoxes [][][]float64 `json:"BoundingBoxes"`
+	FiltersShipMMSI []string `json:"FiltersShipMMSI,omitempty"`
+	FilterMessageTypes []AisMessageTypes `json:"FilterMessageTypes,omitempty"`
 }
 
 // NewSubscriptionMessage instantiates a new SubscriptionMessage object
@@ -87,6 +89,70 @@ func (o *SubscriptionMessage) SetBoundingBoxes(v [][][]float64) {
 	o.BoundingBoxes = v
 }
 
+// GetFiltersShipMMSI returns the FiltersShipMMSI field value if set, zero value otherwise.
+func (o *SubscriptionMessage) GetFiltersShipMMSI() []string {
+	if o == nil || o.FiltersShipMMSI == nil {
+		var ret []string
+		return ret
+	}
+	return o.FiltersShipMMSI
+}
+
+// GetFiltersShipMMSIOk returns a tuple with the FiltersShipMMSI field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubscriptionMessage) GetFiltersShipMMSIOk() ([]string, bool) {
+	if o == nil || o.FiltersShipMMSI == nil {
+		return nil, false
+	}
+	return o.FiltersShipMMSI, true
+}
+
+// HasFiltersShipMMSI returns a boolean if a field has been set.
+func (o *SubscriptionMessage) HasFiltersShipMMSI() bool {
+	if o != nil && o.FiltersShipMMSI != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFiltersShipMMSI gets a reference to the given []string and assigns it to the FiltersShipMMSI field.
+func (o *SubscriptionMessage) SetFiltersShipMMSI(v []string) {
+	o.FiltersShipMMSI = v
+}
+
+// GetFilterMessageTypes returns the FilterMessageTypes field value if set, zero value otherwise.
+func (o *SubscriptionMessage) GetFilterMessageTypes() []AisMessageTypes {
+	if o == nil || o.FilterMessageTypes == nil {
+		var ret []AisMessageTypes
+		return ret
+	}
+	return o.FilterMessageTypes
+}
+
+// GetFilterMessageTypesOk returns a tuple with the FilterMessageTypes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubscriptionMessage) GetFilterMessageTypesOk() ([]AisMessageTypes, bool) {
+	if o == nil || o.FilterMessageTypes == nil {
+		return nil, false
+	}
+	return o.FilterMessageTypes, true
+}
+
+// HasFilterMessageTypes returns a boolean if a field has been set.
+func (o *SubscriptionMessage) HasFilterMessageTypes() bool {
+	if o != nil && o.FilterMessageTypes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFilterMessageTypes gets a reference to the given []AisMessageTypes and assigns it to the FilterMessageTypes field.
+func (o *SubscriptionMessage) SetFilterMessageTypes(v []AisMessageTypes) {
+	o.FilterMessageTypes = v
+}
+
 func (o SubscriptionMessage) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -94,6 +160,12 @@ func (o SubscriptionMessage) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["BoundingBoxes"] = o.BoundingBoxes
+	}
+	if o.FiltersShipMMSI != nil {
+		toSerialize["FiltersShipMMSI"] = o.FiltersShipMMSI
+	}
+	if o.FilterMessageTypes != nil {
+		toSerialize["FilterMessageTypes"] = o.FilterMessageTypes
 	}
 	return json.Marshal(toSerialize)
 }

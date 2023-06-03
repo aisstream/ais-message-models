@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * DataLinkManagementMessageData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-12-27T20:06:28.639799-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-03T16:23:44.640253-07:00[America/Vancouver]")
 public class DataLinkManagementMessageData {
   public static final String SERIALIZED_NAME_0 = "0";
   @SerializedName(SERIALIZED_NAME_0)
