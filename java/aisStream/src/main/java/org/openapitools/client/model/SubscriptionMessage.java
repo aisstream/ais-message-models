@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * SubscriptionMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-03T16:23:44.640253-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
 public class SubscriptionMessage {
   public static final String SERIALIZED_NAME_AP_I_KEY = "APIKey";
   @SerializedName(SERIALIZED_NAME_AP_I_KEY)

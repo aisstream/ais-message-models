@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * ChannelManagementUnicast
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-03T16:23:44.640253-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
 public class ChannelManagementUnicast {
   public static final String SERIALIZED_NAME_ADDRESS_STATION1 = "AddressStation1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_STATION1)
