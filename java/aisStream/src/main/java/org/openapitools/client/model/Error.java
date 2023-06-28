@@ -45,18 +45,18 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * UnknownMessage
+ * Error
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
-public class UnknownMessage {
-  public static final String SERIALIZED_NAME_ERROR = "Error";
+public class Error {
+  public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
   private String error;
 
-  public UnknownMessage() { 
+  public Error() { 
   }
 
-  public UnknownMessage error(String error) {
+  public Error error(String error) {
     
     this.error = error;
     return this;
@@ -66,8 +66,8 @@ public class UnknownMessage {
    * Get error
    * @return error
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public String getError() {
     return error;
@@ -88,8 +88,8 @@ public class UnknownMessage {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UnknownMessage unknownMessage = (UnknownMessage) o;
-    return Objects.equals(this.error, unknownMessage.error);
+    Error error = (Error) o;
+    return Objects.equals(this.error, error.error);
   }
 
   @Override
@@ -100,7 +100,7 @@ public class UnknownMessage {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UnknownMessage {\n");
+    sb.append("class Error {\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -124,36 +124,44 @@ public class UnknownMessage {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("Error");
+    openapiFields.add("error");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("error");
   }
 
  /**
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UnknownMessage
+  * @throws IOException if the JSON Object is invalid with respect to Error
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (UnknownMessage.openapiRequiredFields.isEmpty()) {
+        if (Error.openapiRequiredFields.isEmpty()) {
           return;
         } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UnknownMessage is not found in the empty JSON string", UnknownMessage.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Error is not found in the empty JSON string", Error.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!UnknownMessage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UnknownMessage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!Error.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Error` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      if (jsonObj.get("Error") != null && !jsonObj.get("Error").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `Error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Error").toString()));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Error.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("error") != null && !jsonObj.get("error").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
       }
   }
 
@@ -161,22 +169,22 @@ public class UnknownMessage {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UnknownMessage.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UnknownMessage' and its subtypes
+       if (!Error.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Error' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UnknownMessage> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UnknownMessage.class));
+       final TypeAdapter<Error> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Error.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UnknownMessage>() {
+       return (TypeAdapter<T>) new TypeAdapter<Error>() {
            @Override
-           public void write(JsonWriter out, UnknownMessage value) throws IOException {
+           public void write(JsonWriter out, Error value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UnknownMessage read(JsonReader in) throws IOException {
+           public Error read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -187,18 +195,18 @@ public class UnknownMessage {
   }
 
  /**
-  * Create an instance of UnknownMessage given an JSON string
+  * Create an instance of Error given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of UnknownMessage
-  * @throws IOException if the JSON string is invalid with respect to UnknownMessage
+  * @return An instance of Error
+  * @throws IOException if the JSON string is invalid with respect to Error
   */
-  public static UnknownMessage fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UnknownMessage.class);
+  public static Error fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Error.class);
   }
 
  /**
-  * Convert an instance of UnknownMessage to an JSON string
+  * Convert an instance of Error to an JSON string
   *
   * @return JSON string
   */

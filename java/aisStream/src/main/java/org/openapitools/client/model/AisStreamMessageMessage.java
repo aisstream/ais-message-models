@@ -72,7 +72,7 @@ import org.openapitools.client.JSON;
 /**
  * AisStreamMessageMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-12-27T20:06:28.639799-05:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
 public class AisStreamMessageMessage {
   public static final String SERIALIZED_NAME_POSITION_REPORT = "PositionReport";
   @SerializedName(SERIALIZED_NAME_POSITION_REPORT)
