@@ -15,7 +15,7 @@ To generate your own libraries, you can use the OpenAPI Generator as follows:
 
 Copy code
 ```
-openapi-generator generate -i openapi.yaml -g <language> -o <output directory>
+openapi-generator generate -i type-definition.yaml -g <language> -o <output directory>
 Replace <language> with the programming language of your choice (e.g. java, python, etc.), and <output directory> with the directory where you want the generated code to be stored.
 ```
 
