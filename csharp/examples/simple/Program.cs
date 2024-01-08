@@ -27,7 +27,6 @@ namespace aisStream.SimpleExample
                     else
                     {
                         Console.WriteLine($"Received {Encoding.Default.GetString(buffer, 0, result.Count)}");
-                        return;
                     }
                 }
             }
