@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { AssignedModeCommandCommands } from './AssignedModeCommandCommands';
+import { AssignedModeCommandCommands } from '../models/AssignedModeCommandCommands';
 import { HttpFile } from '../http/http';
 
 export class AssignedModeCommand {
@@ -22,6 +22,8 @@ export class AssignedModeCommand {
     'commands': AssignedModeCommandCommands;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -68,4 +70,3 @@ export class AssignedModeCommand {
     public constructor() {
     }
 }
-

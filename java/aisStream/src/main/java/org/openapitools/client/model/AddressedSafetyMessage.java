@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,15 +29,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -47,250 +49,223 @@ import org.openapitools.client.JSON;
 /**
  * AddressedSafetyMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class AddressedSafetyMessage {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nonnull
   private Integer messageID;
 
   public static final String SERIALIZED_NAME_REPEAT_INDICATOR = "RepeatIndicator";
   @SerializedName(SERIALIZED_NAME_REPEAT_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer repeatIndicator;
 
   public static final String SERIALIZED_NAME_USER_I_D = "UserID";
   @SerializedName(SERIALIZED_NAME_USER_I_D)
+  @javax.annotation.Nonnull
   private Integer userID;
 
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_SEQUENCEINTEGER = "Sequenceinteger";
   @SerializedName(SERIALIZED_NAME_SEQUENCEINTEGER)
+  @javax.annotation.Nonnull
   private Integer sequenceinteger;
 
   public static final String SERIALIZED_NAME_DESTINATION_I_D = "DestinationID";
   @SerializedName(SERIALIZED_NAME_DESTINATION_I_D)
+  @javax.annotation.Nonnull
   private Integer destinationID;
 
   public static final String SERIALIZED_NAME_RETRANSMISSION = "Retransmission";
   @SerializedName(SERIALIZED_NAME_RETRANSMISSION)
+  @javax.annotation.Nonnull
   private Boolean retransmission;
 
   public static final String SERIALIZED_NAME_SPARE = "Spare";
   @SerializedName(SERIALIZED_NAME_SPARE)
+  @javax.annotation.Nonnull
   private Boolean spare;
 
   public static final String SERIALIZED_NAME_TEXT = "Text";
   @SerializedName(SERIALIZED_NAME_TEXT)
+  @javax.annotation.Nonnull
   private String text;
 
-  public AddressedSafetyMessage() { 
+  public AddressedSafetyMessage() {
   }
 
-  public AddressedSafetyMessage messageID(Integer messageID) {
-    
+  public AddressedSafetyMessage messageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Get messageID
    * @return messageID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getMessageID() {
     return messageID;
   }
 
-
-  public void setMessageID(Integer messageID) {
+  public void setMessageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
   }
 
 
-  public AddressedSafetyMessage repeatIndicator(Integer repeatIndicator) {
-    
+  public AddressedSafetyMessage repeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get repeatIndicator
    * @return repeatIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRepeatIndicator() {
     return repeatIndicator;
   }
 
-
-  public void setRepeatIndicator(Integer repeatIndicator) {
+  public void setRepeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
   }
 
 
-  public AddressedSafetyMessage userID(Integer userID) {
-    
+  public AddressedSafetyMessage userID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
     return this;
   }
 
-   /**
+  /**
    * Get userID
    * @return userID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUserID() {
     return userID;
   }
 
-
-  public void setUserID(Integer userID) {
+  public void setUserID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
   }
 
 
-  public AddressedSafetyMessage valid(Boolean valid) {
-    
+  public AddressedSafetyMessage valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public AddressedSafetyMessage sequenceinteger(Integer sequenceinteger) {
-    
+  public AddressedSafetyMessage sequenceinteger(@javax.annotation.Nonnull Integer sequenceinteger) {
     this.sequenceinteger = sequenceinteger;
     return this;
   }
 
-   /**
+  /**
    * Get sequenceinteger
    * @return sequenceinteger
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSequenceinteger() {
     return sequenceinteger;
   }
 
-
-  public void setSequenceinteger(Integer sequenceinteger) {
+  public void setSequenceinteger(@javax.annotation.Nonnull Integer sequenceinteger) {
     this.sequenceinteger = sequenceinteger;
   }
 
 
-  public AddressedSafetyMessage destinationID(Integer destinationID) {
-    
+  public AddressedSafetyMessage destinationID(@javax.annotation.Nonnull Integer destinationID) {
     this.destinationID = destinationID;
     return this;
   }
 
-   /**
+  /**
    * Get destinationID
    * @return destinationID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getDestinationID() {
     return destinationID;
   }
 
-
-  public void setDestinationID(Integer destinationID) {
+  public void setDestinationID(@javax.annotation.Nonnull Integer destinationID) {
     this.destinationID = destinationID;
   }
 
 
-  public AddressedSafetyMessage retransmission(Boolean retransmission) {
-    
+  public AddressedSafetyMessage retransmission(@javax.annotation.Nonnull Boolean retransmission) {
     this.retransmission = retransmission;
     return this;
   }
 
-   /**
+  /**
    * Get retransmission
    * @return retransmission
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getRetransmission() {
     return retransmission;
   }
 
-
-  public void setRetransmission(Boolean retransmission) {
+  public void setRetransmission(@javax.annotation.Nonnull Boolean retransmission) {
     this.retransmission = retransmission;
   }
 
 
-  public AddressedSafetyMessage spare(Boolean spare) {
-    
+  public AddressedSafetyMessage spare(@javax.annotation.Nonnull Boolean spare) {
     this.spare = spare;
     return this;
   }
 
-   /**
+  /**
    * Get spare
    * @return spare
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getSpare() {
     return spare;
   }
 
-
-  public void setSpare(Boolean spare) {
+  public void setSpare(@javax.annotation.Nonnull Boolean spare) {
     this.spare = spare;
   }
 
 
-  public AddressedSafetyMessage text(String text) {
-    
+  public AddressedSafetyMessage text(@javax.annotation.Nonnull String text) {
     this.text = text;
     return this;
   }
 
-   /**
+  /**
    * Get text
    * @return text
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public String getText() {
     return text;
   }
 
-
-  public void setText(String text) {
+  public void setText(@javax.annotation.Nonnull String text) {
     this.text = text;
   }
 
@@ -343,10 +318,7 @@ public class AddressedSafetyMessage {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -355,61 +327,42 @@ public class AddressedSafetyMessage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MessageID");
-    openapiFields.add("RepeatIndicator");
-    openapiFields.add("UserID");
-    openapiFields.add("Valid");
-    openapiFields.add("Sequenceinteger");
-    openapiFields.add("DestinationID");
-    openapiFields.add("Retransmission");
-    openapiFields.add("Spare");
-    openapiFields.add("Text");
+    openapiFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Sequenceinteger", "DestinationID", "Retransmission", "Spare", "Text"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MessageID");
-    openapiRequiredFields.add("RepeatIndicator");
-    openapiRequiredFields.add("UserID");
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("Sequenceinteger");
-    openapiRequiredFields.add("DestinationID");
-    openapiRequiredFields.add("Retransmission");
-    openapiRequiredFields.add("Spare");
-    openapiRequiredFields.add("Text");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Sequenceinteger", "DestinationID", "Retransmission", "Spare", "Text"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AddressedSafetyMessage
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AddressedSafetyMessage.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddressedSafetyMessage is not found in the empty JSON string", AddressedSafetyMessage.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AddressedSafetyMessage
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!AddressedSafetyMessage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AddressedSafetyMessage is not found in the empty JSON string", AddressedSafetyMessage.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AddressedSafetyMessage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddressedSafetyMessage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AddressedSafetyMessage` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AddressedSafetyMessage.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("Text") != null && !jsonObj.get("Text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `Text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Text").toString()));
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("Text").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `Text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Text").toString()));
       }
   }
 
@@ -433,31 +386,31 @@ public class AddressedSafetyMessage {
 
            @Override
            public AddressedSafetyMessage read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of AddressedSafetyMessage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddressedSafetyMessage
-  * @throws IOException if the JSON string is invalid with respect to AddressedSafetyMessage
-  */
+  /**
+   * Create an instance of AddressedSafetyMessage given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AddressedSafetyMessage
+   * @throws IOException if the JSON string is invalid with respect to AddressedSafetyMessage
+   */
   public static AddressedSafetyMessage fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AddressedSafetyMessage.class);
   }
 
- /**
-  * Convert an instance of AddressedSafetyMessage to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AddressedSafetyMessage to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

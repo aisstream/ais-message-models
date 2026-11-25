@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.client.model.ShipStaticDataDimension;
 
 import com.google.gson.Gson;
@@ -32,15 +30,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -48,250 +50,223 @@ import org.openapitools.client.JSON;
 /**
  * StaticDataReportReportB
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class StaticDataReportReportB {
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_SHIP_TYPE = "ShipType";
   @SerializedName(SERIALIZED_NAME_SHIP_TYPE)
+  @javax.annotation.Nonnull
   private Integer shipType;
 
   public static final String SERIALIZED_NAME_VENDOR_I_D_NAME = "VendorIDName";
   @SerializedName(SERIALIZED_NAME_VENDOR_I_D_NAME)
+  @javax.annotation.Nonnull
   private String vendorIDName;
 
   public static final String SERIALIZED_NAME_VENDER_I_D_MODEL = "VenderIDModel";
   @SerializedName(SERIALIZED_NAME_VENDER_I_D_MODEL)
+  @javax.annotation.Nonnull
   private Integer venderIDModel;
 
   public static final String SERIALIZED_NAME_VENDER_I_D_SERIAL = "VenderIDSerial";
   @SerializedName(SERIALIZED_NAME_VENDER_I_D_SERIAL)
+  @javax.annotation.Nonnull
   private Integer venderIDSerial;
 
   public static final String SERIALIZED_NAME_CALL_SIGN = "CallSign";
   @SerializedName(SERIALIZED_NAME_CALL_SIGN)
+  @javax.annotation.Nonnull
   private String callSign;
 
   public static final String SERIALIZED_NAME_DIMENSION = "Dimension";
   @SerializedName(SERIALIZED_NAME_DIMENSION)
+  @javax.annotation.Nonnull
   private ShipStaticDataDimension dimension;
 
   public static final String SERIALIZED_NAME_FIX_TYPE = "FixType";
   @SerializedName(SERIALIZED_NAME_FIX_TYPE)
+  @javax.annotation.Nonnull
   private Integer fixType;
 
   public static final String SERIALIZED_NAME_SPARE = "Spare";
   @SerializedName(SERIALIZED_NAME_SPARE)
+  @javax.annotation.Nonnull
   private Integer spare;
 
-  public StaticDataReportReportB() { 
+  public StaticDataReportReportB() {
   }
 
-  public StaticDataReportReportB valid(Boolean valid) {
-    
+  public StaticDataReportReportB valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public StaticDataReportReportB shipType(Integer shipType) {
-    
+  public StaticDataReportReportB shipType(@javax.annotation.Nonnull Integer shipType) {
     this.shipType = shipType;
     return this;
   }
 
-   /**
+  /**
    * Get shipType
    * @return shipType
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getShipType() {
     return shipType;
   }
 
-
-  public void setShipType(Integer shipType) {
+  public void setShipType(@javax.annotation.Nonnull Integer shipType) {
     this.shipType = shipType;
   }
 
 
-  public StaticDataReportReportB vendorIDName(String vendorIDName) {
-    
+  public StaticDataReportReportB vendorIDName(@javax.annotation.Nonnull String vendorIDName) {
     this.vendorIDName = vendorIDName;
     return this;
   }
 
-   /**
+  /**
    * Get vendorIDName
    * @return vendorIDName
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public String getVendorIDName() {
     return vendorIDName;
   }
 
-
-  public void setVendorIDName(String vendorIDName) {
+  public void setVendorIDName(@javax.annotation.Nonnull String vendorIDName) {
     this.vendorIDName = vendorIDName;
   }
 
 
-  public StaticDataReportReportB venderIDModel(Integer venderIDModel) {
-    
+  public StaticDataReportReportB venderIDModel(@javax.annotation.Nonnull Integer venderIDModel) {
     this.venderIDModel = venderIDModel;
     return this;
   }
 
-   /**
+  /**
    * Get venderIDModel
    * @return venderIDModel
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getVenderIDModel() {
     return venderIDModel;
   }
 
-
-  public void setVenderIDModel(Integer venderIDModel) {
+  public void setVenderIDModel(@javax.annotation.Nonnull Integer venderIDModel) {
     this.venderIDModel = venderIDModel;
   }
 
 
-  public StaticDataReportReportB venderIDSerial(Integer venderIDSerial) {
-    
+  public StaticDataReportReportB venderIDSerial(@javax.annotation.Nonnull Integer venderIDSerial) {
     this.venderIDSerial = venderIDSerial;
     return this;
   }
 
-   /**
+  /**
    * Get venderIDSerial
    * @return venderIDSerial
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getVenderIDSerial() {
     return venderIDSerial;
   }
 
-
-  public void setVenderIDSerial(Integer venderIDSerial) {
+  public void setVenderIDSerial(@javax.annotation.Nonnull Integer venderIDSerial) {
     this.venderIDSerial = venderIDSerial;
   }
 
 
-  public StaticDataReportReportB callSign(String callSign) {
-    
+  public StaticDataReportReportB callSign(@javax.annotation.Nonnull String callSign) {
     this.callSign = callSign;
     return this;
   }
 
-   /**
+  /**
    * Get callSign
    * @return callSign
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public String getCallSign() {
     return callSign;
   }
 
-
-  public void setCallSign(String callSign) {
+  public void setCallSign(@javax.annotation.Nonnull String callSign) {
     this.callSign = callSign;
   }
 
 
-  public StaticDataReportReportB dimension(ShipStaticDataDimension dimension) {
-    
+  public StaticDataReportReportB dimension(@javax.annotation.Nonnull ShipStaticDataDimension dimension) {
     this.dimension = dimension;
     return this;
   }
 
-   /**
+  /**
    * Get dimension
    * @return dimension
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public ShipStaticDataDimension getDimension() {
     return dimension;
   }
 
-
-  public void setDimension(ShipStaticDataDimension dimension) {
+  public void setDimension(@javax.annotation.Nonnull ShipStaticDataDimension dimension) {
     this.dimension = dimension;
   }
 
 
-  public StaticDataReportReportB fixType(Integer fixType) {
-    
+  public StaticDataReportReportB fixType(@javax.annotation.Nonnull Integer fixType) {
     this.fixType = fixType;
     return this;
   }
 
-   /**
+  /**
    * Get fixType
    * @return fixType
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getFixType() {
     return fixType;
   }
 
-
-  public void setFixType(Integer fixType) {
+  public void setFixType(@javax.annotation.Nonnull Integer fixType) {
     this.fixType = fixType;
   }
 
 
-  public StaticDataReportReportB spare(Integer spare) {
-    
+  public StaticDataReportReportB spare(@javax.annotation.Nonnull Integer spare) {
     this.spare = spare;
     return this;
   }
 
-   /**
+  /**
    * Get spare
    * @return spare
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare() {
     return spare;
   }
 
-
-  public void setSpare(Integer spare) {
+  public void setSpare(@javax.annotation.Nonnull Integer spare) {
     this.spare = spare;
   }
 
@@ -344,10 +319,7 @@ public class StaticDataReportReportB {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -356,69 +328,48 @@ public class StaticDataReportReportB {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Valid");
-    openapiFields.add("ShipType");
-    openapiFields.add("VendorIDName");
-    openapiFields.add("VenderIDModel");
-    openapiFields.add("VenderIDSerial");
-    openapiFields.add("CallSign");
-    openapiFields.add("Dimension");
-    openapiFields.add("FixType");
-    openapiFields.add("Spare");
+    openapiFields = new HashSet<String>(Arrays.asList("Valid", "ShipType", "VendorIDName", "VenderIDModel", "VenderIDSerial", "CallSign", "Dimension", "FixType", "Spare"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("ShipType");
-    openapiRequiredFields.add("VendorIDName");
-    openapiRequiredFields.add("VenderIDModel");
-    openapiRequiredFields.add("VenderIDSerial");
-    openapiRequiredFields.add("CallSign");
-    openapiRequiredFields.add("Dimension");
-    openapiRequiredFields.add("FixType");
-    openapiRequiredFields.add("Spare");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Valid", "ShipType", "VendorIDName", "VenderIDModel", "VenderIDSerial", "CallSign", "Dimension", "FixType", "Spare"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StaticDataReportReportB
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (StaticDataReportReportB.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StaticDataReportReportB is not found in the empty JSON string", StaticDataReportReportB.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StaticDataReportReportB
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StaticDataReportReportB.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in StaticDataReportReportB is not found in the empty JSON string", StaticDataReportReportB.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!StaticDataReportReportB.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StaticDataReportReportB` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `StaticDataReportReportB` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : StaticDataReportReportB.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("VendorIDName") != null && !jsonObj.get("VendorIDName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `VendorIDName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("VendorIDName").toString()));
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("VendorIDName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `VendorIDName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("VendorIDName").toString()));
       }
-      if (jsonObj.get("CallSign") != null && !jsonObj.get("CallSign").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `CallSign` to be a primitive type in the JSON string but got `%s`", jsonObj.get("CallSign").toString()));
+      if (!jsonObj.get("CallSign").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `CallSign` to be a primitive type in the JSON string but got `%s`", jsonObj.get("CallSign").toString()));
       }
-      // validate the optional field `Dimension`
-      if (jsonObj.getAsJsonObject("Dimension") != null) {
-        ShipStaticDataDimension.validateJsonObject(jsonObj.getAsJsonObject("Dimension"));
-      }
+      // validate the required field `Dimension`
+      ShipStaticDataDimension.validateJsonElement(jsonObj.get("Dimension"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -441,31 +392,31 @@ public class StaticDataReportReportB {
 
            @Override
            public StaticDataReportReportB read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of StaticDataReportReportB given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StaticDataReportReportB
-  * @throws IOException if the JSON string is invalid with respect to StaticDataReportReportB
-  */
+  /**
+   * Create an instance of StaticDataReportReportB given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StaticDataReportReportB
+   * @throws IOException if the JSON string is invalid with respect to StaticDataReportReportB
+   */
   public static StaticDataReportReportB fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StaticDataReportReportB.class);
   }
 
- /**
-  * Convert an instance of StaticDataReportReportB to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StaticDataReportReportB to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

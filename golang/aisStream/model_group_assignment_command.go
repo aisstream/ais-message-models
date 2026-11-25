@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the GroupAssignmentCommand type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GroupAssignmentCommand{}
 
 // GroupAssignmentCommand struct for GroupAssignmentCommand
 type GroupAssignmentCommand struct {
@@ -33,6 +38,8 @@ type GroupAssignmentCommand struct {
 	QuietTime int32 `json:"QuietTime"`
 	Spare3 int32 `json:"Spare3"`
 }
+
+type _GroupAssignmentCommand GroupAssignmentCommand
 
 // NewGroupAssignmentCommand instantiates a new GroupAssignmentCommand object
 // This constructor will assign default values to properties that have it defined,
@@ -452,56 +459,84 @@ func (o *GroupAssignmentCommand) SetSpare3(v int32) {
 }
 
 func (o GroupAssignmentCommand) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Spare1"] = o.Spare1
-	}
-	if true {
-		toSerialize["Longitude1"] = o.Longitude1
-	}
-	if true {
-		toSerialize["Latitude1"] = o.Latitude1
-	}
-	if true {
-		toSerialize["Longitude2"] = o.Longitude2
-	}
-	if true {
-		toSerialize["Latitude2"] = o.Latitude2
-	}
-	if true {
-		toSerialize["StationType"] = o.StationType
-	}
-	if true {
-		toSerialize["ShipType"] = o.ShipType
-	}
-	if true {
-		toSerialize["Spare2"] = o.Spare2
-	}
-	if true {
-		toSerialize["TxRxMode"] = o.TxRxMode
-	}
-	if true {
-		toSerialize["ReportingInterval"] = o.ReportingInterval
-	}
-	if true {
-		toSerialize["QuietTime"] = o.QuietTime
-	}
-	if true {
-		toSerialize["Spare3"] = o.Spare3
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GroupAssignmentCommand) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Spare1"] = o.Spare1
+	toSerialize["Longitude1"] = o.Longitude1
+	toSerialize["Latitude1"] = o.Latitude1
+	toSerialize["Longitude2"] = o.Longitude2
+	toSerialize["Latitude2"] = o.Latitude2
+	toSerialize["StationType"] = o.StationType
+	toSerialize["ShipType"] = o.ShipType
+	toSerialize["Spare2"] = o.Spare2
+	toSerialize["TxRxMode"] = o.TxRxMode
+	toSerialize["ReportingInterval"] = o.ReportingInterval
+	toSerialize["QuietTime"] = o.QuietTime
+	toSerialize["Spare3"] = o.Spare3
+	return toSerialize, nil
+}
+
+func (o *GroupAssignmentCommand) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"Spare1",
+		"Longitude1",
+		"Latitude1",
+		"Longitude2",
+		"Latitude2",
+		"StationType",
+		"ShipType",
+		"Spare2",
+		"TxRxMode",
+		"ReportingInterval",
+		"QuietTime",
+		"Spare3",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGroupAssignmentCommand := _GroupAssignmentCommand{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varGroupAssignmentCommand)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GroupAssignmentCommand(varGroupAssignmentCommand)
+
+	return err
 }
 
 type NullableGroupAssignmentCommand struct {

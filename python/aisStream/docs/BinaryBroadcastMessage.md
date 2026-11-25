@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_id** | **int** |  | 
@@ -11,8 +12,24 @@ Name | Type | Description | Notes
 **spare** | **int** |  | 
 **application_id** | [**AddressedBinaryMessageApplicationID**](AddressedBinaryMessageApplicationID.md) |  | 
 **binary_data** | **str** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from aisStream.models.binary_broadcast_message import BinaryBroadcastMessage
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of BinaryBroadcastMessage from a JSON string
+binary_broadcast_message_instance = BinaryBroadcastMessage.from_json(json)
+# print the JSON string representation of the object
+print(BinaryBroadcastMessage.to_json())
+
+# convert the object into a dict
+binary_broadcast_message_dict = binary_broadcast_message_instance.to_dict()
+# create an instance of BinaryBroadcastMessage from a dict
+binary_broadcast_message_from_dict = BinaryBroadcastMessage.from_dict(binary_broadcast_message_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -10,31 +10,31 @@
  * Do not edit the class manually.
  */
 
-import { AddressedBinaryMessage } from './AddressedBinaryMessage';
-import { AddressedSafetyMessage } from './AddressedSafetyMessage';
-import { AidsToNavigationReport } from './AidsToNavigationReport';
-import { AssignedModeCommand } from './AssignedModeCommand';
-import { BaseStationReport } from './BaseStationReport';
-import { BinaryAcknowledge } from './BinaryAcknowledge';
-import { BinaryBroadcastMessage } from './BinaryBroadcastMessage';
-import { ChannelManagement } from './ChannelManagement';
-import { CoordinatedUTCInquiry } from './CoordinatedUTCInquiry';
-import { DataLinkManagementMessage } from './DataLinkManagementMessage';
-import { DataLinkManagementMessageData } from './DataLinkManagementMessageData';
-import { ExtendedClassBPositionReport } from './ExtendedClassBPositionReport';
-import { GnssBroadcastBinaryMessage } from './GnssBroadcastBinaryMessage';
-import { GroupAssignmentCommand } from './GroupAssignmentCommand';
-import { Interrogation } from './Interrogation';
-import { LongRangeAisBroadcastMessage } from './LongRangeAisBroadcastMessage';
-import { MultiSlotBinaryMessage } from './MultiSlotBinaryMessage';
-import { PositionReport } from './PositionReport';
-import { SafetyBroadcastMessage } from './SafetyBroadcastMessage';
-import { ShipStaticData } from './ShipStaticData';
-import { SingleSlotBinaryMessage } from './SingleSlotBinaryMessage';
-import { StandardClassBPositionReport } from './StandardClassBPositionReport';
-import { StandardSearchAndRescueAircraftReport } from './StandardSearchAndRescueAircraftReport';
-import { StaticDataReport } from './StaticDataReport';
-import { UnknownMessage } from './UnknownMessage';
+import { AddressedBinaryMessage } from '../models/AddressedBinaryMessage';
+import { AddressedSafetyMessage } from '../models/AddressedSafetyMessage';
+import { AidsToNavigationReport } from '../models/AidsToNavigationReport';
+import { AssignedModeCommand } from '../models/AssignedModeCommand';
+import { BaseStationReport } from '../models/BaseStationReport';
+import { BinaryAcknowledge } from '../models/BinaryAcknowledge';
+import { BinaryBroadcastMessage } from '../models/BinaryBroadcastMessage';
+import { ChannelManagement } from '../models/ChannelManagement';
+import { CoordinatedUTCInquiry } from '../models/CoordinatedUTCInquiry';
+import { DataLinkManagementMessage } from '../models/DataLinkManagementMessage';
+import { DataLinkManagementMessageData } from '../models/DataLinkManagementMessageData';
+import { ExtendedClassBPositionReport } from '../models/ExtendedClassBPositionReport';
+import { GnssBroadcastBinaryMessage } from '../models/GnssBroadcastBinaryMessage';
+import { GroupAssignmentCommand } from '../models/GroupAssignmentCommand';
+import { Interrogation } from '../models/Interrogation';
+import { LongRangeAisBroadcastMessage } from '../models/LongRangeAisBroadcastMessage';
+import { MultiSlotBinaryMessage } from '../models/MultiSlotBinaryMessage';
+import { PositionReport } from '../models/PositionReport';
+import { SafetyBroadcastMessage } from '../models/SafetyBroadcastMessage';
+import { ShipStaticData } from '../models/ShipStaticData';
+import { SingleSlotBinaryMessage } from '../models/SingleSlotBinaryMessage';
+import { StandardClassBPositionReport } from '../models/StandardClassBPositionReport';
+import { StandardSearchAndRescueAircraftReport } from '../models/StandardSearchAndRescueAircraftReport';
+import { StaticDataReport } from '../models/StaticDataReport';
+import { UnknownMessage } from '../models/UnknownMessage';
 import { HttpFile } from '../http/http';
 
 export class AisStreamMessageMessage {
@@ -65,6 +65,8 @@ export class AisStreamMessageMessage {
     'staticDataReport'?: StaticDataReport;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -225,4 +227,3 @@ export class AisStreamMessageMessage {
     public constructor() {
     }
 }
-

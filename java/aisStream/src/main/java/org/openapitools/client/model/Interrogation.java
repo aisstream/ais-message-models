@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.client.model.InterrogationStation1Msg1;
 import org.openapitools.client.model.InterrogationStation1Msg2;
 import org.openapitools.client.model.InterrogationStation2;
@@ -34,15 +32,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -50,223 +52,199 @@ import org.openapitools.client.JSON;
 /**
  * Interrogation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class Interrogation {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nonnull
   private Integer messageID;
 
   public static final String SERIALIZED_NAME_REPEAT_INDICATOR = "RepeatIndicator";
   @SerializedName(SERIALIZED_NAME_REPEAT_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer repeatIndicator;
 
   public static final String SERIALIZED_NAME_USER_I_D = "UserID";
   @SerializedName(SERIALIZED_NAME_USER_I_D)
+  @javax.annotation.Nonnull
   private Integer userID;
 
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_SPARE = "Spare";
   @SerializedName(SERIALIZED_NAME_SPARE)
+  @javax.annotation.Nonnull
   private Integer spare;
 
   public static final String SERIALIZED_NAME_STATION1_MSG1 = "Station1Msg1";
   @SerializedName(SERIALIZED_NAME_STATION1_MSG1)
+  @javax.annotation.Nonnull
   private InterrogationStation1Msg1 station1Msg1;
 
   public static final String SERIALIZED_NAME_STATION1_MSG2 = "Station1Msg2";
   @SerializedName(SERIALIZED_NAME_STATION1_MSG2)
+  @javax.annotation.Nonnull
   private InterrogationStation1Msg2 station1Msg2;
 
   public static final String SERIALIZED_NAME_STATION2 = "Station2";
   @SerializedName(SERIALIZED_NAME_STATION2)
+  @javax.annotation.Nonnull
   private InterrogationStation2 station2;
 
-  public Interrogation() { 
+  public Interrogation() {
   }
 
-  public Interrogation messageID(Integer messageID) {
-    
+  public Interrogation messageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Get messageID
    * @return messageID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getMessageID() {
     return messageID;
   }
 
-
-  public void setMessageID(Integer messageID) {
+  public void setMessageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
   }
 
 
-  public Interrogation repeatIndicator(Integer repeatIndicator) {
-    
+  public Interrogation repeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get repeatIndicator
    * @return repeatIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRepeatIndicator() {
     return repeatIndicator;
   }
 
-
-  public void setRepeatIndicator(Integer repeatIndicator) {
+  public void setRepeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
   }
 
 
-  public Interrogation userID(Integer userID) {
-    
+  public Interrogation userID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
     return this;
   }
 
-   /**
+  /**
    * Get userID
    * @return userID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUserID() {
     return userID;
   }
 
-
-  public void setUserID(Integer userID) {
+  public void setUserID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
   }
 
 
-  public Interrogation valid(Boolean valid) {
-    
+  public Interrogation valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public Interrogation spare(Integer spare) {
-    
+  public Interrogation spare(@javax.annotation.Nonnull Integer spare) {
     this.spare = spare;
     return this;
   }
 
-   /**
+  /**
    * Get spare
    * @return spare
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare() {
     return spare;
   }
 
-
-  public void setSpare(Integer spare) {
+  public void setSpare(@javax.annotation.Nonnull Integer spare) {
     this.spare = spare;
   }
 
 
-  public Interrogation station1Msg1(InterrogationStation1Msg1 station1Msg1) {
-    
+  public Interrogation station1Msg1(@javax.annotation.Nonnull InterrogationStation1Msg1 station1Msg1) {
     this.station1Msg1 = station1Msg1;
     return this;
   }
 
-   /**
+  /**
    * Get station1Msg1
    * @return station1Msg1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public InterrogationStation1Msg1 getStation1Msg1() {
     return station1Msg1;
   }
 
-
-  public void setStation1Msg1(InterrogationStation1Msg1 station1Msg1) {
+  public void setStation1Msg1(@javax.annotation.Nonnull InterrogationStation1Msg1 station1Msg1) {
     this.station1Msg1 = station1Msg1;
   }
 
 
-  public Interrogation station1Msg2(InterrogationStation1Msg2 station1Msg2) {
-    
+  public Interrogation station1Msg2(@javax.annotation.Nonnull InterrogationStation1Msg2 station1Msg2) {
     this.station1Msg2 = station1Msg2;
     return this;
   }
 
-   /**
+  /**
    * Get station1Msg2
    * @return station1Msg2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public InterrogationStation1Msg2 getStation1Msg2() {
     return station1Msg2;
   }
 
-
-  public void setStation1Msg2(InterrogationStation1Msg2 station1Msg2) {
+  public void setStation1Msg2(@javax.annotation.Nonnull InterrogationStation1Msg2 station1Msg2) {
     this.station1Msg2 = station1Msg2;
   }
 
 
-  public Interrogation station2(InterrogationStation2 station2) {
-    
+  public Interrogation station2(@javax.annotation.Nonnull InterrogationStation2 station2) {
     this.station2 = station2;
     return this;
   }
 
-   /**
+  /**
    * Get station2
    * @return station2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public InterrogationStation2 getStation2() {
     return station2;
   }
 
-
-  public void setStation2(InterrogationStation2 station2) {
+  public void setStation2(@javax.annotation.Nonnull InterrogationStation2 station2) {
     this.station2 = station2;
   }
 
@@ -317,10 +295,7 @@ public class Interrogation {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -329,69 +304,46 @@ public class Interrogation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MessageID");
-    openapiFields.add("RepeatIndicator");
-    openapiFields.add("UserID");
-    openapiFields.add("Valid");
-    openapiFields.add("Spare");
-    openapiFields.add("Station1Msg1");
-    openapiFields.add("Station1Msg2");
-    openapiFields.add("Station2");
+    openapiFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Spare", "Station1Msg1", "Station1Msg2", "Station2"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MessageID");
-    openapiRequiredFields.add("RepeatIndicator");
-    openapiRequiredFields.add("UserID");
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("Spare");
-    openapiRequiredFields.add("Station1Msg1");
-    openapiRequiredFields.add("Station1Msg2");
-    openapiRequiredFields.add("Station2");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Spare", "Station1Msg1", "Station1Msg2", "Station2"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Interrogation
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Interrogation.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Interrogation is not found in the empty JSON string", Interrogation.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Interrogation
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Interrogation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Interrogation is not found in the empty JSON string", Interrogation.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Interrogation.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Interrogation` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Interrogation` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Interrogation.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      // validate the optional field `Station1Msg1`
-      if (jsonObj.getAsJsonObject("Station1Msg1") != null) {
-        InterrogationStation1Msg1.validateJsonObject(jsonObj.getAsJsonObject("Station1Msg1"));
-      }
-      // validate the optional field `Station1Msg2`
-      if (jsonObj.getAsJsonObject("Station1Msg2") != null) {
-        InterrogationStation1Msg2.validateJsonObject(jsonObj.getAsJsonObject("Station1Msg2"));
-      }
-      // validate the optional field `Station2`
-      if (jsonObj.getAsJsonObject("Station2") != null) {
-        InterrogationStation2.validateJsonObject(jsonObj.getAsJsonObject("Station2"));
-      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `Station1Msg1`
+      InterrogationStation1Msg1.validateJsonElement(jsonObj.get("Station1Msg1"));
+      // validate the required field `Station1Msg2`
+      InterrogationStation1Msg2.validateJsonElement(jsonObj.get("Station1Msg2"));
+      // validate the required field `Station2`
+      InterrogationStation2.validateJsonElement(jsonObj.get("Station2"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -414,31 +366,31 @@ public class Interrogation {
 
            @Override
            public Interrogation read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of Interrogation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Interrogation
-  * @throws IOException if the JSON string is invalid with respect to Interrogation
-  */
+  /**
+   * Create an instance of Interrogation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Interrogation
+   * @throws IOException if the JSON string is invalid with respect to Interrogation
+   */
   public static Interrogation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Interrogation.class);
   }
 
- /**
-  * Convert an instance of Interrogation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Interrogation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

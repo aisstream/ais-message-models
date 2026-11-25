@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,15 +29,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -47,115 +49,103 @@ import org.openapitools.client.JSON;
 /**
  * ChannelManagementArea
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class ChannelManagementArea {
   public static final String SERIALIZED_NAME_LONGITUDE1 = "Longitude1";
   @SerializedName(SERIALIZED_NAME_LONGITUDE1)
+  @javax.annotation.Nonnull
   private Double longitude1;
 
   public static final String SERIALIZED_NAME_LATITUDE1 = "Latitude1";
   @SerializedName(SERIALIZED_NAME_LATITUDE1)
+  @javax.annotation.Nonnull
   private Double latitude1;
 
   public static final String SERIALIZED_NAME_LONGITUDE2 = "Longitude2";
   @SerializedName(SERIALIZED_NAME_LONGITUDE2)
+  @javax.annotation.Nonnull
   private Double longitude2;
 
   public static final String SERIALIZED_NAME_LATITUDE2 = "Latitude2";
   @SerializedName(SERIALIZED_NAME_LATITUDE2)
+  @javax.annotation.Nonnull
   private Double latitude2;
 
-  public ChannelManagementArea() { 
+  public ChannelManagementArea() {
   }
 
-  public ChannelManagementArea longitude1(Double longitude1) {
-    
+  public ChannelManagementArea longitude1(@javax.annotation.Nonnull Double longitude1) {
     this.longitude1 = longitude1;
     return this;
   }
 
-   /**
+  /**
    * Get longitude1
    * @return longitude1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLongitude1() {
     return longitude1;
   }
 
-
-  public void setLongitude1(Double longitude1) {
+  public void setLongitude1(@javax.annotation.Nonnull Double longitude1) {
     this.longitude1 = longitude1;
   }
 
 
-  public ChannelManagementArea latitude1(Double latitude1) {
-    
+  public ChannelManagementArea latitude1(@javax.annotation.Nonnull Double latitude1) {
     this.latitude1 = latitude1;
     return this;
   }
 
-   /**
+  /**
    * Get latitude1
    * @return latitude1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLatitude1() {
     return latitude1;
   }
 
-
-  public void setLatitude1(Double latitude1) {
+  public void setLatitude1(@javax.annotation.Nonnull Double latitude1) {
     this.latitude1 = latitude1;
   }
 
 
-  public ChannelManagementArea longitude2(Double longitude2) {
-    
+  public ChannelManagementArea longitude2(@javax.annotation.Nonnull Double longitude2) {
     this.longitude2 = longitude2;
     return this;
   }
 
-   /**
+  /**
    * Get longitude2
    * @return longitude2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLongitude2() {
     return longitude2;
   }
 
-
-  public void setLongitude2(Double longitude2) {
+  public void setLongitude2(@javax.annotation.Nonnull Double longitude2) {
     this.longitude2 = longitude2;
   }
 
 
-  public ChannelManagementArea latitude2(Double latitude2) {
-    
+  public ChannelManagementArea latitude2(@javax.annotation.Nonnull Double latitude2) {
     this.latitude2 = latitude2;
     return this;
   }
 
-   /**
+  /**
    * Get latitude2
    * @return latitude2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLatitude2() {
     return latitude2;
   }
 
-
-  public void setLatitude2(Double latitude2) {
+  public void setLatitude2(@javax.annotation.Nonnull Double latitude2) {
     this.latitude2 = latitude2;
   }
 
@@ -198,10 +188,7 @@ public class ChannelManagementArea {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -210,49 +197,40 @@ public class ChannelManagementArea {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Longitude1");
-    openapiFields.add("Latitude1");
-    openapiFields.add("Longitude2");
-    openapiFields.add("Latitude2");
+    openapiFields = new HashSet<String>(Arrays.asList("Longitude1", "Latitude1", "Longitude2", "Latitude2"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Longitude1");
-    openapiRequiredFields.add("Latitude1");
-    openapiRequiredFields.add("Longitude2");
-    openapiRequiredFields.add("Latitude2");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Longitude1", "Latitude1", "Longitude2", "Latitude2"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ChannelManagementArea
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ChannelManagementArea.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ChannelManagementArea is not found in the empty JSON string", ChannelManagementArea.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ChannelManagementArea
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ChannelManagementArea.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ChannelManagementArea is not found in the empty JSON string", ChannelManagementArea.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ChannelManagementArea.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ChannelManagementArea` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ChannelManagementArea` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ChannelManagementArea.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -275,31 +253,31 @@ public class ChannelManagementArea {
 
            @Override
            public ChannelManagementArea read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of ChannelManagementArea given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ChannelManagementArea
-  * @throws IOException if the JSON string is invalid with respect to ChannelManagementArea
-  */
+  /**
+   * Create an instance of ChannelManagementArea given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ChannelManagementArea
+   * @throws IOException if the JSON string is invalid with respect to ChannelManagementArea
+   */
   public static ChannelManagementArea fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ChannelManagementArea.class);
   }
 
- /**
-  * Convert an instance of ChannelManagementArea to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ChannelManagementArea to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

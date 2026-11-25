@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { AisMessageTypes } from './AisMessageTypes';
+import { AisMessageTypes } from '../models/AisMessageTypes';
 import { HttpFile } from '../http/http';
 
 export class SubscriptionMessage {
@@ -20,6 +20,8 @@ export class SubscriptionMessage {
     'filterMessageTypes'?: Array<AisMessageTypes>;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -54,4 +56,3 @@ export class SubscriptionMessage {
     public constructor() {
     }
 }
-

@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the Interrogation type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Interrogation{}
 
 // Interrogation struct for Interrogation
 type Interrogation struct {
@@ -25,6 +30,8 @@ type Interrogation struct {
 	Station1Msg2 InterrogationStation1Msg2 `json:"Station1Msg2"`
 	Station2 InterrogationStation2 `json:"Station2"`
 }
+
+type _Interrogation Interrogation
 
 // NewInterrogation instantiates a new Interrogation object
 // This constructor will assign default values to properties that have it defined,
@@ -244,32 +251,68 @@ func (o *Interrogation) SetStation2(v InterrogationStation2) {
 }
 
 func (o Interrogation) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Spare"] = o.Spare
-	}
-	if true {
-		toSerialize["Station1Msg1"] = o.Station1Msg1
-	}
-	if true {
-		toSerialize["Station1Msg2"] = o.Station1Msg2
-	}
-	if true {
-		toSerialize["Station2"] = o.Station2
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Interrogation) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Spare"] = o.Spare
+	toSerialize["Station1Msg1"] = o.Station1Msg1
+	toSerialize["Station1Msg2"] = o.Station1Msg2
+	toSerialize["Station2"] = o.Station2
+	return toSerialize, nil
+}
+
+func (o *Interrogation) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"Spare",
+		"Station1Msg1",
+		"Station1Msg2",
+		"Station2",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varInterrogation := _Interrogation{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varInterrogation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Interrogation(varInterrogation)
+
+	return err
 }
 
 type NullableInterrogation struct {

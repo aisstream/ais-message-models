@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the DataLinkManagementMessageData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DataLinkManagementMessageData{}
 
 // DataLinkManagementMessageData struct for DataLinkManagementMessageData
 type DataLinkManagementMessageData struct {
@@ -21,6 +26,8 @@ type DataLinkManagementMessageData struct {
 	Var2 DataLinkManagementMessageData0 `json:"2"`
 	Var3 DataLinkManagementMessageData0 `json:"3"`
 }
+
+type _DataLinkManagementMessageData DataLinkManagementMessageData
 
 // NewDataLinkManagementMessageData instantiates a new DataLinkManagementMessageData object
 // This constructor will assign default values to properties that have it defined,
@@ -140,20 +147,60 @@ func (o *DataLinkManagementMessageData) SetVar3(v DataLinkManagementMessageData0
 }
 
 func (o DataLinkManagementMessageData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["0"] = o.Var0
-	}
-	if true {
-		toSerialize["1"] = o.Var1
-	}
-	if true {
-		toSerialize["2"] = o.Var2
-	}
-	if true {
-		toSerialize["3"] = o.Var3
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DataLinkManagementMessageData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["0"] = o.Var0
+	toSerialize["1"] = o.Var1
+	toSerialize["2"] = o.Var2
+	toSerialize["3"] = o.Var3
+	return toSerialize, nil
+}
+
+func (o *DataLinkManagementMessageData) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"0",
+		"1",
+		"2",
+		"3",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varDataLinkManagementMessageData := _DataLinkManagementMessageData{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varDataLinkManagementMessageData)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DataLinkManagementMessageData(varDataLinkManagementMessageData)
+
+	return err
 }
 
 type NullableDataLinkManagementMessageData struct {

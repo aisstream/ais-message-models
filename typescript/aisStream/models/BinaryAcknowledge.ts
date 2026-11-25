@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { BinaryAcknowledgeDestinations } from './BinaryAcknowledgeDestinations';
+import { BinaryAcknowledgeDestinations } from '../models/BinaryAcknowledgeDestinations';
 import { HttpFile } from '../http/http';
 
 export class BinaryAcknowledge {
@@ -22,6 +22,8 @@ export class BinaryAcknowledge {
     'destinations': BinaryAcknowledgeDestinations;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -68,4 +70,3 @@ export class BinaryAcknowledge {
     public constructor() {
     }
 }
-

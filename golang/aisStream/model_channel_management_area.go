@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the ChannelManagementArea type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ChannelManagementArea{}
 
 // ChannelManagementArea struct for ChannelManagementArea
 type ChannelManagementArea struct {
@@ -21,6 +26,8 @@ type ChannelManagementArea struct {
 	Longitude2 float64 `json:"Longitude2"`
 	Latitude2 float64 `json:"Latitude2"`
 }
+
+type _ChannelManagementArea ChannelManagementArea
 
 // NewChannelManagementArea instantiates a new ChannelManagementArea object
 // This constructor will assign default values to properties that have it defined,
@@ -140,20 +147,60 @@ func (o *ChannelManagementArea) SetLatitude2(v float64) {
 }
 
 func (o ChannelManagementArea) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["Longitude1"] = o.Longitude1
-	}
-	if true {
-		toSerialize["Latitude1"] = o.Latitude1
-	}
-	if true {
-		toSerialize["Longitude2"] = o.Longitude2
-	}
-	if true {
-		toSerialize["Latitude2"] = o.Latitude2
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ChannelManagementArea) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["Longitude1"] = o.Longitude1
+	toSerialize["Latitude1"] = o.Latitude1
+	toSerialize["Longitude2"] = o.Longitude2
+	toSerialize["Latitude2"] = o.Latitude2
+	return toSerialize, nil
+}
+
+func (o *ChannelManagementArea) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"Longitude1",
+		"Latitude1",
+		"Longitude2",
+		"Latitude2",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varChannelManagementArea := _ChannelManagementArea{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varChannelManagementArea)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ChannelManagementArea(varChannelManagementArea)
+
+	return err
 }
 
 type NullableChannelManagementArea struct {

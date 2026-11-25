@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-import { AisMessageTypes } from './AisMessageTypes';
-import { AisStreamMessageMessage } from './AisStreamMessageMessage';
+import { AisMessageTypes } from '../models/AisMessageTypes';
+import { AisStreamMessageMessage } from '../models/AisStreamMessageMessage';
 import { HttpFile } from '../http/http';
 
 export class AisStreamMessage {
@@ -20,6 +20,8 @@ export class AisStreamMessage {
     'message': AisStreamMessageMessage;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -48,4 +50,5 @@ export class AisStreamMessage {
     public constructor() {
     }
 }
+
 

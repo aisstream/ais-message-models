@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the LongRangeAisBroadcastMessage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LongRangeAisBroadcastMessage{}
 
 // LongRangeAisBroadcastMessage struct for LongRangeAisBroadcastMessage
 type LongRangeAisBroadcastMessage struct {
@@ -30,6 +35,8 @@ type LongRangeAisBroadcastMessage struct {
 	PositionLatency bool `json:"PositionLatency"`
 	Spare bool `json:"Spare"`
 }
+
+type _LongRangeAisBroadcastMessage LongRangeAisBroadcastMessage
 
 // NewLongRangeAisBroadcastMessage instantiates a new LongRangeAisBroadcastMessage object
 // This constructor will assign default values to properties that have it defined,
@@ -374,47 +381,78 @@ func (o *LongRangeAisBroadcastMessage) SetSpare(v bool) {
 }
 
 func (o LongRangeAisBroadcastMessage) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["PositionAccuracy"] = o.PositionAccuracy
-	}
-	if true {
-		toSerialize["Raim"] = o.Raim
-	}
-	if true {
-		toSerialize["NavigationalStatus"] = o.NavigationalStatus
-	}
-	if true {
-		toSerialize["Longitude"] = o.Longitude
-	}
-	if true {
-		toSerialize["Latitude"] = o.Latitude
-	}
-	if true {
-		toSerialize["Sog"] = o.Sog
-	}
-	if true {
-		toSerialize["Cog"] = o.Cog
-	}
-	if true {
-		toSerialize["PositionLatency"] = o.PositionLatency
-	}
-	if true {
-		toSerialize["Spare"] = o.Spare
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LongRangeAisBroadcastMessage) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["PositionAccuracy"] = o.PositionAccuracy
+	toSerialize["Raim"] = o.Raim
+	toSerialize["NavigationalStatus"] = o.NavigationalStatus
+	toSerialize["Longitude"] = o.Longitude
+	toSerialize["Latitude"] = o.Latitude
+	toSerialize["Sog"] = o.Sog
+	toSerialize["Cog"] = o.Cog
+	toSerialize["PositionLatency"] = o.PositionLatency
+	toSerialize["Spare"] = o.Spare
+	return toSerialize, nil
+}
+
+func (o *LongRangeAisBroadcastMessage) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"PositionAccuracy",
+		"Raim",
+		"NavigationalStatus",
+		"Longitude",
+		"Latitude",
+		"Sog",
+		"Cog",
+		"PositionLatency",
+		"Spare",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varLongRangeAisBroadcastMessage := _LongRangeAisBroadcastMessage{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varLongRangeAisBroadcastMessage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LongRangeAisBroadcastMessage(varLongRangeAisBroadcastMessage)
+
+	return err
 }
 
 type NullableLongRangeAisBroadcastMessage struct {

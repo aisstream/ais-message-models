@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the ChannelManagementUnicast type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ChannelManagementUnicast{}
 
 // ChannelManagementUnicast struct for ChannelManagementUnicast
 type ChannelManagementUnicast struct {
@@ -21,6 +26,8 @@ type ChannelManagementUnicast struct {
 	AddressStation2 int32 `json:"AddressStation2"`
 	Spare3 int32 `json:"Spare3"`
 }
+
+type _ChannelManagementUnicast ChannelManagementUnicast
 
 // NewChannelManagementUnicast instantiates a new ChannelManagementUnicast object
 // This constructor will assign default values to properties that have it defined,
@@ -140,20 +147,60 @@ func (o *ChannelManagementUnicast) SetSpare3(v int32) {
 }
 
 func (o ChannelManagementUnicast) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["AddressStation1"] = o.AddressStation1
-	}
-	if true {
-		toSerialize["Spare2"] = o.Spare2
-	}
-	if true {
-		toSerialize["AddressStation2"] = o.AddressStation2
-	}
-	if true {
-		toSerialize["Spare3"] = o.Spare3
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ChannelManagementUnicast) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["AddressStation1"] = o.AddressStation1
+	toSerialize["Spare2"] = o.Spare2
+	toSerialize["AddressStation2"] = o.AddressStation2
+	toSerialize["Spare3"] = o.Spare3
+	return toSerialize, nil
+}
+
+func (o *ChannelManagementUnicast) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"AddressStation1",
+		"Spare2",
+		"AddressStation2",
+		"Spare3",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varChannelManagementUnicast := _ChannelManagementUnicast{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varChannelManagementUnicast)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ChannelManagementUnicast(varChannelManagementUnicast)
+
+	return err
 }
 
 type NullableChannelManagementUnicast struct {

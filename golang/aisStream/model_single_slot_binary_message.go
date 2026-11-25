@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the SingleSlotBinaryMessage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SingleSlotBinaryMessage{}
 
 // SingleSlotBinaryMessage struct for SingleSlotBinaryMessage
 type SingleSlotBinaryMessage struct {
@@ -27,6 +32,8 @@ type SingleSlotBinaryMessage struct {
 	ApplicationID AddressedBinaryMessageApplicationID `json:"ApplicationID"`
 	Payload string `json:"Payload"`
 }
+
+type _SingleSlotBinaryMessage SingleSlotBinaryMessage
 
 // NewSingleSlotBinaryMessage instantiates a new SingleSlotBinaryMessage object
 // This constructor will assign default values to properties that have it defined,
@@ -296,38 +303,72 @@ func (o *SingleSlotBinaryMessage) SetPayload(v string) {
 }
 
 func (o SingleSlotBinaryMessage) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["DestinationIDValid"] = o.DestinationIDValid
-	}
-	if true {
-		toSerialize["ApplicationIDValid"] = o.ApplicationIDValid
-	}
-	if true {
-		toSerialize["DestinationID"] = o.DestinationID
-	}
-	if true {
-		toSerialize["Spare"] = o.Spare
-	}
-	if true {
-		toSerialize["ApplicationID"] = o.ApplicationID
-	}
-	if true {
-		toSerialize["Payload"] = o.Payload
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SingleSlotBinaryMessage) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["DestinationIDValid"] = o.DestinationIDValid
+	toSerialize["ApplicationIDValid"] = o.ApplicationIDValid
+	toSerialize["DestinationID"] = o.DestinationID
+	toSerialize["Spare"] = o.Spare
+	toSerialize["ApplicationID"] = o.ApplicationID
+	toSerialize["Payload"] = o.Payload
+	return toSerialize, nil
+}
+
+func (o *SingleSlotBinaryMessage) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"DestinationIDValid",
+		"ApplicationIDValid",
+		"DestinationID",
+		"Spare",
+		"ApplicationID",
+		"Payload",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSingleSlotBinaryMessage := _SingleSlotBinaryMessage{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varSingleSlotBinaryMessage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SingleSlotBinaryMessage(varSingleSlotBinaryMessage)
+
+	return err
 }
 
 type NullableSingleSlotBinaryMessage struct {

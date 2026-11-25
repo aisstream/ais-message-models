@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the StandardSearchAndRescueAircraftReport type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StandardSearchAndRescueAircraftReport{}
 
 // StandardSearchAndRescueAircraftReport struct for StandardSearchAndRescueAircraftReport
 type StandardSearchAndRescueAircraftReport struct {
@@ -36,6 +41,8 @@ type StandardSearchAndRescueAircraftReport struct {
 	CommunicationStateIsItdma bool `json:"CommunicationStateIsItdma"`
 	CommunicationState int32 `json:"CommunicationState"`
 }
+
+type _StandardSearchAndRescueAircraftReport StandardSearchAndRescueAircraftReport
 
 // NewStandardSearchAndRescueAircraftReport instantiates a new StandardSearchAndRescueAircraftReport object
 // This constructor will assign default values to properties that have it defined,
@@ -530,65 +537,90 @@ func (o *StandardSearchAndRescueAircraftReport) SetCommunicationState(v int32) {
 }
 
 func (o StandardSearchAndRescueAircraftReport) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Altitude"] = o.Altitude
-	}
-	if true {
-		toSerialize["Sog"] = o.Sog
-	}
-	if true {
-		toSerialize["PositionAccuracy"] = o.PositionAccuracy
-	}
-	if true {
-		toSerialize["Longitude"] = o.Longitude
-	}
-	if true {
-		toSerialize["Latitude"] = o.Latitude
-	}
-	if true {
-		toSerialize["Cog"] = o.Cog
-	}
-	if true {
-		toSerialize["Timestamp"] = o.Timestamp
-	}
-	if true {
-		toSerialize["AltFromBaro"] = o.AltFromBaro
-	}
-	if true {
-		toSerialize["Spare1"] = o.Spare1
-	}
-	if true {
-		toSerialize["Dte"] = o.Dte
-	}
-	if true {
-		toSerialize["Spare2"] = o.Spare2
-	}
-	if true {
-		toSerialize["AssignedMode"] = o.AssignedMode
-	}
-	if true {
-		toSerialize["Raim"] = o.Raim
-	}
-	if true {
-		toSerialize["CommunicationStateIsItdma"] = o.CommunicationStateIsItdma
-	}
-	if true {
-		toSerialize["CommunicationState"] = o.CommunicationState
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StandardSearchAndRescueAircraftReport) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Altitude"] = o.Altitude
+	toSerialize["Sog"] = o.Sog
+	toSerialize["PositionAccuracy"] = o.PositionAccuracy
+	toSerialize["Longitude"] = o.Longitude
+	toSerialize["Latitude"] = o.Latitude
+	toSerialize["Cog"] = o.Cog
+	toSerialize["Timestamp"] = o.Timestamp
+	toSerialize["AltFromBaro"] = o.AltFromBaro
+	toSerialize["Spare1"] = o.Spare1
+	toSerialize["Dte"] = o.Dte
+	toSerialize["Spare2"] = o.Spare2
+	toSerialize["AssignedMode"] = o.AssignedMode
+	toSerialize["Raim"] = o.Raim
+	toSerialize["CommunicationStateIsItdma"] = o.CommunicationStateIsItdma
+	toSerialize["CommunicationState"] = o.CommunicationState
+	return toSerialize, nil
+}
+
+func (o *StandardSearchAndRescueAircraftReport) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"Altitude",
+		"Sog",
+		"PositionAccuracy",
+		"Longitude",
+		"Latitude",
+		"Cog",
+		"Timestamp",
+		"AltFromBaro",
+		"Spare1",
+		"Dte",
+		"Spare2",
+		"AssignedMode",
+		"Raim",
+		"CommunicationStateIsItdma",
+		"CommunicationState",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varStandardSearchAndRescueAircraftReport := _StandardSearchAndRescueAircraftReport{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varStandardSearchAndRescueAircraftReport)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StandardSearchAndRescueAircraftReport(varStandardSearchAndRescueAircraftReport)
+
+	return err
 }
 
 type NullableStandardSearchAndRescueAircraftReport struct {

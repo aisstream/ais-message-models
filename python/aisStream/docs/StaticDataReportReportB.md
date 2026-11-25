@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **valid** | **bool** |  | 
@@ -13,8 +14,24 @@ Name | Type | Description | Notes
 **dimension** | [**ShipStaticDataDimension**](ShipStaticDataDimension.md) |  | 
 **fix_type** | **int** |  | 
 **spare** | **int** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from aisStream.models.static_data_report_report_b import StaticDataReportReportB
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of StaticDataReportReportB from a JSON string
+static_data_report_report_b_instance = StaticDataReportReportB.from_json(json)
+# print the JSON string representation of the object
+print(StaticDataReportReportB.to_json())
+
+# convert the object into a dict
+static_data_report_report_b_dict = static_data_report_report_b_instance.to_dict()
+# create an instance of StaticDataReportReportB from a dict
+static_data_report_report_b_from_dict = StaticDataReportReportB.from_dict(static_data_report_report_b_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

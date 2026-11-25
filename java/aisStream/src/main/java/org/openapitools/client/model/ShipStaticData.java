@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.client.model.ShipStaticDataDimension;
 import org.openapitools.client.model.ShipStaticDataEta;
 
@@ -33,15 +31,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -49,439 +51,391 @@ import org.openapitools.client.JSON;
 /**
  * ShipStaticData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class ShipStaticData {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nonnull
   private Integer messageID;
 
   public static final String SERIALIZED_NAME_REPEAT_INDICATOR = "RepeatIndicator";
   @SerializedName(SERIALIZED_NAME_REPEAT_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer repeatIndicator;
 
   public static final String SERIALIZED_NAME_USER_I_D = "UserID";
   @SerializedName(SERIALIZED_NAME_USER_I_D)
+  @javax.annotation.Nonnull
   private Integer userID;
 
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_AIS_VERSION = "AisVersion";
   @SerializedName(SERIALIZED_NAME_AIS_VERSION)
+  @javax.annotation.Nonnull
   private Integer aisVersion;
 
   public static final String SERIALIZED_NAME_IMO_NUMBER = "ImoNumber";
   @SerializedName(SERIALIZED_NAME_IMO_NUMBER)
+  @javax.annotation.Nonnull
   private Integer imoNumber;
 
   public static final String SERIALIZED_NAME_CALL_SIGN = "CallSign";
   @SerializedName(SERIALIZED_NAME_CALL_SIGN)
+  @javax.annotation.Nonnull
   private String callSign;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_TYPE = "Type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private Integer type;
 
   public static final String SERIALIZED_NAME_DIMENSION = "Dimension";
   @SerializedName(SERIALIZED_NAME_DIMENSION)
+  @javax.annotation.Nonnull
   private ShipStaticDataDimension dimension;
 
   public static final String SERIALIZED_NAME_FIX_TYPE = "FixType";
   @SerializedName(SERIALIZED_NAME_FIX_TYPE)
+  @javax.annotation.Nonnull
   private Integer fixType;
 
   public static final String SERIALIZED_NAME_ETA = "Eta";
   @SerializedName(SERIALIZED_NAME_ETA)
+  @javax.annotation.Nonnull
   private ShipStaticDataEta eta;
 
   public static final String SERIALIZED_NAME_MAXIMUM_STATIC_DRAUGHT = "MaximumStaticDraught";
   @SerializedName(SERIALIZED_NAME_MAXIMUM_STATIC_DRAUGHT)
+  @javax.annotation.Nonnull
   private Double maximumStaticDraught;
 
   public static final String SERIALIZED_NAME_DESTINATION = "Destination";
   @SerializedName(SERIALIZED_NAME_DESTINATION)
+  @javax.annotation.Nonnull
   private String destination;
 
   public static final String SERIALIZED_NAME_DTE = "Dte";
   @SerializedName(SERIALIZED_NAME_DTE)
+  @javax.annotation.Nonnull
   private Boolean dte;
 
   public static final String SERIALIZED_NAME_SPARE = "Spare";
   @SerializedName(SERIALIZED_NAME_SPARE)
+  @javax.annotation.Nonnull
   private Boolean spare;
 
-  public ShipStaticData() { 
+  public ShipStaticData() {
   }
 
-  public ShipStaticData messageID(Integer messageID) {
-    
+  public ShipStaticData messageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Get messageID
    * @return messageID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getMessageID() {
     return messageID;
   }
 
-
-  public void setMessageID(Integer messageID) {
+  public void setMessageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
   }
 
 
-  public ShipStaticData repeatIndicator(Integer repeatIndicator) {
-    
+  public ShipStaticData repeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get repeatIndicator
    * @return repeatIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRepeatIndicator() {
     return repeatIndicator;
   }
 
-
-  public void setRepeatIndicator(Integer repeatIndicator) {
+  public void setRepeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
   }
 
 
-  public ShipStaticData userID(Integer userID) {
-    
+  public ShipStaticData userID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
     return this;
   }
 
-   /**
+  /**
    * Get userID
    * @return userID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUserID() {
     return userID;
   }
 
-
-  public void setUserID(Integer userID) {
+  public void setUserID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
   }
 
 
-  public ShipStaticData valid(Boolean valid) {
-    
+  public ShipStaticData valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public ShipStaticData aisVersion(Integer aisVersion) {
-    
+  public ShipStaticData aisVersion(@javax.annotation.Nonnull Integer aisVersion) {
     this.aisVersion = aisVersion;
     return this;
   }
 
-   /**
+  /**
    * Get aisVersion
    * @return aisVersion
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getAisVersion() {
     return aisVersion;
   }
 
-
-  public void setAisVersion(Integer aisVersion) {
+  public void setAisVersion(@javax.annotation.Nonnull Integer aisVersion) {
     this.aisVersion = aisVersion;
   }
 
 
-  public ShipStaticData imoNumber(Integer imoNumber) {
-    
+  public ShipStaticData imoNumber(@javax.annotation.Nonnull Integer imoNumber) {
     this.imoNumber = imoNumber;
     return this;
   }
 
-   /**
+  /**
    * Get imoNumber
    * @return imoNumber
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getImoNumber() {
     return imoNumber;
   }
 
-
-  public void setImoNumber(Integer imoNumber) {
+  public void setImoNumber(@javax.annotation.Nonnull Integer imoNumber) {
     this.imoNumber = imoNumber;
   }
 
 
-  public ShipStaticData callSign(String callSign) {
-    
+  public ShipStaticData callSign(@javax.annotation.Nonnull String callSign) {
     this.callSign = callSign;
     return this;
   }
 
-   /**
+  /**
    * Get callSign
    * @return callSign
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public String getCallSign() {
     return callSign;
   }
 
-
-  public void setCallSign(String callSign) {
+  public void setCallSign(@javax.annotation.Nonnull String callSign) {
     this.callSign = callSign;
   }
 
 
-  public ShipStaticData name(String name) {
-    
+  public ShipStaticData name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ShipStaticData type(Integer type) {
-    
+  public ShipStaticData type(@javax.annotation.Nonnull Integer type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getType() {
     return type;
   }
 
-
-  public void setType(Integer type) {
+  public void setType(@javax.annotation.Nonnull Integer type) {
     this.type = type;
   }
 
 
-  public ShipStaticData dimension(ShipStaticDataDimension dimension) {
-    
+  public ShipStaticData dimension(@javax.annotation.Nonnull ShipStaticDataDimension dimension) {
     this.dimension = dimension;
     return this;
   }
 
-   /**
+  /**
    * Get dimension
    * @return dimension
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public ShipStaticDataDimension getDimension() {
     return dimension;
   }
 
-
-  public void setDimension(ShipStaticDataDimension dimension) {
+  public void setDimension(@javax.annotation.Nonnull ShipStaticDataDimension dimension) {
     this.dimension = dimension;
   }
 
 
-  public ShipStaticData fixType(Integer fixType) {
-    
+  public ShipStaticData fixType(@javax.annotation.Nonnull Integer fixType) {
     this.fixType = fixType;
     return this;
   }
 
-   /**
+  /**
    * Get fixType
    * @return fixType
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getFixType() {
     return fixType;
   }
 
-
-  public void setFixType(Integer fixType) {
+  public void setFixType(@javax.annotation.Nonnull Integer fixType) {
     this.fixType = fixType;
   }
 
 
-  public ShipStaticData eta(ShipStaticDataEta eta) {
-    
+  public ShipStaticData eta(@javax.annotation.Nonnull ShipStaticDataEta eta) {
     this.eta = eta;
     return this;
   }
 
-   /**
+  /**
    * Get eta
    * @return eta
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public ShipStaticDataEta getEta() {
     return eta;
   }
 
-
-  public void setEta(ShipStaticDataEta eta) {
+  public void setEta(@javax.annotation.Nonnull ShipStaticDataEta eta) {
     this.eta = eta;
   }
 
 
-  public ShipStaticData maximumStaticDraught(Double maximumStaticDraught) {
-    
+  public ShipStaticData maximumStaticDraught(@javax.annotation.Nonnull Double maximumStaticDraught) {
     this.maximumStaticDraught = maximumStaticDraught;
     return this;
   }
 
-   /**
+  /**
    * Get maximumStaticDraught
    * @return maximumStaticDraught
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getMaximumStaticDraught() {
     return maximumStaticDraught;
   }
 
-
-  public void setMaximumStaticDraught(Double maximumStaticDraught) {
+  public void setMaximumStaticDraught(@javax.annotation.Nonnull Double maximumStaticDraught) {
     this.maximumStaticDraught = maximumStaticDraught;
   }
 
 
-  public ShipStaticData destination(String destination) {
-    
+  public ShipStaticData destination(@javax.annotation.Nonnull String destination) {
     this.destination = destination;
     return this;
   }
 
-   /**
+  /**
    * Get destination
    * @return destination
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public String getDestination() {
     return destination;
   }
 
-
-  public void setDestination(String destination) {
+  public void setDestination(@javax.annotation.Nonnull String destination) {
     this.destination = destination;
   }
 
 
-  public ShipStaticData dte(Boolean dte) {
-    
+  public ShipStaticData dte(@javax.annotation.Nonnull Boolean dte) {
     this.dte = dte;
     return this;
   }
 
-   /**
+  /**
    * Get dte
    * @return dte
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getDte() {
     return dte;
   }
 
-
-  public void setDte(Boolean dte) {
+  public void setDte(@javax.annotation.Nonnull Boolean dte) {
     this.dte = dte;
   }
 
 
-  public ShipStaticData spare(Boolean spare) {
-    
+  public ShipStaticData spare(@javax.annotation.Nonnull Boolean spare) {
     this.spare = spare;
     return this;
   }
 
-   /**
+  /**
    * Get spare
    * @return spare
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getSpare() {
     return spare;
   }
 
-
-  public void setSpare(Boolean spare) {
+  public void setSpare(@javax.annotation.Nonnull Boolean spare) {
     this.spare = spare;
   }
 
@@ -548,10 +502,7 @@ public class ShipStaticData {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -560,89 +511,52 @@ public class ShipStaticData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MessageID");
-    openapiFields.add("RepeatIndicator");
-    openapiFields.add("UserID");
-    openapiFields.add("Valid");
-    openapiFields.add("AisVersion");
-    openapiFields.add("ImoNumber");
-    openapiFields.add("CallSign");
-    openapiFields.add("Name");
-    openapiFields.add("Type");
-    openapiFields.add("Dimension");
-    openapiFields.add("FixType");
-    openapiFields.add("Eta");
-    openapiFields.add("MaximumStaticDraught");
-    openapiFields.add("Destination");
-    openapiFields.add("Dte");
-    openapiFields.add("Spare");
+    openapiFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "AisVersion", "ImoNumber", "CallSign", "Name", "Type", "Dimension", "FixType", "Eta", "MaximumStaticDraught", "Destination", "Dte", "Spare"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MessageID");
-    openapiRequiredFields.add("RepeatIndicator");
-    openapiRequiredFields.add("UserID");
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("AisVersion");
-    openapiRequiredFields.add("ImoNumber");
-    openapiRequiredFields.add("CallSign");
-    openapiRequiredFields.add("Name");
-    openapiRequiredFields.add("Type");
-    openapiRequiredFields.add("Dimension");
-    openapiRequiredFields.add("FixType");
-    openapiRequiredFields.add("Eta");
-    openapiRequiredFields.add("MaximumStaticDraught");
-    openapiRequiredFields.add("Destination");
-    openapiRequiredFields.add("Dte");
-    openapiRequiredFields.add("Spare");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "AisVersion", "ImoNumber", "CallSign", "Name", "Type", "Dimension", "FixType", "Eta", "MaximumStaticDraught", "Destination", "Dte", "Spare"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ShipStaticData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ShipStaticData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ShipStaticData is not found in the empty JSON string", ShipStaticData.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ShipStaticData
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ShipStaticData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ShipStaticData is not found in the empty JSON string", ShipStaticData.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ShipStaticData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ShipStaticData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ShipStaticData` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ShipStaticData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("CallSign") != null && !jsonObj.get("CallSign").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `CallSign` to be a primitive type in the JSON string but got `%s`", jsonObj.get("CallSign").toString()));
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("CallSign").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `CallSign` to be a primitive type in the JSON string but got `%s`", jsonObj.get("CallSign").toString()));
       }
-      if (jsonObj.get("Name") != null && !jsonObj.get("Name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `Name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Name").toString()));
+      if (!jsonObj.get("Name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `Name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Name").toString()));
       }
-      // validate the optional field `Dimension`
-      if (jsonObj.getAsJsonObject("Dimension") != null) {
-        ShipStaticDataDimension.validateJsonObject(jsonObj.getAsJsonObject("Dimension"));
-      }
-      // validate the optional field `Eta`
-      if (jsonObj.getAsJsonObject("Eta") != null) {
-        ShipStaticDataEta.validateJsonObject(jsonObj.getAsJsonObject("Eta"));
-      }
-      if (jsonObj.get("Destination") != null && !jsonObj.get("Destination").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `Destination` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Destination").toString()));
+      // validate the required field `Dimension`
+      ShipStaticDataDimension.validateJsonElement(jsonObj.get("Dimension"));
+      // validate the required field `Eta`
+      ShipStaticDataEta.validateJsonElement(jsonObj.get("Eta"));
+      if (!jsonObj.get("Destination").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `Destination` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Destination").toString()));
       }
   }
 
@@ -666,31 +580,31 @@ public class ShipStaticData {
 
            @Override
            public ShipStaticData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of ShipStaticData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ShipStaticData
-  * @throws IOException if the JSON string is invalid with respect to ShipStaticData
-  */
+  /**
+   * Create an instance of ShipStaticData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ShipStaticData
+   * @throws IOException if the JSON string is invalid with respect to ShipStaticData
+   */
   public static ShipStaticData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ShipStaticData.class);
   }
 
- /**
-  * Convert an instance of ShipStaticData to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ShipStaticData to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

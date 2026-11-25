@@ -10,9 +10,9 @@
  * Do not edit the class manually.
  */
 
-import { InterrogationStation1Msg1 } from './InterrogationStation1Msg1';
-import { InterrogationStation1Msg2 } from './InterrogationStation1Msg2';
-import { InterrogationStation2 } from './InterrogationStation2';
+import { InterrogationStation1Msg1 } from '../models/InterrogationStation1Msg1';
+import { InterrogationStation1Msg2 } from '../models/InterrogationStation1Msg2';
+import { InterrogationStation2 } from '../models/InterrogationStation2';
 import { HttpFile } from '../http/http';
 
 export class Interrogation {
@@ -26,6 +26,8 @@ export class Interrogation {
     'station2': InterrogationStation2;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -84,4 +86,3 @@ export class Interrogation {
     public constructor() {
     }
 }
-

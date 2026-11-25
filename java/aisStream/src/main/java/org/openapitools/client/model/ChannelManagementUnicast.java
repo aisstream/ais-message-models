@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,15 +29,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -47,115 +49,103 @@ import org.openapitools.client.JSON;
 /**
  * ChannelManagementUnicast
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class ChannelManagementUnicast {
   public static final String SERIALIZED_NAME_ADDRESS_STATION1 = "AddressStation1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_STATION1)
+  @javax.annotation.Nonnull
   private Integer addressStation1;
 
   public static final String SERIALIZED_NAME_SPARE2 = "Spare2";
   @SerializedName(SERIALIZED_NAME_SPARE2)
+  @javax.annotation.Nonnull
   private Integer spare2;
 
   public static final String SERIALIZED_NAME_ADDRESS_STATION2 = "AddressStation2";
   @SerializedName(SERIALIZED_NAME_ADDRESS_STATION2)
+  @javax.annotation.Nonnull
   private Integer addressStation2;
 
   public static final String SERIALIZED_NAME_SPARE3 = "Spare3";
   @SerializedName(SERIALIZED_NAME_SPARE3)
+  @javax.annotation.Nonnull
   private Integer spare3;
 
-  public ChannelManagementUnicast() { 
+  public ChannelManagementUnicast() {
   }
 
-  public ChannelManagementUnicast addressStation1(Integer addressStation1) {
-    
+  public ChannelManagementUnicast addressStation1(@javax.annotation.Nonnull Integer addressStation1) {
     this.addressStation1 = addressStation1;
     return this;
   }
 
-   /**
+  /**
    * Get addressStation1
    * @return addressStation1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getAddressStation1() {
     return addressStation1;
   }
 
-
-  public void setAddressStation1(Integer addressStation1) {
+  public void setAddressStation1(@javax.annotation.Nonnull Integer addressStation1) {
     this.addressStation1 = addressStation1;
   }
 
 
-  public ChannelManagementUnicast spare2(Integer spare2) {
-    
+  public ChannelManagementUnicast spare2(@javax.annotation.Nonnull Integer spare2) {
     this.spare2 = spare2;
     return this;
   }
 
-   /**
+  /**
    * Get spare2
    * @return spare2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare2() {
     return spare2;
   }
 
-
-  public void setSpare2(Integer spare2) {
+  public void setSpare2(@javax.annotation.Nonnull Integer spare2) {
     this.spare2 = spare2;
   }
 
 
-  public ChannelManagementUnicast addressStation2(Integer addressStation2) {
-    
+  public ChannelManagementUnicast addressStation2(@javax.annotation.Nonnull Integer addressStation2) {
     this.addressStation2 = addressStation2;
     return this;
   }
 
-   /**
+  /**
    * Get addressStation2
    * @return addressStation2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getAddressStation2() {
     return addressStation2;
   }
 
-
-  public void setAddressStation2(Integer addressStation2) {
+  public void setAddressStation2(@javax.annotation.Nonnull Integer addressStation2) {
     this.addressStation2 = addressStation2;
   }
 
 
-  public ChannelManagementUnicast spare3(Integer spare3) {
-    
+  public ChannelManagementUnicast spare3(@javax.annotation.Nonnull Integer spare3) {
     this.spare3 = spare3;
     return this;
   }
 
-   /**
+  /**
    * Get spare3
    * @return spare3
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare3() {
     return spare3;
   }
 
-
-  public void setSpare3(Integer spare3) {
+  public void setSpare3(@javax.annotation.Nonnull Integer spare3) {
     this.spare3 = spare3;
   }
 
@@ -198,10 +188,7 @@ public class ChannelManagementUnicast {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -210,49 +197,40 @@ public class ChannelManagementUnicast {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("AddressStation1");
-    openapiFields.add("Spare2");
-    openapiFields.add("AddressStation2");
-    openapiFields.add("Spare3");
+    openapiFields = new HashSet<String>(Arrays.asList("AddressStation1", "Spare2", "AddressStation2", "Spare3"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("AddressStation1");
-    openapiRequiredFields.add("Spare2");
-    openapiRequiredFields.add("AddressStation2");
-    openapiRequiredFields.add("Spare3");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("AddressStation1", "Spare2", "AddressStation2", "Spare3"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ChannelManagementUnicast
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ChannelManagementUnicast.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ChannelManagementUnicast is not found in the empty JSON string", ChannelManagementUnicast.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ChannelManagementUnicast
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ChannelManagementUnicast.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ChannelManagementUnicast is not found in the empty JSON string", ChannelManagementUnicast.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ChannelManagementUnicast.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ChannelManagementUnicast` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ChannelManagementUnicast` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ChannelManagementUnicast.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -275,31 +253,31 @@ public class ChannelManagementUnicast {
 
            @Override
            public ChannelManagementUnicast read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of ChannelManagementUnicast given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ChannelManagementUnicast
-  * @throws IOException if the JSON string is invalid with respect to ChannelManagementUnicast
-  */
+  /**
+   * Create an instance of ChannelManagementUnicast given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ChannelManagementUnicast
+   * @throws IOException if the JSON string is invalid with respect to ChannelManagementUnicast
+   */
   public static ChannelManagementUnicast fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ChannelManagementUnicast.class);
   }
 
- /**
-  * Convert an instance of ChannelManagementUnicast to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ChannelManagementUnicast to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

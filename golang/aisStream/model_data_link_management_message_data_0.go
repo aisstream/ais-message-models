@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the DataLinkManagementMessageData0 type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DataLinkManagementMessageData0{}
 
 // DataLinkManagementMessageData0 struct for DataLinkManagementMessageData0
 type DataLinkManagementMessageData0 struct {
@@ -22,6 +27,8 @@ type DataLinkManagementMessageData0 struct {
 	TimeOut int32 `json:"TimeOut"`
 	Increment int32 `json:"Increment"`
 }
+
+type _DataLinkManagementMessageData0 DataLinkManagementMessageData0
 
 // NewDataLinkManagementMessageData0 instantiates a new DataLinkManagementMessageData0 object
 // This constructor will assign default values to properties that have it defined,
@@ -166,23 +173,62 @@ func (o *DataLinkManagementMessageData0) SetIncrement(v int32) {
 }
 
 func (o DataLinkManagementMessageData0) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Offset"] = o.Offset
-	}
-	if true {
-		toSerialize["integerOfSlots"] = o.IntegerOfSlots
-	}
-	if true {
-		toSerialize["TimeOut"] = o.TimeOut
-	}
-	if true {
-		toSerialize["Increment"] = o.Increment
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DataLinkManagementMessageData0) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Offset"] = o.Offset
+	toSerialize["integerOfSlots"] = o.IntegerOfSlots
+	toSerialize["TimeOut"] = o.TimeOut
+	toSerialize["Increment"] = o.Increment
+	return toSerialize, nil
+}
+
+func (o *DataLinkManagementMessageData0) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"Valid",
+		"Offset",
+		"integerOfSlots",
+		"TimeOut",
+		"Increment",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varDataLinkManagementMessageData0 := _DataLinkManagementMessageData0{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varDataLinkManagementMessageData0)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DataLinkManagementMessageData0(varDataLinkManagementMessageData0)
+
+	return err
 }
 
 type NullableDataLinkManagementMessageData0 struct {

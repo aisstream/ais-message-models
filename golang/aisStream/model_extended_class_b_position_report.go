@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the ExtendedClassBPositionReport type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExtendedClassBPositionReport{}
 
 // ExtendedClassBPositionReport struct for ExtendedClassBPositionReport
 type ExtendedClassBPositionReport struct {
@@ -38,6 +43,8 @@ type ExtendedClassBPositionReport struct {
 	AssignedMode bool `json:"AssignedMode"`
 	Spare3 int32 `json:"Spare3"`
 }
+
+type _ExtendedClassBPositionReport ExtendedClassBPositionReport
 
 // NewExtendedClassBPositionReport instantiates a new ExtendedClassBPositionReport object
 // This constructor will assign default values to properties that have it defined,
@@ -582,71 +589,94 @@ func (o *ExtendedClassBPositionReport) SetSpare3(v int32) {
 }
 
 func (o ExtendedClassBPositionReport) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Spare1"] = o.Spare1
-	}
-	if true {
-		toSerialize["Sog"] = o.Sog
-	}
-	if true {
-		toSerialize["PositionAccuracy"] = o.PositionAccuracy
-	}
-	if true {
-		toSerialize["Longitude"] = o.Longitude
-	}
-	if true {
-		toSerialize["Latitude"] = o.Latitude
-	}
-	if true {
-		toSerialize["Cog"] = o.Cog
-	}
-	if true {
-		toSerialize["TrueHeading"] = o.TrueHeading
-	}
-	if true {
-		toSerialize["Timestamp"] = o.Timestamp
-	}
-	if true {
-		toSerialize["Spare2"] = o.Spare2
-	}
-	if true {
-		toSerialize["Name"] = o.Name
-	}
-	if true {
-		toSerialize["Type"] = o.Type
-	}
-	if true {
-		toSerialize["Dimension"] = o.Dimension
-	}
-	if true {
-		toSerialize["FixType"] = o.FixType
-	}
-	if true {
-		toSerialize["Raim"] = o.Raim
-	}
-	if true {
-		toSerialize["Dte"] = o.Dte
-	}
-	if true {
-		toSerialize["AssignedMode"] = o.AssignedMode
-	}
-	if true {
-		toSerialize["Spare3"] = o.Spare3
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExtendedClassBPositionReport) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Spare1"] = o.Spare1
+	toSerialize["Sog"] = o.Sog
+	toSerialize["PositionAccuracy"] = o.PositionAccuracy
+	toSerialize["Longitude"] = o.Longitude
+	toSerialize["Latitude"] = o.Latitude
+	toSerialize["Cog"] = o.Cog
+	toSerialize["TrueHeading"] = o.TrueHeading
+	toSerialize["Timestamp"] = o.Timestamp
+	toSerialize["Spare2"] = o.Spare2
+	toSerialize["Name"] = o.Name
+	toSerialize["Type"] = o.Type
+	toSerialize["Dimension"] = o.Dimension
+	toSerialize["FixType"] = o.FixType
+	toSerialize["Raim"] = o.Raim
+	toSerialize["Dte"] = o.Dte
+	toSerialize["AssignedMode"] = o.AssignedMode
+	toSerialize["Spare3"] = o.Spare3
+	return toSerialize, nil
+}
+
+func (o *ExtendedClassBPositionReport) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"Spare1",
+		"Sog",
+		"PositionAccuracy",
+		"Longitude",
+		"Latitude",
+		"Cog",
+		"TrueHeading",
+		"Timestamp",
+		"Spare2",
+		"Name",
+		"Type",
+		"Dimension",
+		"FixType",
+		"Raim",
+		"Dte",
+		"AssignedMode",
+		"Spare3",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varExtendedClassBPositionReport := _ExtendedClassBPositionReport{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varExtendedClassBPositionReport)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExtendedClassBPositionReport(varExtendedClassBPositionReport)
+
+	return err
 }
 
 type NullableExtendedClassBPositionReport struct {

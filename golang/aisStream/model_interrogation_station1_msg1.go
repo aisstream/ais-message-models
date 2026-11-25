@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the InterrogationStation1Msg1 type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InterrogationStation1Msg1{}
 
 // InterrogationStation1Msg1 struct for InterrogationStation1Msg1
 type InterrogationStation1Msg1 struct {
@@ -21,6 +26,8 @@ type InterrogationStation1Msg1 struct {
 	MessageID int32 `json:"MessageID"`
 	SlotOffset int32 `json:"SlotOffset"`
 }
+
+type _InterrogationStation1Msg1 InterrogationStation1Msg1
 
 // NewInterrogationStation1Msg1 instantiates a new InterrogationStation1Msg1 object
 // This constructor will assign default values to properties that have it defined,
@@ -140,20 +147,60 @@ func (o *InterrogationStation1Msg1) SetSlotOffset(v int32) {
 }
 
 func (o InterrogationStation1Msg1) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["StationID"] = o.StationID
-	}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["SlotOffset"] = o.SlotOffset
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InterrogationStation1Msg1) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["Valid"] = o.Valid
+	toSerialize["StationID"] = o.StationID
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["SlotOffset"] = o.SlotOffset
+	return toSerialize, nil
+}
+
+func (o *InterrogationStation1Msg1) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"Valid",
+		"StationID",
+		"MessageID",
+		"SlotOffset",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varInterrogationStation1Msg1 := _InterrogationStation1Msg1{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varInterrogationStation1Msg1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InterrogationStation1Msg1(varInterrogationStation1Msg1)
+
+	return err
 }
 
 type NullableInterrogationStation1Msg1 struct {

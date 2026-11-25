@@ -5,55 +5,55 @@
 ## Enum
 
 
-* `POSITIONREPORT` (value: `"PositionReport"`)
+* `POSITION_REPORT` (value: `"PositionReport"`)
 
-* `UNKNOWNMESSAGE` (value: `"UnknownMessage"`)
+* `UNKNOWN_MESSAGE` (value: `"UnknownMessage"`)
 
-* `ADDRESSEDSAFETYMESSAGE` (value: `"AddressedSafetyMessage"`)
+* `ADDRESSED_SAFETY_MESSAGE` (value: `"AddressedSafetyMessage"`)
 
-* `ADDRESSEDBINARYMESSAGE` (value: `"AddressedBinaryMessage"`)
+* `ADDRESSED_BINARY_MESSAGE` (value: `"AddressedBinaryMessage"`)
 
-* `AIDSTONAVIGATIONREPORT` (value: `"AidsToNavigationReport"`)
+* `AIDS_TO_NAVIGATION_REPORT` (value: `"AidsToNavigationReport"`)
 
-* `ASSIGNEDMODECOMMAND` (value: `"AssignedModeCommand"`)
+* `ASSIGNED_MODE_COMMAND` (value: `"AssignedModeCommand"`)
 
-* `BASESTATIONREPORT` (value: `"BaseStationReport"`)
+* `BASE_STATION_REPORT` (value: `"BaseStationReport"`)
 
-* `BINARYACKNOWLEDGE` (value: `"BinaryAcknowledge"`)
+* `BINARY_ACKNOWLEDGE` (value: `"BinaryAcknowledge"`)
 
-* `BINARYBROADCASTMESSAGE` (value: `"BinaryBroadcastMessage"`)
+* `BINARY_BROADCAST_MESSAGE` (value: `"BinaryBroadcastMessage"`)
 
-* `CHANNELMANAGEMENT` (value: `"ChannelManagement"`)
+* `CHANNEL_MANAGEMENT` (value: `"ChannelManagement"`)
 
-* `COORDINATEDUTCINQUIRY` (value: `"CoordinatedUTCInquiry"`)
+* `COORDINATED_UTC_INQUIRY` (value: `"CoordinatedUTCInquiry"`)
 
-* `DATALINKMANAGEMENTMESSAGE` (value: `"DataLinkManagementMessage"`)
+* `DATA_LINK_MANAGEMENT_MESSAGE` (value: `"DataLinkManagementMessage"`)
 
-* `DATALINKMANAGEMENTMESSAGEDATA` (value: `"DataLinkManagementMessageData"`)
+* `DATA_LINK_MANAGEMENT_MESSAGE_DATA` (value: `"DataLinkManagementMessageData"`)
 
-* `EXTENDEDCLASSBPOSITIONREPORT` (value: `"ExtendedClassBPositionReport"`)
+* `EXTENDED_CLASS_B_POSITION_REPORT` (value: `"ExtendedClassBPositionReport"`)
 
-* `GROUPASSIGNMENTCOMMAND` (value: `"GroupAssignmentCommand"`)
+* `GROUP_ASSIGNMENT_COMMAND` (value: `"GroupAssignmentCommand"`)
 
-* `GNSSBROADCASTBINARYMESSAGE` (value: `"GnssBroadcastBinaryMessage"`)
+* `GNSS_BROADCAST_BINARY_MESSAGE` (value: `"GnssBroadcastBinaryMessage"`)
 
 * `INTERROGATION` (value: `"Interrogation"`)
 
-* `LONGRANGEAISBROADCASTMESSAGE` (value: `"LongRangeAisBroadcastMessage"`)
+* `LONG_RANGE_AIS_BROADCAST_MESSAGE` (value: `"LongRangeAisBroadcastMessage"`)
 
-* `MULTISLOTBINARYMESSAGE` (value: `"MultiSlotBinaryMessage"`)
+* `MULTI_SLOT_BINARY_MESSAGE` (value: `"MultiSlotBinaryMessage"`)
 
-* `SAFETYBROADCASTMESSAGE` (value: `"SafetyBroadcastMessage"`)
+* `SAFETY_BROADCAST_MESSAGE` (value: `"SafetyBroadcastMessage"`)
 
-* `SHIPSTATICDATA` (value: `"ShipStaticData"`)
+* `SHIP_STATIC_DATA` (value: `"ShipStaticData"`)
 
-* `SINGLESLOTBINARYMESSAGE` (value: `"SingleSlotBinaryMessage"`)
+* `SINGLE_SLOT_BINARY_MESSAGE` (value: `"SingleSlotBinaryMessage"`)
 
-* `STANDARDCLASSBPOSITIONREPORT` (value: `"StandardClassBPositionReport"`)
+* `STANDARD_CLASS_B_POSITION_REPORT` (value: `"StandardClassBPositionReport"`)
 
-* `STANDARDSEARCHANDRESCUEAIRCRAFTREPORT` (value: `"StandardSearchAndRescueAircraftReport"`)
+* `STANDARD_SEARCH_AND_RESCUE_AIRCRAFT_REPORT` (value: `"StandardSearchAndRescueAircraftReport"`)
 
-* `STATICDATAREPORT` (value: `"StaticDataReport"`)
+* `STATIC_DATA_REPORT` (value: `"StaticDataReport"`)
 
 
 

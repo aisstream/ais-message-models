@@ -12,4 +12,30 @@
 
 import { HttpFile } from '../http/http';
 
-export type AisMessageTypes = "PositionReport" | "UnknownMessage" | "AddressedSafetyMessage" | "AddressedBinaryMessage" | "AidsToNavigationReport" | "AssignedModeCommand" | "BaseStationReport" | "BinaryAcknowledge" | "BinaryBroadcastMessage" | "ChannelManagement" | "CoordinatedUTCInquiry" | "DataLinkManagementMessage" | "DataLinkManagementMessageData" | "ExtendedClassBPositionReport" | "GroupAssignmentCommand" | "GnssBroadcastBinaryMessage" | "Interrogation" | "LongRangeAisBroadcastMessage" | "MultiSlotBinaryMessage" | "SafetyBroadcastMessage" | "ShipStaticData" | "SingleSlotBinaryMessage" | "StandardClassBPositionReport" | "StandardSearchAndRescueAircraftReport" | "StaticDataReport" ;
+export enum AisMessageTypes {
+    PositionReport = 'PositionReport',
+    UnknownMessage = 'UnknownMessage',
+    AddressedSafetyMessage = 'AddressedSafetyMessage',
+    AddressedBinaryMessage = 'AddressedBinaryMessage',
+    AidsToNavigationReport = 'AidsToNavigationReport',
+    AssignedModeCommand = 'AssignedModeCommand',
+    BaseStationReport = 'BaseStationReport',
+    BinaryAcknowledge = 'BinaryAcknowledge',
+    BinaryBroadcastMessage = 'BinaryBroadcastMessage',
+    ChannelManagement = 'ChannelManagement',
+    CoordinatedUtcInquiry = 'CoordinatedUTCInquiry',
+    DataLinkManagementMessage = 'DataLinkManagementMessage',
+    DataLinkManagementMessageData = 'DataLinkManagementMessageData',
+    ExtendedClassBPositionReport = 'ExtendedClassBPositionReport',
+    GroupAssignmentCommand = 'GroupAssignmentCommand',
+    GnssBroadcastBinaryMessage = 'GnssBroadcastBinaryMessage',
+    Interrogation = 'Interrogation',
+    LongRangeAisBroadcastMessage = 'LongRangeAisBroadcastMessage',
+    MultiSlotBinaryMessage = 'MultiSlotBinaryMessage',
+    SafetyBroadcastMessage = 'SafetyBroadcastMessage',
+    ShipStaticData = 'ShipStaticData',
+    SingleSlotBinaryMessage = 'SingleSlotBinaryMessage',
+    StandardClassBPositionReport = 'StandardClassBPositionReport',
+    StandardSearchAndRescueAircraftReport = 'StandardSearchAndRescueAircraftReport',
+    StaticDataReport = 'StaticDataReport'
+}
