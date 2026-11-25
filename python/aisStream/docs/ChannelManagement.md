@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_id** | **int** |  | 
@@ -20,8 +21,24 @@ Name | Type | Description | Notes
 **bw_b** | **bool** |  | 
 **transitional_zone_size** | **int** |  | 
 **spare4** | **int** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from aisStream.models.channel_management import ChannelManagement
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ChannelManagement from a JSON string
+channel_management_instance = ChannelManagement.from_json(json)
+# print the JSON string representation of the object
+print(ChannelManagement.to_json())
+
+# convert the object into a dict
+channel_management_dict = channel_management_instance.to_dict()
+# create an instance of ChannelManagement from a dict
+channel_management_from_dict = ChannelManagement.from_dict(channel_management_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the ChannelManagement type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ChannelManagement{}
 
 // ChannelManagement struct for ChannelManagement
 type ChannelManagement struct {
@@ -33,6 +38,8 @@ type ChannelManagement struct {
 	TransitionalZoneSize int32 `json:"TransitionalZoneSize"`
 	Spare4 int32 `json:"Spare4"`
 }
+
+type _ChannelManagement ChannelManagement
 
 // NewChannelManagement instantiates a new ChannelManagement object
 // This constructor will assign default values to properties that have it defined,
@@ -452,56 +459,84 @@ func (o *ChannelManagement) SetSpare4(v int32) {
 }
 
 func (o ChannelManagement) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Spare1"] = o.Spare1
-	}
-	if true {
-		toSerialize["ChannelA"] = o.ChannelA
-	}
-	if true {
-		toSerialize["ChannelB"] = o.ChannelB
-	}
-	if true {
-		toSerialize["TxRxMode"] = o.TxRxMode
-	}
-	if true {
-		toSerialize["LowPower"] = o.LowPower
-	}
-	if true {
-		toSerialize["Area"] = o.Area
-	}
-	if true {
-		toSerialize["Unicast"] = o.Unicast
-	}
-	if true {
-		toSerialize["IsAddressed"] = o.IsAddressed
-	}
-	if true {
-		toSerialize["BwA"] = o.BwA
-	}
-	if true {
-		toSerialize["BwB"] = o.BwB
-	}
-	if true {
-		toSerialize["TransitionalZoneSize"] = o.TransitionalZoneSize
-	}
-	if true {
-		toSerialize["Spare4"] = o.Spare4
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ChannelManagement) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Spare1"] = o.Spare1
+	toSerialize["ChannelA"] = o.ChannelA
+	toSerialize["ChannelB"] = o.ChannelB
+	toSerialize["TxRxMode"] = o.TxRxMode
+	toSerialize["LowPower"] = o.LowPower
+	toSerialize["Area"] = o.Area
+	toSerialize["Unicast"] = o.Unicast
+	toSerialize["IsAddressed"] = o.IsAddressed
+	toSerialize["BwA"] = o.BwA
+	toSerialize["BwB"] = o.BwB
+	toSerialize["TransitionalZoneSize"] = o.TransitionalZoneSize
+	toSerialize["Spare4"] = o.Spare4
+	return toSerialize, nil
+}
+
+func (o *ChannelManagement) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"Spare1",
+		"ChannelA",
+		"ChannelB",
+		"TxRxMode",
+		"LowPower",
+		"Area",
+		"Unicast",
+		"IsAddressed",
+		"BwA",
+		"BwB",
+		"TransitionalZoneSize",
+		"Spare4",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varChannelManagement := _ChannelManagement{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varChannelManagement)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ChannelManagement(varChannelManagement)
+
+	return err
 }
 
 type NullableChannelManagement struct {

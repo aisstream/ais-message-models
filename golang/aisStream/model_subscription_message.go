@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the SubscriptionMessage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SubscriptionMessage{}
 
 // SubscriptionMessage struct for SubscriptionMessage
 type SubscriptionMessage struct {
@@ -21,6 +26,8 @@ type SubscriptionMessage struct {
 	FiltersShipMMSI []string `json:"FiltersShipMMSI,omitempty"`
 	FilterMessageTypes []AisMessageTypes `json:"FilterMessageTypes,omitempty"`
 }
+
+type _SubscriptionMessage SubscriptionMessage
 
 // NewSubscriptionMessage instantiates a new SubscriptionMessage object
 // This constructor will assign default values to properties that have it defined,
@@ -91,7 +98,7 @@ func (o *SubscriptionMessage) SetBoundingBoxes(v [][][]float64) {
 
 // GetFiltersShipMMSI returns the FiltersShipMMSI field value if set, zero value otherwise.
 func (o *SubscriptionMessage) GetFiltersShipMMSI() []string {
-	if o == nil || o.FiltersShipMMSI == nil {
+	if o == nil || IsNil(o.FiltersShipMMSI) {
 		var ret []string
 		return ret
 	}
@@ -101,7 +108,7 @@ func (o *SubscriptionMessage) GetFiltersShipMMSI() []string {
 // GetFiltersShipMMSIOk returns a tuple with the FiltersShipMMSI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionMessage) GetFiltersShipMMSIOk() ([]string, bool) {
-	if o == nil || o.FiltersShipMMSI == nil {
+	if o == nil || IsNil(o.FiltersShipMMSI) {
 		return nil, false
 	}
 	return o.FiltersShipMMSI, true
@@ -109,7 +116,7 @@ func (o *SubscriptionMessage) GetFiltersShipMMSIOk() ([]string, bool) {
 
 // HasFiltersShipMMSI returns a boolean if a field has been set.
 func (o *SubscriptionMessage) HasFiltersShipMMSI() bool {
-	if o != nil && o.FiltersShipMMSI != nil {
+	if o != nil && !IsNil(o.FiltersShipMMSI) {
 		return true
 	}
 
@@ -123,7 +130,7 @@ func (o *SubscriptionMessage) SetFiltersShipMMSI(v []string) {
 
 // GetFilterMessageTypes returns the FilterMessageTypes field value if set, zero value otherwise.
 func (o *SubscriptionMessage) GetFilterMessageTypes() []AisMessageTypes {
-	if o == nil || o.FilterMessageTypes == nil {
+	if o == nil || IsNil(o.FilterMessageTypes) {
 		var ret []AisMessageTypes
 		return ret
 	}
@@ -133,7 +140,7 @@ func (o *SubscriptionMessage) GetFilterMessageTypes() []AisMessageTypes {
 // GetFilterMessageTypesOk returns a tuple with the FilterMessageTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionMessage) GetFilterMessageTypesOk() ([]AisMessageTypes, bool) {
-	if o == nil || o.FilterMessageTypes == nil {
+	if o == nil || IsNil(o.FilterMessageTypes) {
 		return nil, false
 	}
 	return o.FilterMessageTypes, true
@@ -141,7 +148,7 @@ func (o *SubscriptionMessage) GetFilterMessageTypesOk() ([]AisMessageTypes, bool
 
 // HasFilterMessageTypes returns a boolean if a field has been set.
 func (o *SubscriptionMessage) HasFilterMessageTypes() bool {
-	if o != nil && o.FilterMessageTypes != nil {
+	if o != nil && !IsNil(o.FilterMessageTypes) {
 		return true
 	}
 
@@ -154,20 +161,62 @@ func (o *SubscriptionMessage) SetFilterMessageTypes(v []AisMessageTypes) {
 }
 
 func (o SubscriptionMessage) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["APIKey"] = o.APIKey
-	}
-	if true {
-		toSerialize["BoundingBoxes"] = o.BoundingBoxes
-	}
-	if o.FiltersShipMMSI != nil {
-		toSerialize["FiltersShipMMSI"] = o.FiltersShipMMSI
-	}
-	if o.FilterMessageTypes != nil {
-		toSerialize["FilterMessageTypes"] = o.FilterMessageTypes
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SubscriptionMessage) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["APIKey"] = o.APIKey
+	toSerialize["BoundingBoxes"] = o.BoundingBoxes
+	if !IsNil(o.FiltersShipMMSI) {
+		toSerialize["FiltersShipMMSI"] = o.FiltersShipMMSI
+	}
+	if !IsNil(o.FilterMessageTypes) {
+		toSerialize["FilterMessageTypes"] = o.FilterMessageTypes
+	}
+	return toSerialize, nil
+}
+
+func (o *SubscriptionMessage) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"APIKey",
+		"BoundingBoxes",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSubscriptionMessage := _SubscriptionMessage{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varSubscriptionMessage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SubscriptionMessage(varSubscriptionMessage)
+
+	return err
 }
 
 type NullableSubscriptionMessage struct {

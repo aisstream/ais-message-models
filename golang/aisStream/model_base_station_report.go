@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the BaseStationReport type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BaseStationReport{}
 
 // BaseStationReport struct for BaseStationReport
 type BaseStationReport struct {
@@ -35,6 +40,8 @@ type BaseStationReport struct {
 	Raim bool `json:"Raim"`
 	CommunicationState int32 `json:"CommunicationState"`
 }
+
+type _BaseStationReport BaseStationReport
 
 // NewBaseStationReport instantiates a new BaseStationReport object
 // This constructor will assign default values to properties that have it defined,
@@ -504,62 +511,88 @@ func (o *BaseStationReport) SetCommunicationState(v int32) {
 }
 
 func (o BaseStationReport) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["UtcYear"] = o.UtcYear
-	}
-	if true {
-		toSerialize["UtcMonth"] = o.UtcMonth
-	}
-	if true {
-		toSerialize["UtcDay"] = o.UtcDay
-	}
-	if true {
-		toSerialize["UtcHour"] = o.UtcHour
-	}
-	if true {
-		toSerialize["UtcMinute"] = o.UtcMinute
-	}
-	if true {
-		toSerialize["UtcSecond"] = o.UtcSecond
-	}
-	if true {
-		toSerialize["PositionAccuracy"] = o.PositionAccuracy
-	}
-	if true {
-		toSerialize["Longitude"] = o.Longitude
-	}
-	if true {
-		toSerialize["Latitude"] = o.Latitude
-	}
-	if true {
-		toSerialize["FixType"] = o.FixType
-	}
-	if true {
-		toSerialize["LongRangeEnable"] = o.LongRangeEnable
-	}
-	if true {
-		toSerialize["Spare"] = o.Spare
-	}
-	if true {
-		toSerialize["Raim"] = o.Raim
-	}
-	if true {
-		toSerialize["CommunicationState"] = o.CommunicationState
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BaseStationReport) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["UtcYear"] = o.UtcYear
+	toSerialize["UtcMonth"] = o.UtcMonth
+	toSerialize["UtcDay"] = o.UtcDay
+	toSerialize["UtcHour"] = o.UtcHour
+	toSerialize["UtcMinute"] = o.UtcMinute
+	toSerialize["UtcSecond"] = o.UtcSecond
+	toSerialize["PositionAccuracy"] = o.PositionAccuracy
+	toSerialize["Longitude"] = o.Longitude
+	toSerialize["Latitude"] = o.Latitude
+	toSerialize["FixType"] = o.FixType
+	toSerialize["LongRangeEnable"] = o.LongRangeEnable
+	toSerialize["Spare"] = o.Spare
+	toSerialize["Raim"] = o.Raim
+	toSerialize["CommunicationState"] = o.CommunicationState
+	return toSerialize, nil
+}
+
+func (o *BaseStationReport) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"UtcYear",
+		"UtcMonth",
+		"UtcDay",
+		"UtcHour",
+		"UtcMinute",
+		"UtcSecond",
+		"PositionAccuracy",
+		"Longitude",
+		"Latitude",
+		"FixType",
+		"LongRangeEnable",
+		"Spare",
+		"Raim",
+		"CommunicationState",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varBaseStationReport := _BaseStationReport{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varBaseStationReport)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BaseStationReport(varBaseStationReport)
+
+	return err
 }
 
 type NullableBaseStationReport struct {

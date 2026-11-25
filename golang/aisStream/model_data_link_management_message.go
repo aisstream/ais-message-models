@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the DataLinkManagementMessage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DataLinkManagementMessage{}
 
 // DataLinkManagementMessage struct for DataLinkManagementMessage
 type DataLinkManagementMessage struct {
@@ -23,6 +28,8 @@ type DataLinkManagementMessage struct {
 	Spare int32 `json:"Spare"`
 	Data DataLinkManagementMessageData `json:"Data"`
 }
+
+type _DataLinkManagementMessage DataLinkManagementMessage
 
 // NewDataLinkManagementMessage instantiates a new DataLinkManagementMessage object
 // This constructor will assign default values to properties that have it defined,
@@ -192,26 +199,64 @@ func (o *DataLinkManagementMessage) SetData(v DataLinkManagementMessageData) {
 }
 
 func (o DataLinkManagementMessage) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Spare"] = o.Spare
-	}
-	if true {
-		toSerialize["Data"] = o.Data
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DataLinkManagementMessage) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Spare"] = o.Spare
+	toSerialize["Data"] = o.Data
+	return toSerialize, nil
+}
+
+func (o *DataLinkManagementMessage) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"Spare",
+		"Data",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varDataLinkManagementMessage := _DataLinkManagementMessage{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varDataLinkManagementMessage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DataLinkManagementMessage(varDataLinkManagementMessage)
+
+	return err
 }
 
 type NullableDataLinkManagementMessage struct {

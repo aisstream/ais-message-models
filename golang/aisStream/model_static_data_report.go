@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the StaticDataReport type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StaticDataReport{}
 
 // StaticDataReport struct for StaticDataReport
 type StaticDataReport struct {
@@ -25,6 +30,8 @@ type StaticDataReport struct {
 	ReportA StaticDataReportReportA `json:"ReportA"`
 	ReportB StaticDataReportReportB `json:"ReportB"`
 }
+
+type _StaticDataReport StaticDataReport
 
 // NewStaticDataReport instantiates a new StaticDataReport object
 // This constructor will assign default values to properties that have it defined,
@@ -244,32 +251,68 @@ func (o *StaticDataReport) SetReportB(v StaticDataReportReportB) {
 }
 
 func (o StaticDataReport) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Reserved"] = o.Reserved
-	}
-	if true {
-		toSerialize["PartNumber"] = o.PartNumber
-	}
-	if true {
-		toSerialize["ReportA"] = o.ReportA
-	}
-	if true {
-		toSerialize["ReportB"] = o.ReportB
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StaticDataReport) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Reserved"] = o.Reserved
+	toSerialize["PartNumber"] = o.PartNumber
+	toSerialize["ReportA"] = o.ReportA
+	toSerialize["ReportB"] = o.ReportB
+	return toSerialize, nil
+}
+
+func (o *StaticDataReport) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"Reserved",
+		"PartNumber",
+		"ReportA",
+		"ReportB",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varStaticDataReport := _StaticDataReport{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varStaticDataReport)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StaticDataReport(varStaticDataReport)
+
+	return err
 }
 
 type NullableStaticDataReport struct {

@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.client.model.AssignedModeCommandCommands0;
 
 import com.google.gson.Gson;
@@ -32,15 +30,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -48,61 +50,55 @@ import org.openapitools.client.JSON;
 /**
  * AssignedModeCommandCommands
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class AssignedModeCommandCommands {
   public static final String SERIALIZED_NAME_0 = "0";
   @SerializedName(SERIALIZED_NAME_0)
+  @javax.annotation.Nonnull
   private AssignedModeCommandCommands0 _0;
 
   public static final String SERIALIZED_NAME_1 = "1";
   @SerializedName(SERIALIZED_NAME_1)
+  @javax.annotation.Nonnull
   private AssignedModeCommandCommands0 _1;
 
-  public AssignedModeCommandCommands() { 
+  public AssignedModeCommandCommands() {
   }
 
-  public AssignedModeCommandCommands _0(AssignedModeCommandCommands0 _0) {
-    
+  public AssignedModeCommandCommands _0(@javax.annotation.Nonnull AssignedModeCommandCommands0 _0) {
     this._0 = _0;
     return this;
   }
 
-   /**
+  /**
    * Get _0
    * @return _0
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public AssignedModeCommandCommands0 get0() {
     return _0;
   }
 
-
-  public void set0(AssignedModeCommandCommands0 _0) {
+  public void set0(@javax.annotation.Nonnull AssignedModeCommandCommands0 _0) {
     this._0 = _0;
   }
 
 
-  public AssignedModeCommandCommands _1(AssignedModeCommandCommands0 _1) {
-    
+  public AssignedModeCommandCommands _1(@javax.annotation.Nonnull AssignedModeCommandCommands0 _1) {
     this._1 = _1;
     return this;
   }
 
-   /**
+  /**
    * Get _1
    * @return _1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public AssignedModeCommandCommands0 get1() {
     return _1;
   }
 
-
-  public void set1(AssignedModeCommandCommands0 _1) {
+  public void set1(@javax.annotation.Nonnull AssignedModeCommandCommands0 _1) {
     this._1 = _1;
   }
 
@@ -141,10 +137,7 @@ public class AssignedModeCommandCommands {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -153,53 +146,44 @@ public class AssignedModeCommandCommands {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("0");
-    openapiFields.add("1");
+    openapiFields = new HashSet<String>(Arrays.asList("0", "1"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("0");
-    openapiRequiredFields.add("1");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("0", "1"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AssignedModeCommandCommands
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AssignedModeCommandCommands.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AssignedModeCommandCommands is not found in the empty JSON string", AssignedModeCommandCommands.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AssignedModeCommandCommands
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!AssignedModeCommandCommands.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AssignedModeCommandCommands is not found in the empty JSON string", AssignedModeCommandCommands.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AssignedModeCommandCommands.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AssignedModeCommandCommands` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AssignedModeCommandCommands` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AssignedModeCommandCommands.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      // validate the optional field `0`
-      if (jsonObj.getAsJsonObject("0") != null) {
-        AssignedModeCommandCommands0.validateJsonObject(jsonObj.getAsJsonObject("0"));
-      }
-      // validate the optional field `1`
-      if (jsonObj.getAsJsonObject("1") != null) {
-        AssignedModeCommandCommands0.validateJsonObject(jsonObj.getAsJsonObject("1"));
-      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `0`
+      AssignedModeCommandCommands0.validateJsonElement(jsonObj.get("0"));
+      // validate the required field `1`
+      AssignedModeCommandCommands0.validateJsonElement(jsonObj.get("1"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -222,31 +206,31 @@ public class AssignedModeCommandCommands {
 
            @Override
            public AssignedModeCommandCommands read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of AssignedModeCommandCommands given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AssignedModeCommandCommands
-  * @throws IOException if the JSON string is invalid with respect to AssignedModeCommandCommands
-  */
+  /**
+   * Create an instance of AssignedModeCommandCommands given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AssignedModeCommandCommands
+   * @throws IOException if the JSON string is invalid with respect to AssignedModeCommandCommands
+   */
   public static AssignedModeCommandCommands fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AssignedModeCommandCommands.class);
   }
 
- /**
-  * Convert an instance of AssignedModeCommandCommands to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AssignedModeCommandCommands to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

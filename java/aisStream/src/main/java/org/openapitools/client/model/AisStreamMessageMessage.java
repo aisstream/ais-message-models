@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.client.model.AddressedBinaryMessage;
 import org.openapitools.client.model.AddressedSafetyMessage;
 import org.openapitools.client.model.AidsToNavigationReport;
@@ -56,15 +54,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -72,682 +74,607 @@ import org.openapitools.client.JSON;
 /**
  * AisStreamMessageMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class AisStreamMessageMessage {
   public static final String SERIALIZED_NAME_POSITION_REPORT = "PositionReport";
   @SerializedName(SERIALIZED_NAME_POSITION_REPORT)
+  @javax.annotation.Nullable
   private PositionReport positionReport;
 
   public static final String SERIALIZED_NAME_UNKNOWN_MESSAGE = "UnknownMessage";
   @SerializedName(SERIALIZED_NAME_UNKNOWN_MESSAGE)
+  @javax.annotation.Nullable
   private UnknownMessage unknownMessage;
 
   public static final String SERIALIZED_NAME_ADDRESSED_SAFETY_MESSAGE = "AddressedSafetyMessage";
   @SerializedName(SERIALIZED_NAME_ADDRESSED_SAFETY_MESSAGE)
+  @javax.annotation.Nullable
   private AddressedSafetyMessage addressedSafetyMessage;
 
   public static final String SERIALIZED_NAME_ADDRESSED_BINARY_MESSAGE = "AddressedBinaryMessage";
   @SerializedName(SERIALIZED_NAME_ADDRESSED_BINARY_MESSAGE)
+  @javax.annotation.Nullable
   private AddressedBinaryMessage addressedBinaryMessage;
 
   public static final String SERIALIZED_NAME_AIDS_TO_NAVIGATION_REPORT = "AidsToNavigationReport";
   @SerializedName(SERIALIZED_NAME_AIDS_TO_NAVIGATION_REPORT)
+  @javax.annotation.Nullable
   private AidsToNavigationReport aidsToNavigationReport;
 
   public static final String SERIALIZED_NAME_ASSIGNED_MODE_COMMAND = "AssignedModeCommand";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_MODE_COMMAND)
+  @javax.annotation.Nullable
   private AssignedModeCommand assignedModeCommand;
 
   public static final String SERIALIZED_NAME_BASE_STATION_REPORT = "BaseStationReport";
   @SerializedName(SERIALIZED_NAME_BASE_STATION_REPORT)
+  @javax.annotation.Nullable
   private BaseStationReport baseStationReport;
 
   public static final String SERIALIZED_NAME_BINARY_ACKNOWLEDGE = "BinaryAcknowledge";
   @SerializedName(SERIALIZED_NAME_BINARY_ACKNOWLEDGE)
+  @javax.annotation.Nullable
   private BinaryAcknowledge binaryAcknowledge;
 
   public static final String SERIALIZED_NAME_BINARY_BROADCAST_MESSAGE = "BinaryBroadcastMessage";
   @SerializedName(SERIALIZED_NAME_BINARY_BROADCAST_MESSAGE)
+  @javax.annotation.Nullable
   private BinaryBroadcastMessage binaryBroadcastMessage;
 
   public static final String SERIALIZED_NAME_CHANNEL_MANAGEMENT = "ChannelManagement";
   @SerializedName(SERIALIZED_NAME_CHANNEL_MANAGEMENT)
+  @javax.annotation.Nullable
   private ChannelManagement channelManagement;
 
   public static final String SERIALIZED_NAME_COORDINATED_U_T_C_INQUIRY = "CoordinatedUTCInquiry";
   @SerializedName(SERIALIZED_NAME_COORDINATED_U_T_C_INQUIRY)
+  @javax.annotation.Nullable
   private CoordinatedUTCInquiry coordinatedUTCInquiry;
 
   public static final String SERIALIZED_NAME_DATA_LINK_MANAGEMENT_MESSAGE = "DataLinkManagementMessage";
   @SerializedName(SERIALIZED_NAME_DATA_LINK_MANAGEMENT_MESSAGE)
+  @javax.annotation.Nullable
   private DataLinkManagementMessage dataLinkManagementMessage;
 
   public static final String SERIALIZED_NAME_DATA_LINK_MANAGEMENT_MESSAGE_DATA = "DataLinkManagementMessageData";
   @SerializedName(SERIALIZED_NAME_DATA_LINK_MANAGEMENT_MESSAGE_DATA)
+  @javax.annotation.Nullable
   private DataLinkManagementMessageData dataLinkManagementMessageData = null;
 
   public static final String SERIALIZED_NAME_EXTENDED_CLASS_B_POSITION_REPORT = "ExtendedClassBPositionReport";
   @SerializedName(SERIALIZED_NAME_EXTENDED_CLASS_B_POSITION_REPORT)
+  @javax.annotation.Nullable
   private ExtendedClassBPositionReport extendedClassBPositionReport;
 
   public static final String SERIALIZED_NAME_GNSS_BROADCAST_BINARY_MESSAGE = "GnssBroadcastBinaryMessage";
   @SerializedName(SERIALIZED_NAME_GNSS_BROADCAST_BINARY_MESSAGE)
+  @javax.annotation.Nullable
   private GnssBroadcastBinaryMessage gnssBroadcastBinaryMessage;
 
   public static final String SERIALIZED_NAME_GROUP_ASSIGNMENT_COMMAND = "GroupAssignmentCommand";
   @SerializedName(SERIALIZED_NAME_GROUP_ASSIGNMENT_COMMAND)
+  @javax.annotation.Nullable
   private GroupAssignmentCommand groupAssignmentCommand;
 
   public static final String SERIALIZED_NAME_INTERROGATION = "Interrogation";
   @SerializedName(SERIALIZED_NAME_INTERROGATION)
+  @javax.annotation.Nullable
   private Interrogation interrogation;
 
   public static final String SERIALIZED_NAME_LONG_RANGE_AIS_BROADCAST_MESSAGE = "LongRangeAisBroadcastMessage";
   @SerializedName(SERIALIZED_NAME_LONG_RANGE_AIS_BROADCAST_MESSAGE)
+  @javax.annotation.Nullable
   private LongRangeAisBroadcastMessage longRangeAisBroadcastMessage;
 
   public static final String SERIALIZED_NAME_MULTI_SLOT_BINARY_MESSAGE = "MultiSlotBinaryMessage";
   @SerializedName(SERIALIZED_NAME_MULTI_SLOT_BINARY_MESSAGE)
+  @javax.annotation.Nullable
   private MultiSlotBinaryMessage multiSlotBinaryMessage;
 
   public static final String SERIALIZED_NAME_SAFETY_BROADCAST_MESSAGE = "SafetyBroadcastMessage";
   @SerializedName(SERIALIZED_NAME_SAFETY_BROADCAST_MESSAGE)
+  @javax.annotation.Nullable
   private SafetyBroadcastMessage safetyBroadcastMessage;
 
   public static final String SERIALIZED_NAME_SHIP_STATIC_DATA = "ShipStaticData";
   @SerializedName(SERIALIZED_NAME_SHIP_STATIC_DATA)
+  @javax.annotation.Nullable
   private ShipStaticData shipStaticData;
 
   public static final String SERIALIZED_NAME_SINGLE_SLOT_BINARY_MESSAGE = "SingleSlotBinaryMessage";
   @SerializedName(SERIALIZED_NAME_SINGLE_SLOT_BINARY_MESSAGE)
+  @javax.annotation.Nullable
   private SingleSlotBinaryMessage singleSlotBinaryMessage;
 
   public static final String SERIALIZED_NAME_STANDARD_CLASS_B_POSITION_REPORT = "StandardClassBPositionReport";
   @SerializedName(SERIALIZED_NAME_STANDARD_CLASS_B_POSITION_REPORT)
+  @javax.annotation.Nullable
   private StandardClassBPositionReport standardClassBPositionReport;
 
   public static final String SERIALIZED_NAME_STANDARD_SEARCH_AND_RESCUE_AIRCRAFT_REPORT = "StandardSearchAndRescueAircraftReport";
   @SerializedName(SERIALIZED_NAME_STANDARD_SEARCH_AND_RESCUE_AIRCRAFT_REPORT)
+  @javax.annotation.Nullable
   private StandardSearchAndRescueAircraftReport standardSearchAndRescueAircraftReport;
 
   public static final String SERIALIZED_NAME_STATIC_DATA_REPORT = "StaticDataReport";
   @SerializedName(SERIALIZED_NAME_STATIC_DATA_REPORT)
+  @javax.annotation.Nullable
   private StaticDataReport staticDataReport;
 
-  public AisStreamMessageMessage() { 
+  public AisStreamMessageMessage() {
   }
 
-  public AisStreamMessageMessage positionReport(PositionReport positionReport) {
-    
+  public AisStreamMessageMessage positionReport(@javax.annotation.Nullable PositionReport positionReport) {
     this.positionReport = positionReport;
     return this;
   }
 
-   /**
+  /**
    * Get positionReport
    * @return positionReport
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public PositionReport getPositionReport() {
     return positionReport;
   }
 
-
-  public void setPositionReport(PositionReport positionReport) {
+  public void setPositionReport(@javax.annotation.Nullable PositionReport positionReport) {
     this.positionReport = positionReport;
   }
 
 
-  public AisStreamMessageMessage unknownMessage(UnknownMessage unknownMessage) {
-    
+  public AisStreamMessageMessage unknownMessage(@javax.annotation.Nullable UnknownMessage unknownMessage) {
     this.unknownMessage = unknownMessage;
     return this;
   }
 
-   /**
+  /**
    * Get unknownMessage
    * @return unknownMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public UnknownMessage getUnknownMessage() {
     return unknownMessage;
   }
 
-
-  public void setUnknownMessage(UnknownMessage unknownMessage) {
+  public void setUnknownMessage(@javax.annotation.Nullable UnknownMessage unknownMessage) {
     this.unknownMessage = unknownMessage;
   }
 
 
-  public AisStreamMessageMessage addressedSafetyMessage(AddressedSafetyMessage addressedSafetyMessage) {
-    
+  public AisStreamMessageMessage addressedSafetyMessage(@javax.annotation.Nullable AddressedSafetyMessage addressedSafetyMessage) {
     this.addressedSafetyMessage = addressedSafetyMessage;
     return this;
   }
 
-   /**
+  /**
    * Get addressedSafetyMessage
    * @return addressedSafetyMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public AddressedSafetyMessage getAddressedSafetyMessage() {
     return addressedSafetyMessage;
   }
 
-
-  public void setAddressedSafetyMessage(AddressedSafetyMessage addressedSafetyMessage) {
+  public void setAddressedSafetyMessage(@javax.annotation.Nullable AddressedSafetyMessage addressedSafetyMessage) {
     this.addressedSafetyMessage = addressedSafetyMessage;
   }
 
 
-  public AisStreamMessageMessage addressedBinaryMessage(AddressedBinaryMessage addressedBinaryMessage) {
-    
+  public AisStreamMessageMessage addressedBinaryMessage(@javax.annotation.Nullable AddressedBinaryMessage addressedBinaryMessage) {
     this.addressedBinaryMessage = addressedBinaryMessage;
     return this;
   }
 
-   /**
+  /**
    * Get addressedBinaryMessage
    * @return addressedBinaryMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public AddressedBinaryMessage getAddressedBinaryMessage() {
     return addressedBinaryMessage;
   }
 
-
-  public void setAddressedBinaryMessage(AddressedBinaryMessage addressedBinaryMessage) {
+  public void setAddressedBinaryMessage(@javax.annotation.Nullable AddressedBinaryMessage addressedBinaryMessage) {
     this.addressedBinaryMessage = addressedBinaryMessage;
   }
 
 
-  public AisStreamMessageMessage aidsToNavigationReport(AidsToNavigationReport aidsToNavigationReport) {
-    
+  public AisStreamMessageMessage aidsToNavigationReport(@javax.annotation.Nullable AidsToNavigationReport aidsToNavigationReport) {
     this.aidsToNavigationReport = aidsToNavigationReport;
     return this;
   }
 
-   /**
+  /**
    * Get aidsToNavigationReport
    * @return aidsToNavigationReport
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public AidsToNavigationReport getAidsToNavigationReport() {
     return aidsToNavigationReport;
   }
 
-
-  public void setAidsToNavigationReport(AidsToNavigationReport aidsToNavigationReport) {
+  public void setAidsToNavigationReport(@javax.annotation.Nullable AidsToNavigationReport aidsToNavigationReport) {
     this.aidsToNavigationReport = aidsToNavigationReport;
   }
 
 
-  public AisStreamMessageMessage assignedModeCommand(AssignedModeCommand assignedModeCommand) {
-    
+  public AisStreamMessageMessage assignedModeCommand(@javax.annotation.Nullable AssignedModeCommand assignedModeCommand) {
     this.assignedModeCommand = assignedModeCommand;
     return this;
   }
 
-   /**
+  /**
    * Get assignedModeCommand
    * @return assignedModeCommand
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public AssignedModeCommand getAssignedModeCommand() {
     return assignedModeCommand;
   }
 
-
-  public void setAssignedModeCommand(AssignedModeCommand assignedModeCommand) {
+  public void setAssignedModeCommand(@javax.annotation.Nullable AssignedModeCommand assignedModeCommand) {
     this.assignedModeCommand = assignedModeCommand;
   }
 
 
-  public AisStreamMessageMessage baseStationReport(BaseStationReport baseStationReport) {
-    
+  public AisStreamMessageMessage baseStationReport(@javax.annotation.Nullable BaseStationReport baseStationReport) {
     this.baseStationReport = baseStationReport;
     return this;
   }
 
-   /**
+  /**
    * Get baseStationReport
    * @return baseStationReport
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public BaseStationReport getBaseStationReport() {
     return baseStationReport;
   }
 
-
-  public void setBaseStationReport(BaseStationReport baseStationReport) {
+  public void setBaseStationReport(@javax.annotation.Nullable BaseStationReport baseStationReport) {
     this.baseStationReport = baseStationReport;
   }
 
 
-  public AisStreamMessageMessage binaryAcknowledge(BinaryAcknowledge binaryAcknowledge) {
-    
+  public AisStreamMessageMessage binaryAcknowledge(@javax.annotation.Nullable BinaryAcknowledge binaryAcknowledge) {
     this.binaryAcknowledge = binaryAcknowledge;
     return this;
   }
 
-   /**
+  /**
    * Get binaryAcknowledge
    * @return binaryAcknowledge
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public BinaryAcknowledge getBinaryAcknowledge() {
     return binaryAcknowledge;
   }
 
-
-  public void setBinaryAcknowledge(BinaryAcknowledge binaryAcknowledge) {
+  public void setBinaryAcknowledge(@javax.annotation.Nullable BinaryAcknowledge binaryAcknowledge) {
     this.binaryAcknowledge = binaryAcknowledge;
   }
 
 
-  public AisStreamMessageMessage binaryBroadcastMessage(BinaryBroadcastMessage binaryBroadcastMessage) {
-    
+  public AisStreamMessageMessage binaryBroadcastMessage(@javax.annotation.Nullable BinaryBroadcastMessage binaryBroadcastMessage) {
     this.binaryBroadcastMessage = binaryBroadcastMessage;
     return this;
   }
 
-   /**
+  /**
    * Get binaryBroadcastMessage
    * @return binaryBroadcastMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public BinaryBroadcastMessage getBinaryBroadcastMessage() {
     return binaryBroadcastMessage;
   }
 
-
-  public void setBinaryBroadcastMessage(BinaryBroadcastMessage binaryBroadcastMessage) {
+  public void setBinaryBroadcastMessage(@javax.annotation.Nullable BinaryBroadcastMessage binaryBroadcastMessage) {
     this.binaryBroadcastMessage = binaryBroadcastMessage;
   }
 
 
-  public AisStreamMessageMessage channelManagement(ChannelManagement channelManagement) {
-    
+  public AisStreamMessageMessage channelManagement(@javax.annotation.Nullable ChannelManagement channelManagement) {
     this.channelManagement = channelManagement;
     return this;
   }
 
-   /**
+  /**
    * Get channelManagement
    * @return channelManagement
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public ChannelManagement getChannelManagement() {
     return channelManagement;
   }
 
-
-  public void setChannelManagement(ChannelManagement channelManagement) {
+  public void setChannelManagement(@javax.annotation.Nullable ChannelManagement channelManagement) {
     this.channelManagement = channelManagement;
   }
 
 
-  public AisStreamMessageMessage coordinatedUTCInquiry(CoordinatedUTCInquiry coordinatedUTCInquiry) {
-    
+  public AisStreamMessageMessage coordinatedUTCInquiry(@javax.annotation.Nullable CoordinatedUTCInquiry coordinatedUTCInquiry) {
     this.coordinatedUTCInquiry = coordinatedUTCInquiry;
     return this;
   }
 
-   /**
+  /**
    * Get coordinatedUTCInquiry
    * @return coordinatedUTCInquiry
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public CoordinatedUTCInquiry getCoordinatedUTCInquiry() {
     return coordinatedUTCInquiry;
   }
 
-
-  public void setCoordinatedUTCInquiry(CoordinatedUTCInquiry coordinatedUTCInquiry) {
+  public void setCoordinatedUTCInquiry(@javax.annotation.Nullable CoordinatedUTCInquiry coordinatedUTCInquiry) {
     this.coordinatedUTCInquiry = coordinatedUTCInquiry;
   }
 
 
-  public AisStreamMessageMessage dataLinkManagementMessage(DataLinkManagementMessage dataLinkManagementMessage) {
-    
+  public AisStreamMessageMessage dataLinkManagementMessage(@javax.annotation.Nullable DataLinkManagementMessage dataLinkManagementMessage) {
     this.dataLinkManagementMessage = dataLinkManagementMessage;
     return this;
   }
 
-   /**
+  /**
    * Get dataLinkManagementMessage
    * @return dataLinkManagementMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public DataLinkManagementMessage getDataLinkManagementMessage() {
     return dataLinkManagementMessage;
   }
 
-
-  public void setDataLinkManagementMessage(DataLinkManagementMessage dataLinkManagementMessage) {
+  public void setDataLinkManagementMessage(@javax.annotation.Nullable DataLinkManagementMessage dataLinkManagementMessage) {
     this.dataLinkManagementMessage = dataLinkManagementMessage;
   }
 
 
-  public AisStreamMessageMessage dataLinkManagementMessageData(DataLinkManagementMessageData dataLinkManagementMessageData) {
-    
+  public AisStreamMessageMessage dataLinkManagementMessageData(@javax.annotation.Nullable DataLinkManagementMessageData dataLinkManagementMessageData) {
     this.dataLinkManagementMessageData = dataLinkManagementMessageData;
     return this;
   }
 
-   /**
+  /**
    * Get dataLinkManagementMessageData
    * @return dataLinkManagementMessageData
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public DataLinkManagementMessageData getDataLinkManagementMessageData() {
     return dataLinkManagementMessageData;
   }
 
-
-  public void setDataLinkManagementMessageData(DataLinkManagementMessageData dataLinkManagementMessageData) {
+  public void setDataLinkManagementMessageData(@javax.annotation.Nullable DataLinkManagementMessageData dataLinkManagementMessageData) {
     this.dataLinkManagementMessageData = dataLinkManagementMessageData;
   }
 
 
-  public AisStreamMessageMessage extendedClassBPositionReport(ExtendedClassBPositionReport extendedClassBPositionReport) {
-    
+  public AisStreamMessageMessage extendedClassBPositionReport(@javax.annotation.Nullable ExtendedClassBPositionReport extendedClassBPositionReport) {
     this.extendedClassBPositionReport = extendedClassBPositionReport;
     return this;
   }
 
-   /**
+  /**
    * Get extendedClassBPositionReport
    * @return extendedClassBPositionReport
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public ExtendedClassBPositionReport getExtendedClassBPositionReport() {
     return extendedClassBPositionReport;
   }
 
-
-  public void setExtendedClassBPositionReport(ExtendedClassBPositionReport extendedClassBPositionReport) {
+  public void setExtendedClassBPositionReport(@javax.annotation.Nullable ExtendedClassBPositionReport extendedClassBPositionReport) {
     this.extendedClassBPositionReport = extendedClassBPositionReport;
   }
 
 
-  public AisStreamMessageMessage gnssBroadcastBinaryMessage(GnssBroadcastBinaryMessage gnssBroadcastBinaryMessage) {
-    
+  public AisStreamMessageMessage gnssBroadcastBinaryMessage(@javax.annotation.Nullable GnssBroadcastBinaryMessage gnssBroadcastBinaryMessage) {
     this.gnssBroadcastBinaryMessage = gnssBroadcastBinaryMessage;
     return this;
   }
 
-   /**
+  /**
    * Get gnssBroadcastBinaryMessage
    * @return gnssBroadcastBinaryMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public GnssBroadcastBinaryMessage getGnssBroadcastBinaryMessage() {
     return gnssBroadcastBinaryMessage;
   }
 
-
-  public void setGnssBroadcastBinaryMessage(GnssBroadcastBinaryMessage gnssBroadcastBinaryMessage) {
+  public void setGnssBroadcastBinaryMessage(@javax.annotation.Nullable GnssBroadcastBinaryMessage gnssBroadcastBinaryMessage) {
     this.gnssBroadcastBinaryMessage = gnssBroadcastBinaryMessage;
   }
 
 
-  public AisStreamMessageMessage groupAssignmentCommand(GroupAssignmentCommand groupAssignmentCommand) {
-    
+  public AisStreamMessageMessage groupAssignmentCommand(@javax.annotation.Nullable GroupAssignmentCommand groupAssignmentCommand) {
     this.groupAssignmentCommand = groupAssignmentCommand;
     return this;
   }
 
-   /**
+  /**
    * Get groupAssignmentCommand
    * @return groupAssignmentCommand
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public GroupAssignmentCommand getGroupAssignmentCommand() {
     return groupAssignmentCommand;
   }
 
-
-  public void setGroupAssignmentCommand(GroupAssignmentCommand groupAssignmentCommand) {
+  public void setGroupAssignmentCommand(@javax.annotation.Nullable GroupAssignmentCommand groupAssignmentCommand) {
     this.groupAssignmentCommand = groupAssignmentCommand;
   }
 
 
-  public AisStreamMessageMessage interrogation(Interrogation interrogation) {
-    
+  public AisStreamMessageMessage interrogation(@javax.annotation.Nullable Interrogation interrogation) {
     this.interrogation = interrogation;
     return this;
   }
 
-   /**
+  /**
    * Get interrogation
    * @return interrogation
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public Interrogation getInterrogation() {
     return interrogation;
   }
 
-
-  public void setInterrogation(Interrogation interrogation) {
+  public void setInterrogation(@javax.annotation.Nullable Interrogation interrogation) {
     this.interrogation = interrogation;
   }
 
 
-  public AisStreamMessageMessage longRangeAisBroadcastMessage(LongRangeAisBroadcastMessage longRangeAisBroadcastMessage) {
-    
+  public AisStreamMessageMessage longRangeAisBroadcastMessage(@javax.annotation.Nullable LongRangeAisBroadcastMessage longRangeAisBroadcastMessage) {
     this.longRangeAisBroadcastMessage = longRangeAisBroadcastMessage;
     return this;
   }
 
-   /**
+  /**
    * Get longRangeAisBroadcastMessage
    * @return longRangeAisBroadcastMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public LongRangeAisBroadcastMessage getLongRangeAisBroadcastMessage() {
     return longRangeAisBroadcastMessage;
   }
 
-
-  public void setLongRangeAisBroadcastMessage(LongRangeAisBroadcastMessage longRangeAisBroadcastMessage) {
+  public void setLongRangeAisBroadcastMessage(@javax.annotation.Nullable LongRangeAisBroadcastMessage longRangeAisBroadcastMessage) {
     this.longRangeAisBroadcastMessage = longRangeAisBroadcastMessage;
   }
 
 
-  public AisStreamMessageMessage multiSlotBinaryMessage(MultiSlotBinaryMessage multiSlotBinaryMessage) {
-    
+  public AisStreamMessageMessage multiSlotBinaryMessage(@javax.annotation.Nullable MultiSlotBinaryMessage multiSlotBinaryMessage) {
     this.multiSlotBinaryMessage = multiSlotBinaryMessage;
     return this;
   }
 
-   /**
+  /**
    * Get multiSlotBinaryMessage
    * @return multiSlotBinaryMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public MultiSlotBinaryMessage getMultiSlotBinaryMessage() {
     return multiSlotBinaryMessage;
   }
 
-
-  public void setMultiSlotBinaryMessage(MultiSlotBinaryMessage multiSlotBinaryMessage) {
+  public void setMultiSlotBinaryMessage(@javax.annotation.Nullable MultiSlotBinaryMessage multiSlotBinaryMessage) {
     this.multiSlotBinaryMessage = multiSlotBinaryMessage;
   }
 
 
-  public AisStreamMessageMessage safetyBroadcastMessage(SafetyBroadcastMessage safetyBroadcastMessage) {
-    
+  public AisStreamMessageMessage safetyBroadcastMessage(@javax.annotation.Nullable SafetyBroadcastMessage safetyBroadcastMessage) {
     this.safetyBroadcastMessage = safetyBroadcastMessage;
     return this;
   }
 
-   /**
+  /**
    * Get safetyBroadcastMessage
    * @return safetyBroadcastMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public SafetyBroadcastMessage getSafetyBroadcastMessage() {
     return safetyBroadcastMessage;
   }
 
-
-  public void setSafetyBroadcastMessage(SafetyBroadcastMessage safetyBroadcastMessage) {
+  public void setSafetyBroadcastMessage(@javax.annotation.Nullable SafetyBroadcastMessage safetyBroadcastMessage) {
     this.safetyBroadcastMessage = safetyBroadcastMessage;
   }
 
 
-  public AisStreamMessageMessage shipStaticData(ShipStaticData shipStaticData) {
-    
+  public AisStreamMessageMessage shipStaticData(@javax.annotation.Nullable ShipStaticData shipStaticData) {
     this.shipStaticData = shipStaticData;
     return this;
   }
 
-   /**
+  /**
    * Get shipStaticData
    * @return shipStaticData
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public ShipStaticData getShipStaticData() {
     return shipStaticData;
   }
 
-
-  public void setShipStaticData(ShipStaticData shipStaticData) {
+  public void setShipStaticData(@javax.annotation.Nullable ShipStaticData shipStaticData) {
     this.shipStaticData = shipStaticData;
   }
 
 
-  public AisStreamMessageMessage singleSlotBinaryMessage(SingleSlotBinaryMessage singleSlotBinaryMessage) {
-    
+  public AisStreamMessageMessage singleSlotBinaryMessage(@javax.annotation.Nullable SingleSlotBinaryMessage singleSlotBinaryMessage) {
     this.singleSlotBinaryMessage = singleSlotBinaryMessage;
     return this;
   }
 
-   /**
+  /**
    * Get singleSlotBinaryMessage
    * @return singleSlotBinaryMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public SingleSlotBinaryMessage getSingleSlotBinaryMessage() {
     return singleSlotBinaryMessage;
   }
 
-
-  public void setSingleSlotBinaryMessage(SingleSlotBinaryMessage singleSlotBinaryMessage) {
+  public void setSingleSlotBinaryMessage(@javax.annotation.Nullable SingleSlotBinaryMessage singleSlotBinaryMessage) {
     this.singleSlotBinaryMessage = singleSlotBinaryMessage;
   }
 
 
-  public AisStreamMessageMessage standardClassBPositionReport(StandardClassBPositionReport standardClassBPositionReport) {
-    
+  public AisStreamMessageMessage standardClassBPositionReport(@javax.annotation.Nullable StandardClassBPositionReport standardClassBPositionReport) {
     this.standardClassBPositionReport = standardClassBPositionReport;
     return this;
   }
 
-   /**
+  /**
    * Get standardClassBPositionReport
    * @return standardClassBPositionReport
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public StandardClassBPositionReport getStandardClassBPositionReport() {
     return standardClassBPositionReport;
   }
 
-
-  public void setStandardClassBPositionReport(StandardClassBPositionReport standardClassBPositionReport) {
+  public void setStandardClassBPositionReport(@javax.annotation.Nullable StandardClassBPositionReport standardClassBPositionReport) {
     this.standardClassBPositionReport = standardClassBPositionReport;
   }
 
 
-  public AisStreamMessageMessage standardSearchAndRescueAircraftReport(StandardSearchAndRescueAircraftReport standardSearchAndRescueAircraftReport) {
-    
+  public AisStreamMessageMessage standardSearchAndRescueAircraftReport(@javax.annotation.Nullable StandardSearchAndRescueAircraftReport standardSearchAndRescueAircraftReport) {
     this.standardSearchAndRescueAircraftReport = standardSearchAndRescueAircraftReport;
     return this;
   }
 
-   /**
+  /**
    * Get standardSearchAndRescueAircraftReport
    * @return standardSearchAndRescueAircraftReport
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public StandardSearchAndRescueAircraftReport getStandardSearchAndRescueAircraftReport() {
     return standardSearchAndRescueAircraftReport;
   }
 
-
-  public void setStandardSearchAndRescueAircraftReport(StandardSearchAndRescueAircraftReport standardSearchAndRescueAircraftReport) {
+  public void setStandardSearchAndRescueAircraftReport(@javax.annotation.Nullable StandardSearchAndRescueAircraftReport standardSearchAndRescueAircraftReport) {
     this.standardSearchAndRescueAircraftReport = standardSearchAndRescueAircraftReport;
   }
 
 
-  public AisStreamMessageMessage staticDataReport(StaticDataReport staticDataReport) {
-    
+  public AisStreamMessageMessage staticDataReport(@javax.annotation.Nullable StaticDataReport staticDataReport) {
     this.staticDataReport = staticDataReport;
     return this;
   }
 
-   /**
+  /**
    * Get staticDataReport
    * @return staticDataReport
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public StaticDataReport getStaticDataReport() {
     return staticDataReport;
   }
 
-
-  public void setStaticDataReport(StaticDataReport staticDataReport) {
+  public void setStaticDataReport(@javax.annotation.Nullable StaticDataReport staticDataReport) {
     this.staticDataReport = staticDataReport;
   }
 
@@ -832,10 +759,7 @@ public class AisStreamMessageMessage {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -844,154 +768,128 @@ public class AisStreamMessageMessage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("PositionReport");
-    openapiFields.add("UnknownMessage");
-    openapiFields.add("AddressedSafetyMessage");
-    openapiFields.add("AddressedBinaryMessage");
-    openapiFields.add("AidsToNavigationReport");
-    openapiFields.add("AssignedModeCommand");
-    openapiFields.add("BaseStationReport");
-    openapiFields.add("BinaryAcknowledge");
-    openapiFields.add("BinaryBroadcastMessage");
-    openapiFields.add("ChannelManagement");
-    openapiFields.add("CoordinatedUTCInquiry");
-    openapiFields.add("DataLinkManagementMessage");
-    openapiFields.add("DataLinkManagementMessageData");
-    openapiFields.add("ExtendedClassBPositionReport");
-    openapiFields.add("GnssBroadcastBinaryMessage");
-    openapiFields.add("GroupAssignmentCommand");
-    openapiFields.add("Interrogation");
-    openapiFields.add("LongRangeAisBroadcastMessage");
-    openapiFields.add("MultiSlotBinaryMessage");
-    openapiFields.add("SafetyBroadcastMessage");
-    openapiFields.add("ShipStaticData");
-    openapiFields.add("SingleSlotBinaryMessage");
-    openapiFields.add("StandardClassBPositionReport");
-    openapiFields.add("StandardSearchAndRescueAircraftReport");
-    openapiFields.add("StaticDataReport");
+    openapiFields = new HashSet<String>(Arrays.asList("PositionReport", "UnknownMessage", "AddressedSafetyMessage", "AddressedBinaryMessage", "AidsToNavigationReport", "AssignedModeCommand", "BaseStationReport", "BinaryAcknowledge", "BinaryBroadcastMessage", "ChannelManagement", "CoordinatedUTCInquiry", "DataLinkManagementMessage", "DataLinkManagementMessageData", "ExtendedClassBPositionReport", "GnssBroadcastBinaryMessage", "GroupAssignmentCommand", "Interrogation", "LongRangeAisBroadcastMessage", "MultiSlotBinaryMessage", "SafetyBroadcastMessage", "ShipStaticData", "SingleSlotBinaryMessage", "StandardClassBPositionReport", "StandardSearchAndRescueAircraftReport", "StaticDataReport"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AisStreamMessageMessage
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AisStreamMessageMessage.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AisStreamMessageMessage is not found in the empty JSON string", AisStreamMessageMessage.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AisStreamMessageMessage
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!AisStreamMessageMessage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AisStreamMessageMessage is not found in the empty JSON string", AisStreamMessageMessage.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AisStreamMessageMessage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AisStreamMessageMessage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AisStreamMessageMessage` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `PositionReport`
-      if (jsonObj.getAsJsonObject("PositionReport") != null) {
-        PositionReport.validateJsonObject(jsonObj.getAsJsonObject("PositionReport"));
+      if (jsonObj.get("PositionReport") != null && !jsonObj.get("PositionReport").isJsonNull()) {
+        PositionReport.validateJsonElement(jsonObj.get("PositionReport"));
       }
       // validate the optional field `UnknownMessage`
-      if (jsonObj.getAsJsonObject("UnknownMessage") != null) {
-        UnknownMessage.validateJsonObject(jsonObj.getAsJsonObject("UnknownMessage"));
+      if (jsonObj.get("UnknownMessage") != null && !jsonObj.get("UnknownMessage").isJsonNull()) {
+        UnknownMessage.validateJsonElement(jsonObj.get("UnknownMessage"));
       }
       // validate the optional field `AddressedSafetyMessage`
-      if (jsonObj.getAsJsonObject("AddressedSafetyMessage") != null) {
-        AddressedSafetyMessage.validateJsonObject(jsonObj.getAsJsonObject("AddressedSafetyMessage"));
+      if (jsonObj.get("AddressedSafetyMessage") != null && !jsonObj.get("AddressedSafetyMessage").isJsonNull()) {
+        AddressedSafetyMessage.validateJsonElement(jsonObj.get("AddressedSafetyMessage"));
       }
       // validate the optional field `AddressedBinaryMessage`
-      if (jsonObj.getAsJsonObject("AddressedBinaryMessage") != null) {
-        AddressedBinaryMessage.validateJsonObject(jsonObj.getAsJsonObject("AddressedBinaryMessage"));
+      if (jsonObj.get("AddressedBinaryMessage") != null && !jsonObj.get("AddressedBinaryMessage").isJsonNull()) {
+        AddressedBinaryMessage.validateJsonElement(jsonObj.get("AddressedBinaryMessage"));
       }
       // validate the optional field `AidsToNavigationReport`
-      if (jsonObj.getAsJsonObject("AidsToNavigationReport") != null) {
-        AidsToNavigationReport.validateJsonObject(jsonObj.getAsJsonObject("AidsToNavigationReport"));
+      if (jsonObj.get("AidsToNavigationReport") != null && !jsonObj.get("AidsToNavigationReport").isJsonNull()) {
+        AidsToNavigationReport.validateJsonElement(jsonObj.get("AidsToNavigationReport"));
       }
       // validate the optional field `AssignedModeCommand`
-      if (jsonObj.getAsJsonObject("AssignedModeCommand") != null) {
-        AssignedModeCommand.validateJsonObject(jsonObj.getAsJsonObject("AssignedModeCommand"));
+      if (jsonObj.get("AssignedModeCommand") != null && !jsonObj.get("AssignedModeCommand").isJsonNull()) {
+        AssignedModeCommand.validateJsonElement(jsonObj.get("AssignedModeCommand"));
       }
       // validate the optional field `BaseStationReport`
-      if (jsonObj.getAsJsonObject("BaseStationReport") != null) {
-        BaseStationReport.validateJsonObject(jsonObj.getAsJsonObject("BaseStationReport"));
+      if (jsonObj.get("BaseStationReport") != null && !jsonObj.get("BaseStationReport").isJsonNull()) {
+        BaseStationReport.validateJsonElement(jsonObj.get("BaseStationReport"));
       }
       // validate the optional field `BinaryAcknowledge`
-      if (jsonObj.getAsJsonObject("BinaryAcknowledge") != null) {
-        BinaryAcknowledge.validateJsonObject(jsonObj.getAsJsonObject("BinaryAcknowledge"));
+      if (jsonObj.get("BinaryAcknowledge") != null && !jsonObj.get("BinaryAcknowledge").isJsonNull()) {
+        BinaryAcknowledge.validateJsonElement(jsonObj.get("BinaryAcknowledge"));
       }
       // validate the optional field `BinaryBroadcastMessage`
-      if (jsonObj.getAsJsonObject("BinaryBroadcastMessage") != null) {
-        BinaryBroadcastMessage.validateJsonObject(jsonObj.getAsJsonObject("BinaryBroadcastMessage"));
+      if (jsonObj.get("BinaryBroadcastMessage") != null && !jsonObj.get("BinaryBroadcastMessage").isJsonNull()) {
+        BinaryBroadcastMessage.validateJsonElement(jsonObj.get("BinaryBroadcastMessage"));
       }
       // validate the optional field `ChannelManagement`
-      if (jsonObj.getAsJsonObject("ChannelManagement") != null) {
-        ChannelManagement.validateJsonObject(jsonObj.getAsJsonObject("ChannelManagement"));
+      if (jsonObj.get("ChannelManagement") != null && !jsonObj.get("ChannelManagement").isJsonNull()) {
+        ChannelManagement.validateJsonElement(jsonObj.get("ChannelManagement"));
       }
       // validate the optional field `CoordinatedUTCInquiry`
-      if (jsonObj.getAsJsonObject("CoordinatedUTCInquiry") != null) {
-        CoordinatedUTCInquiry.validateJsonObject(jsonObj.getAsJsonObject("CoordinatedUTCInquiry"));
+      if (jsonObj.get("CoordinatedUTCInquiry") != null && !jsonObj.get("CoordinatedUTCInquiry").isJsonNull()) {
+        CoordinatedUTCInquiry.validateJsonElement(jsonObj.get("CoordinatedUTCInquiry"));
       }
       // validate the optional field `DataLinkManagementMessage`
-      if (jsonObj.getAsJsonObject("DataLinkManagementMessage") != null) {
-        DataLinkManagementMessage.validateJsonObject(jsonObj.getAsJsonObject("DataLinkManagementMessage"));
+      if (jsonObj.get("DataLinkManagementMessage") != null && !jsonObj.get("DataLinkManagementMessage").isJsonNull()) {
+        DataLinkManagementMessage.validateJsonElement(jsonObj.get("DataLinkManagementMessage"));
       }
       // validate the optional field `ExtendedClassBPositionReport`
-      if (jsonObj.getAsJsonObject("ExtendedClassBPositionReport") != null) {
-        ExtendedClassBPositionReport.validateJsonObject(jsonObj.getAsJsonObject("ExtendedClassBPositionReport"));
+      if (jsonObj.get("ExtendedClassBPositionReport") != null && !jsonObj.get("ExtendedClassBPositionReport").isJsonNull()) {
+        ExtendedClassBPositionReport.validateJsonElement(jsonObj.get("ExtendedClassBPositionReport"));
       }
       // validate the optional field `GnssBroadcastBinaryMessage`
-      if (jsonObj.getAsJsonObject("GnssBroadcastBinaryMessage") != null) {
-        GnssBroadcastBinaryMessage.validateJsonObject(jsonObj.getAsJsonObject("GnssBroadcastBinaryMessage"));
+      if (jsonObj.get("GnssBroadcastBinaryMessage") != null && !jsonObj.get("GnssBroadcastBinaryMessage").isJsonNull()) {
+        GnssBroadcastBinaryMessage.validateJsonElement(jsonObj.get("GnssBroadcastBinaryMessage"));
       }
       // validate the optional field `GroupAssignmentCommand`
-      if (jsonObj.getAsJsonObject("GroupAssignmentCommand") != null) {
-        GroupAssignmentCommand.validateJsonObject(jsonObj.getAsJsonObject("GroupAssignmentCommand"));
+      if (jsonObj.get("GroupAssignmentCommand") != null && !jsonObj.get("GroupAssignmentCommand").isJsonNull()) {
+        GroupAssignmentCommand.validateJsonElement(jsonObj.get("GroupAssignmentCommand"));
       }
       // validate the optional field `Interrogation`
-      if (jsonObj.getAsJsonObject("Interrogation") != null) {
-        Interrogation.validateJsonObject(jsonObj.getAsJsonObject("Interrogation"));
+      if (jsonObj.get("Interrogation") != null && !jsonObj.get("Interrogation").isJsonNull()) {
+        Interrogation.validateJsonElement(jsonObj.get("Interrogation"));
       }
       // validate the optional field `LongRangeAisBroadcastMessage`
-      if (jsonObj.getAsJsonObject("LongRangeAisBroadcastMessage") != null) {
-        LongRangeAisBroadcastMessage.validateJsonObject(jsonObj.getAsJsonObject("LongRangeAisBroadcastMessage"));
+      if (jsonObj.get("LongRangeAisBroadcastMessage") != null && !jsonObj.get("LongRangeAisBroadcastMessage").isJsonNull()) {
+        LongRangeAisBroadcastMessage.validateJsonElement(jsonObj.get("LongRangeAisBroadcastMessage"));
       }
       // validate the optional field `MultiSlotBinaryMessage`
-      if (jsonObj.getAsJsonObject("MultiSlotBinaryMessage") != null) {
-        MultiSlotBinaryMessage.validateJsonObject(jsonObj.getAsJsonObject("MultiSlotBinaryMessage"));
+      if (jsonObj.get("MultiSlotBinaryMessage") != null && !jsonObj.get("MultiSlotBinaryMessage").isJsonNull()) {
+        MultiSlotBinaryMessage.validateJsonElement(jsonObj.get("MultiSlotBinaryMessage"));
       }
       // validate the optional field `SafetyBroadcastMessage`
-      if (jsonObj.getAsJsonObject("SafetyBroadcastMessage") != null) {
-        SafetyBroadcastMessage.validateJsonObject(jsonObj.getAsJsonObject("SafetyBroadcastMessage"));
+      if (jsonObj.get("SafetyBroadcastMessage") != null && !jsonObj.get("SafetyBroadcastMessage").isJsonNull()) {
+        SafetyBroadcastMessage.validateJsonElement(jsonObj.get("SafetyBroadcastMessage"));
       }
       // validate the optional field `ShipStaticData`
-      if (jsonObj.getAsJsonObject("ShipStaticData") != null) {
-        ShipStaticData.validateJsonObject(jsonObj.getAsJsonObject("ShipStaticData"));
+      if (jsonObj.get("ShipStaticData") != null && !jsonObj.get("ShipStaticData").isJsonNull()) {
+        ShipStaticData.validateJsonElement(jsonObj.get("ShipStaticData"));
       }
       // validate the optional field `SingleSlotBinaryMessage`
-      if (jsonObj.getAsJsonObject("SingleSlotBinaryMessage") != null) {
-        SingleSlotBinaryMessage.validateJsonObject(jsonObj.getAsJsonObject("SingleSlotBinaryMessage"));
+      if (jsonObj.get("SingleSlotBinaryMessage") != null && !jsonObj.get("SingleSlotBinaryMessage").isJsonNull()) {
+        SingleSlotBinaryMessage.validateJsonElement(jsonObj.get("SingleSlotBinaryMessage"));
       }
       // validate the optional field `StandardClassBPositionReport`
-      if (jsonObj.getAsJsonObject("StandardClassBPositionReport") != null) {
-        StandardClassBPositionReport.validateJsonObject(jsonObj.getAsJsonObject("StandardClassBPositionReport"));
+      if (jsonObj.get("StandardClassBPositionReport") != null && !jsonObj.get("StandardClassBPositionReport").isJsonNull()) {
+        StandardClassBPositionReport.validateJsonElement(jsonObj.get("StandardClassBPositionReport"));
       }
       // validate the optional field `StandardSearchAndRescueAircraftReport`
-      if (jsonObj.getAsJsonObject("StandardSearchAndRescueAircraftReport") != null) {
-        StandardSearchAndRescueAircraftReport.validateJsonObject(jsonObj.getAsJsonObject("StandardSearchAndRescueAircraftReport"));
+      if (jsonObj.get("StandardSearchAndRescueAircraftReport") != null && !jsonObj.get("StandardSearchAndRescueAircraftReport").isJsonNull()) {
+        StandardSearchAndRescueAircraftReport.validateJsonElement(jsonObj.get("StandardSearchAndRescueAircraftReport"));
       }
       // validate the optional field `StaticDataReport`
-      if (jsonObj.getAsJsonObject("StaticDataReport") != null) {
-        StaticDataReport.validateJsonObject(jsonObj.getAsJsonObject("StaticDataReport"));
+      if (jsonObj.get("StaticDataReport") != null && !jsonObj.get("StaticDataReport").isJsonNull()) {
+        StaticDataReport.validateJsonElement(jsonObj.get("StaticDataReport"));
       }
   }
 
@@ -1015,31 +913,31 @@ public class AisStreamMessageMessage {
 
            @Override
            public AisStreamMessageMessage read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of AisStreamMessageMessage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AisStreamMessageMessage
-  * @throws IOException if the JSON string is invalid with respect to AisStreamMessageMessage
-  */
+  /**
+   * Create an instance of AisStreamMessageMessage given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AisStreamMessageMessage
+   * @throws IOException if the JSON string is invalid with respect to AisStreamMessageMessage
+   */
   public static AisStreamMessageMessage fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AisStreamMessageMessage.class);
   }
 
- /**
-  * Convert an instance of AisStreamMessageMessage to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AisStreamMessageMessage to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

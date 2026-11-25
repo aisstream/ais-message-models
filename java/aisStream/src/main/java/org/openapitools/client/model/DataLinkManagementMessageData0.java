@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,15 +29,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -47,142 +49,127 @@ import org.openapitools.client.JSON;
 /**
  * DataLinkManagementMessageData0
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class DataLinkManagementMessageData0 {
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_OFFSET = "Offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)
+  @javax.annotation.Nonnull
   private Integer offset;
 
   public static final String SERIALIZED_NAME_INTEGER_OF_SLOTS = "integerOfSlots";
   @SerializedName(SERIALIZED_NAME_INTEGER_OF_SLOTS)
+  @javax.annotation.Nonnull
   private Integer integerOfSlots;
 
   public static final String SERIALIZED_NAME_TIME_OUT = "TimeOut";
   @SerializedName(SERIALIZED_NAME_TIME_OUT)
+  @javax.annotation.Nonnull
   private Integer timeOut;
 
   public static final String SERIALIZED_NAME_INCREMENT = "Increment";
   @SerializedName(SERIALIZED_NAME_INCREMENT)
+  @javax.annotation.Nonnull
   private Integer increment;
 
-  public DataLinkManagementMessageData0() { 
+  public DataLinkManagementMessageData0() {
   }
 
-  public DataLinkManagementMessageData0 valid(Boolean valid) {
-    
+  public DataLinkManagementMessageData0 valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public DataLinkManagementMessageData0 offset(Integer offset) {
-    
+  public DataLinkManagementMessageData0 offset(@javax.annotation.Nonnull Integer offset) {
     this.offset = offset;
     return this;
   }
 
-   /**
+  /**
    * Get offset
    * @return offset
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getOffset() {
     return offset;
   }
 
-
-  public void setOffset(Integer offset) {
+  public void setOffset(@javax.annotation.Nonnull Integer offset) {
     this.offset = offset;
   }
 
 
-  public DataLinkManagementMessageData0 integerOfSlots(Integer integerOfSlots) {
-    
+  public DataLinkManagementMessageData0 integerOfSlots(@javax.annotation.Nonnull Integer integerOfSlots) {
     this.integerOfSlots = integerOfSlots;
     return this;
   }
 
-   /**
+  /**
    * Get integerOfSlots
    * @return integerOfSlots
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getIntegerOfSlots() {
     return integerOfSlots;
   }
 
-
-  public void setIntegerOfSlots(Integer integerOfSlots) {
+  public void setIntegerOfSlots(@javax.annotation.Nonnull Integer integerOfSlots) {
     this.integerOfSlots = integerOfSlots;
   }
 
 
-  public DataLinkManagementMessageData0 timeOut(Integer timeOut) {
-    
+  public DataLinkManagementMessageData0 timeOut(@javax.annotation.Nonnull Integer timeOut) {
     this.timeOut = timeOut;
     return this;
   }
 
-   /**
+  /**
    * Get timeOut
    * @return timeOut
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getTimeOut() {
     return timeOut;
   }
 
-
-  public void setTimeOut(Integer timeOut) {
+  public void setTimeOut(@javax.annotation.Nonnull Integer timeOut) {
     this.timeOut = timeOut;
   }
 
 
-  public DataLinkManagementMessageData0 increment(Integer increment) {
-    
+  public DataLinkManagementMessageData0 increment(@javax.annotation.Nonnull Integer increment) {
     this.increment = increment;
     return this;
   }
 
-   /**
+  /**
    * Get increment
    * @return increment
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getIncrement() {
     return increment;
   }
 
-
-  public void setIncrement(Integer increment) {
+  public void setIncrement(@javax.annotation.Nonnull Integer increment) {
     this.increment = increment;
   }
 
@@ -227,10 +214,7 @@ public class DataLinkManagementMessageData0 {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -239,51 +223,40 @@ public class DataLinkManagementMessageData0 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Valid");
-    openapiFields.add("Offset");
-    openapiFields.add("integerOfSlots");
-    openapiFields.add("TimeOut");
-    openapiFields.add("Increment");
+    openapiFields = new HashSet<String>(Arrays.asList("Valid", "Offset", "integerOfSlots", "TimeOut", "Increment"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("Offset");
-    openapiRequiredFields.add("integerOfSlots");
-    openapiRequiredFields.add("TimeOut");
-    openapiRequiredFields.add("Increment");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Valid", "Offset", "integerOfSlots", "TimeOut", "Increment"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to DataLinkManagementMessageData0
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (DataLinkManagementMessageData0.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DataLinkManagementMessageData0 is not found in the empty JSON string", DataLinkManagementMessageData0.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DataLinkManagementMessageData0
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DataLinkManagementMessageData0.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in DataLinkManagementMessageData0 is not found in the empty JSON string", DataLinkManagementMessageData0.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DataLinkManagementMessageData0.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DataLinkManagementMessageData0` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DataLinkManagementMessageData0` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DataLinkManagementMessageData0.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -306,31 +279,31 @@ public class DataLinkManagementMessageData0 {
 
            @Override
            public DataLinkManagementMessageData0 read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of DataLinkManagementMessageData0 given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DataLinkManagementMessageData0
-  * @throws IOException if the JSON string is invalid with respect to DataLinkManagementMessageData0
-  */
+  /**
+   * Create an instance of DataLinkManagementMessageData0 given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DataLinkManagementMessageData0
+   * @throws IOException if the JSON string is invalid with respect to DataLinkManagementMessageData0
+   */
   public static DataLinkManagementMessageData0 fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DataLinkManagementMessageData0.class);
   }
 
- /**
-  * Convert an instance of DataLinkManagementMessageData0 to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DataLinkManagementMessageData0 to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

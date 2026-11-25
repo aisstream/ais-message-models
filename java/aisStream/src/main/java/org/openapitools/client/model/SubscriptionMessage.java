@@ -14,16 +14,14 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.AisMessageTypes;
 
@@ -34,15 +32,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -50,80 +52,78 @@ import org.openapitools.client.JSON;
 /**
  * SubscriptionMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class SubscriptionMessage {
   public static final String SERIALIZED_NAME_AP_I_KEY = "APIKey";
   @SerializedName(SERIALIZED_NAME_AP_I_KEY)
+  @javax.annotation.Nonnull
   private String apIKey;
 
   public static final String SERIALIZED_NAME_BOUNDING_BOXES = "BoundingBoxes";
   @SerializedName(SERIALIZED_NAME_BOUNDING_BOXES)
+  @javax.annotation.Nonnull
   private List<List<List<Double>>> boundingBoxes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FILTERS_SHIP_M_M_S_I = "FiltersShipMMSI";
   @SerializedName(SERIALIZED_NAME_FILTERS_SHIP_M_M_S_I)
-  private List<String> filtersShipMMSI = null;
+  @javax.annotation.Nullable
+  private List<String> filtersShipMMSI = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FILTER_MESSAGE_TYPES = "FilterMessageTypes";
   @SerializedName(SERIALIZED_NAME_FILTER_MESSAGE_TYPES)
-  private List<AisMessageTypes> filterMessageTypes = null;
+  @javax.annotation.Nullable
+  private List<AisMessageTypes> filterMessageTypes = new ArrayList<>();
 
-  public SubscriptionMessage() { 
+  public SubscriptionMessage() {
   }
 
-  public SubscriptionMessage apIKey(String apIKey) {
-    
+  public SubscriptionMessage apIKey(@javax.annotation.Nonnull String apIKey) {
     this.apIKey = apIKey;
     return this;
   }
 
-   /**
+  /**
    * Get apIKey
    * @return apIKey
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public String getApIKey() {
     return apIKey;
   }
 
-
-  public void setApIKey(String apIKey) {
+  public void setApIKey(@javax.annotation.Nonnull String apIKey) {
     this.apIKey = apIKey;
   }
 
 
-  public SubscriptionMessage boundingBoxes(List<List<List<Double>>> boundingBoxes) {
-    
+  public SubscriptionMessage boundingBoxes(@javax.annotation.Nonnull List<List<List<Double>>> boundingBoxes) {
     this.boundingBoxes = boundingBoxes;
     return this;
   }
 
   public SubscriptionMessage addBoundingBoxesItem(List<List<Double>> boundingBoxesItem) {
+    if (this.boundingBoxes == null) {
+      this.boundingBoxes = new ArrayList<>();
+    }
     this.boundingBoxes.add(boundingBoxesItem);
     return this;
   }
 
-   /**
+  /**
    * Get boundingBoxes
    * @return boundingBoxes
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public List<List<List<Double>>> getBoundingBoxes() {
     return boundingBoxes;
   }
 
-
-  public void setBoundingBoxes(List<List<List<Double>>> boundingBoxes) {
+  public void setBoundingBoxes(@javax.annotation.Nonnull List<List<List<Double>>> boundingBoxes) {
     this.boundingBoxes = boundingBoxes;
   }
 
 
-  public SubscriptionMessage filtersShipMMSI(List<String> filtersShipMMSI) {
-    
+  public SubscriptionMessage filtersShipMMSI(@javax.annotation.Nullable List<String> filtersShipMMSI) {
     this.filtersShipMMSI = filtersShipMMSI;
     return this;
   }
@@ -136,25 +136,21 @@ public class SubscriptionMessage {
     return this;
   }
 
-   /**
+  /**
    * Get filtersShipMMSI
    * @return filtersShipMMSI
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public List<String> getFiltersShipMMSI() {
     return filtersShipMMSI;
   }
 
-
-  public void setFiltersShipMMSI(List<String> filtersShipMMSI) {
+  public void setFiltersShipMMSI(@javax.annotation.Nullable List<String> filtersShipMMSI) {
     this.filtersShipMMSI = filtersShipMMSI;
   }
 
 
-  public SubscriptionMessage filterMessageTypes(List<AisMessageTypes> filterMessageTypes) {
-    
+  public SubscriptionMessage filterMessageTypes(@javax.annotation.Nullable List<AisMessageTypes> filterMessageTypes) {
     this.filterMessageTypes = filterMessageTypes;
     return this;
   }
@@ -167,19 +163,16 @@ public class SubscriptionMessage {
     return this;
   }
 
-   /**
+  /**
    * Get filterMessageTypes
    * @return filterMessageTypes
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public List<AisMessageTypes> getFilterMessageTypes() {
     return filterMessageTypes;
   }
 
-
-  public void setFilterMessageTypes(List<AisMessageTypes> filterMessageTypes) {
+  public void setFilterMessageTypes(@javax.annotation.Nullable List<AisMessageTypes> filterMessageTypes) {
     this.filterMessageTypes = filterMessageTypes;
   }
 
@@ -222,10 +215,7 @@ public class SubscriptionMessage {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -234,61 +224,56 @@ public class SubscriptionMessage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("APIKey");
-    openapiFields.add("BoundingBoxes");
-    openapiFields.add("FiltersShipMMSI");
-    openapiFields.add("FilterMessageTypes");
+    openapiFields = new HashSet<String>(Arrays.asList("APIKey", "BoundingBoxes", "FiltersShipMMSI", "FilterMessageTypes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("APIKey");
-    openapiRequiredFields.add("BoundingBoxes");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("APIKey", "BoundingBoxes"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SubscriptionMessage
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SubscriptionMessage.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SubscriptionMessage is not found in the empty JSON string", SubscriptionMessage.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubscriptionMessage
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SubscriptionMessage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SubscriptionMessage is not found in the empty JSON string", SubscriptionMessage.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SubscriptionMessage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SubscriptionMessage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SubscriptionMessage` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SubscriptionMessage.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("APIKey") != null && !jsonObj.get("APIKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `APIKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("APIKey").toString()));
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("APIKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `APIKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("APIKey").toString()));
       }
-      // ensure the json data is an array
-      if (jsonObj.get("BoundingBoxes") != null && !jsonObj.get("BoundingBoxes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `BoundingBoxes` to be an array in the JSON string but got `%s`", jsonObj.get("BoundingBoxes").toString()));
+      // ensure the required json array is present
+      if (jsonObj.get("BoundingBoxes") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("BoundingBoxes").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `BoundingBoxes` to be an array in the JSON string but got `%s`", jsonObj.get("BoundingBoxes").toString()));
       }
-      // ensure the json data is an array
-      if (jsonObj.get("FiltersShipMMSI") != null && !jsonObj.get("FiltersShipMMSI").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `FiltersShipMMSI` to be an array in the JSON string but got `%s`", jsonObj.get("FiltersShipMMSI").toString()));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("FiltersShipMMSI") != null && !jsonObj.get("FiltersShipMMSI").isJsonNull() && !jsonObj.get("FiltersShipMMSI").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `FiltersShipMMSI` to be an array in the JSON string but got `%s`", jsonObj.get("FiltersShipMMSI").toString()));
       }
-      // ensure the json data is an array
-      if (jsonObj.get("FilterMessageTypes") != null && !jsonObj.get("FilterMessageTypes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `FilterMessageTypes` to be an array in the JSON string but got `%s`", jsonObj.get("FilterMessageTypes").toString()));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("FilterMessageTypes") != null && !jsonObj.get("FilterMessageTypes").isJsonNull() && !jsonObj.get("FilterMessageTypes").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `FilterMessageTypes` to be an array in the JSON string but got `%s`", jsonObj.get("FilterMessageTypes").toString()));
       }
   }
 
@@ -312,31 +297,31 @@ public class SubscriptionMessage {
 
            @Override
            public SubscriptionMessage read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of SubscriptionMessage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubscriptionMessage
-  * @throws IOException if the JSON string is invalid with respect to SubscriptionMessage
-  */
+  /**
+   * Create an instance of SubscriptionMessage given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubscriptionMessage
+   * @throws IOException if the JSON string is invalid with respect to SubscriptionMessage
+   */
   public static SubscriptionMessage fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubscriptionMessage.class);
   }
 
- /**
-  * Convert an instance of SubscriptionMessage to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SubscriptionMessage to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

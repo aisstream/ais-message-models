@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the StaticDataReportReportB type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StaticDataReportReportB{}
 
 // StaticDataReportReportB struct for StaticDataReportReportB
 type StaticDataReportReportB struct {
@@ -26,6 +31,8 @@ type StaticDataReportReportB struct {
 	FixType int32 `json:"FixType"`
 	Spare int32 `json:"Spare"`
 }
+
+type _StaticDataReportReportB StaticDataReportReportB
 
 // NewStaticDataReportReportB instantiates a new StaticDataReportReportB object
 // This constructor will assign default values to properties that have it defined,
@@ -270,35 +277,70 @@ func (o *StaticDataReportReportB) SetSpare(v int32) {
 }
 
 func (o StaticDataReportReportB) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["ShipType"] = o.ShipType
-	}
-	if true {
-		toSerialize["VendorIDName"] = o.VendorIDName
-	}
-	if true {
-		toSerialize["VenderIDModel"] = o.VenderIDModel
-	}
-	if true {
-		toSerialize["VenderIDSerial"] = o.VenderIDSerial
-	}
-	if true {
-		toSerialize["CallSign"] = o.CallSign
-	}
-	if true {
-		toSerialize["Dimension"] = o.Dimension
-	}
-	if true {
-		toSerialize["FixType"] = o.FixType
-	}
-	if true {
-		toSerialize["Spare"] = o.Spare
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StaticDataReportReportB) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["Valid"] = o.Valid
+	toSerialize["ShipType"] = o.ShipType
+	toSerialize["VendorIDName"] = o.VendorIDName
+	toSerialize["VenderIDModel"] = o.VenderIDModel
+	toSerialize["VenderIDSerial"] = o.VenderIDSerial
+	toSerialize["CallSign"] = o.CallSign
+	toSerialize["Dimension"] = o.Dimension
+	toSerialize["FixType"] = o.FixType
+	toSerialize["Spare"] = o.Spare
+	return toSerialize, nil
+}
+
+func (o *StaticDataReportReportB) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"Valid",
+		"ShipType",
+		"VendorIDName",
+		"VenderIDModel",
+		"VenderIDSerial",
+		"CallSign",
+		"Dimension",
+		"FixType",
+		"Spare",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varStaticDataReportReportB := _StaticDataReportReportB{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varStaticDataReportReportB)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StaticDataReportReportB(varStaticDataReportReportB)
+
+	return err
 }
 
 type NullableStaticDataReportReportB struct {

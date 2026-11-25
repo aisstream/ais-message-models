@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { ShipStaticDataDimension } from './ShipStaticDataDimension';
+import { ShipStaticDataDimension } from '../models/ShipStaticDataDimension';
 import { HttpFile } from '../http/http';
 
 export class AidsToNavigationReport {
@@ -35,6 +35,8 @@ export class AidsToNavigationReport {
     'nameExtension': string;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -159,4 +161,3 @@ export class AidsToNavigationReport {
     public constructor() {
     }
 }
-

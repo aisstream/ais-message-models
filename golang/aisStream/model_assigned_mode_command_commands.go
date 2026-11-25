@@ -12,13 +12,20 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the AssignedModeCommandCommands type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AssignedModeCommandCommands{}
 
 // AssignedModeCommandCommands struct for AssignedModeCommandCommands
 type AssignedModeCommandCommands struct {
 	Var0 AssignedModeCommandCommands0 `json:"0"`
 	Var1 AssignedModeCommandCommands0 `json:"1"`
 }
+
+type _AssignedModeCommandCommands AssignedModeCommandCommands
 
 // NewAssignedModeCommandCommands instantiates a new AssignedModeCommandCommands object
 // This constructor will assign default values to properties that have it defined,
@@ -88,14 +95,56 @@ func (o *AssignedModeCommandCommands) SetVar1(v AssignedModeCommandCommands0) {
 }
 
 func (o AssignedModeCommandCommands) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["0"] = o.Var0
-	}
-	if true {
-		toSerialize["1"] = o.Var1
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AssignedModeCommandCommands) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["0"] = o.Var0
+	toSerialize["1"] = o.Var1
+	return toSerialize, nil
+}
+
+func (o *AssignedModeCommandCommands) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"0",
+		"1",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAssignedModeCommandCommands := _AssignedModeCommandCommands{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varAssignedModeCommandCommands)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AssignedModeCommandCommands(varAssignedModeCommandCommands)
+
+	return err
 }
 
 type NullableAssignedModeCommandCommands struct {

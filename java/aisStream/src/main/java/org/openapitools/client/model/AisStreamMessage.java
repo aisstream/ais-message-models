@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.client.model.AisMessageTypes;
 import org.openapitools.client.model.AisStreamMessageMessage;
 
@@ -33,15 +31,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -49,88 +51,79 @@ import org.openapitools.client.JSON;
 /**
  * AisStreamMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class AisStreamMessage {
   public static final String SERIALIZED_NAME_META_DATA = "MetaData";
   @SerializedName(SERIALIZED_NAME_META_DATA)
+  @javax.annotation.Nonnull
   private Object metaData;
 
   public static final String SERIALIZED_NAME_MESSAGE_TYPE = "MessageType";
   @SerializedName(SERIALIZED_NAME_MESSAGE_TYPE)
+  @javax.annotation.Nonnull
   private AisMessageTypes messageType;
 
   public static final String SERIALIZED_NAME_MESSAGE = "Message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nonnull
   private AisStreamMessageMessage message;
 
-  public AisStreamMessage() { 
+  public AisStreamMessage() {
   }
 
-  public AisStreamMessage metaData(Object metaData) {
-    
+  public AisStreamMessage metaData(@javax.annotation.Nonnull Object metaData) {
     this.metaData = metaData;
     return this;
   }
 
-   /**
+  /**
    * Get metaData
    * @return metaData
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Object getMetaData() {
     return metaData;
   }
 
-
-  public void setMetaData(Object metaData) {
+  public void setMetaData(@javax.annotation.Nonnull Object metaData) {
     this.metaData = metaData;
   }
 
 
-  public AisStreamMessage messageType(AisMessageTypes messageType) {
-    
+  public AisStreamMessage messageType(@javax.annotation.Nonnull AisMessageTypes messageType) {
     this.messageType = messageType;
     return this;
   }
 
-   /**
+  /**
    * Get messageType
    * @return messageType
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public AisMessageTypes getMessageType() {
     return messageType;
   }
 
-
-  public void setMessageType(AisMessageTypes messageType) {
+  public void setMessageType(@javax.annotation.Nonnull AisMessageTypes messageType) {
     this.messageType = messageType;
   }
 
 
-  public AisStreamMessage message(AisStreamMessageMessage message) {
-    
+  public AisStreamMessage message(@javax.annotation.Nonnull AisStreamMessageMessage message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Get message
    * @return message
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public AisStreamMessageMessage getMessage() {
     return message;
   }
 
-
-  public void setMessage(AisStreamMessageMessage message) {
+  public void setMessage(@javax.annotation.Nonnull AisStreamMessageMessage message) {
     this.message = message;
   }
 
@@ -171,10 +164,7 @@ public class AisStreamMessage {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -183,51 +173,44 @@ public class AisStreamMessage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MetaData");
-    openapiFields.add("MessageType");
-    openapiFields.add("Message");
+    openapiFields = new HashSet<String>(Arrays.asList("MetaData", "MessageType", "Message"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MetaData");
-    openapiRequiredFields.add("MessageType");
-    openapiRequiredFields.add("Message");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MetaData", "MessageType", "Message"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AisStreamMessage
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AisStreamMessage.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AisStreamMessage is not found in the empty JSON string", AisStreamMessage.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AisStreamMessage
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!AisStreamMessage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AisStreamMessage is not found in the empty JSON string", AisStreamMessage.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AisStreamMessage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AisStreamMessage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AisStreamMessage` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AisStreamMessage.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      // validate the optional field `Message`
-      if (jsonObj.getAsJsonObject("Message") != null) {
-        AisStreamMessageMessage.validateJsonObject(jsonObj.getAsJsonObject("Message"));
-      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `MessageType`
+      AisMessageTypes.validateJsonElement(jsonObj.get("MessageType"));
+      // validate the required field `Message`
+      AisStreamMessageMessage.validateJsonElement(jsonObj.get("Message"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -250,31 +233,31 @@ public class AisStreamMessage {
 
            @Override
            public AisStreamMessage read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of AisStreamMessage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AisStreamMessage
-  * @throws IOException if the JSON string is invalid with respect to AisStreamMessage
-  */
+  /**
+   * Create an instance of AisStreamMessage given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AisStreamMessage
+   * @throws IOException if the JSON string is invalid with respect to AisStreamMessage
+   */
   public static AisStreamMessage fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AisStreamMessage.class);
   }
 
- /**
-  * Convert an instance of AisStreamMessage to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AisStreamMessage to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

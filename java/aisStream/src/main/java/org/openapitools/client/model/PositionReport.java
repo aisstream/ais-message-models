@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,15 +29,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -47,466 +49,415 @@ import org.openapitools.client.JSON;
 /**
  * PositionReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class PositionReport {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nonnull
   private Integer messageID;
 
   public static final String SERIALIZED_NAME_REPEAT_INDICATOR = "RepeatIndicator";
   @SerializedName(SERIALIZED_NAME_REPEAT_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer repeatIndicator;
 
   public static final String SERIALIZED_NAME_USER_I_D = "UserID";
   @SerializedName(SERIALIZED_NAME_USER_I_D)
+  @javax.annotation.Nonnull
   private Integer userID;
 
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_NAVIGATIONAL_STATUS = "NavigationalStatus";
   @SerializedName(SERIALIZED_NAME_NAVIGATIONAL_STATUS)
+  @javax.annotation.Nonnull
   private Integer navigationalStatus;
 
   public static final String SERIALIZED_NAME_RATE_OF_TURN = "RateOfTurn";
   @SerializedName(SERIALIZED_NAME_RATE_OF_TURN)
+  @javax.annotation.Nonnull
   private Integer rateOfTurn;
 
   public static final String SERIALIZED_NAME_SOG = "Sog";
   @SerializedName(SERIALIZED_NAME_SOG)
+  @javax.annotation.Nonnull
   private Double sog;
 
   public static final String SERIALIZED_NAME_POSITION_ACCURACY = "PositionAccuracy";
   @SerializedName(SERIALIZED_NAME_POSITION_ACCURACY)
+  @javax.annotation.Nonnull
   private Boolean positionAccuracy;
 
   public static final String SERIALIZED_NAME_LONGITUDE = "Longitude";
   @SerializedName(SERIALIZED_NAME_LONGITUDE)
+  @javax.annotation.Nonnull
   private Double longitude;
 
   public static final String SERIALIZED_NAME_LATITUDE = "Latitude";
   @SerializedName(SERIALIZED_NAME_LATITUDE)
+  @javax.annotation.Nonnull
   private Double latitude;
 
   public static final String SERIALIZED_NAME_COG = "Cog";
   @SerializedName(SERIALIZED_NAME_COG)
+  @javax.annotation.Nonnull
   private Double cog;
 
   public static final String SERIALIZED_NAME_TRUE_HEADING = "TrueHeading";
   @SerializedName(SERIALIZED_NAME_TRUE_HEADING)
+  @javax.annotation.Nonnull
   private Integer trueHeading;
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "Timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
+  @javax.annotation.Nonnull
   private Integer timestamp;
 
   public static final String SERIALIZED_NAME_SPECIAL_MANOEUVRE_INDICATOR = "SpecialManoeuvreIndicator";
   @SerializedName(SERIALIZED_NAME_SPECIAL_MANOEUVRE_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer specialManoeuvreIndicator;
 
   public static final String SERIALIZED_NAME_SPARE = "Spare";
   @SerializedName(SERIALIZED_NAME_SPARE)
+  @javax.annotation.Nonnull
   private Integer spare;
 
   public static final String SERIALIZED_NAME_RAIM = "Raim";
   @SerializedName(SERIALIZED_NAME_RAIM)
+  @javax.annotation.Nonnull
   private Boolean raim;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_STATE = "CommunicationState";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_STATE)
+  @javax.annotation.Nonnull
   private Integer communicationState;
 
-  public PositionReport() { 
+  public PositionReport() {
   }
 
-  public PositionReport messageID(Integer messageID) {
-    
+  public PositionReport messageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Get messageID
    * @return messageID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getMessageID() {
     return messageID;
   }
 
-
-  public void setMessageID(Integer messageID) {
+  public void setMessageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
   }
 
 
-  public PositionReport repeatIndicator(Integer repeatIndicator) {
-    
+  public PositionReport repeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get repeatIndicator
    * @return repeatIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRepeatIndicator() {
     return repeatIndicator;
   }
 
-
-  public void setRepeatIndicator(Integer repeatIndicator) {
+  public void setRepeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
   }
 
 
-  public PositionReport userID(Integer userID) {
-    
+  public PositionReport userID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
     return this;
   }
 
-   /**
+  /**
    * Get userID
    * @return userID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUserID() {
     return userID;
   }
 
-
-  public void setUserID(Integer userID) {
+  public void setUserID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
   }
 
 
-  public PositionReport valid(Boolean valid) {
-    
+  public PositionReport valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public PositionReport navigationalStatus(Integer navigationalStatus) {
-    
+  public PositionReport navigationalStatus(@javax.annotation.Nonnull Integer navigationalStatus) {
     this.navigationalStatus = navigationalStatus;
     return this;
   }
 
-   /**
+  /**
    * Get navigationalStatus
    * @return navigationalStatus
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getNavigationalStatus() {
     return navigationalStatus;
   }
 
-
-  public void setNavigationalStatus(Integer navigationalStatus) {
+  public void setNavigationalStatus(@javax.annotation.Nonnull Integer navigationalStatus) {
     this.navigationalStatus = navigationalStatus;
   }
 
 
-  public PositionReport rateOfTurn(Integer rateOfTurn) {
-    
+  public PositionReport rateOfTurn(@javax.annotation.Nonnull Integer rateOfTurn) {
     this.rateOfTurn = rateOfTurn;
     return this;
   }
 
-   /**
+  /**
    * Get rateOfTurn
    * @return rateOfTurn
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRateOfTurn() {
     return rateOfTurn;
   }
 
-
-  public void setRateOfTurn(Integer rateOfTurn) {
+  public void setRateOfTurn(@javax.annotation.Nonnull Integer rateOfTurn) {
     this.rateOfTurn = rateOfTurn;
   }
 
 
-  public PositionReport sog(Double sog) {
-    
+  public PositionReport sog(@javax.annotation.Nonnull Double sog) {
     this.sog = sog;
     return this;
   }
 
-   /**
+  /**
    * Get sog
    * @return sog
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getSog() {
     return sog;
   }
 
-
-  public void setSog(Double sog) {
+  public void setSog(@javax.annotation.Nonnull Double sog) {
     this.sog = sog;
   }
 
 
-  public PositionReport positionAccuracy(Boolean positionAccuracy) {
-    
+  public PositionReport positionAccuracy(@javax.annotation.Nonnull Boolean positionAccuracy) {
     this.positionAccuracy = positionAccuracy;
     return this;
   }
 
-   /**
+  /**
    * Get positionAccuracy
    * @return positionAccuracy
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getPositionAccuracy() {
     return positionAccuracy;
   }
 
-
-  public void setPositionAccuracy(Boolean positionAccuracy) {
+  public void setPositionAccuracy(@javax.annotation.Nonnull Boolean positionAccuracy) {
     this.positionAccuracy = positionAccuracy;
   }
 
 
-  public PositionReport longitude(Double longitude) {
-    
+  public PositionReport longitude(@javax.annotation.Nonnull Double longitude) {
     this.longitude = longitude;
     return this;
   }
 
-   /**
+  /**
    * Get longitude
    * @return longitude
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLongitude() {
     return longitude;
   }
 
-
-  public void setLongitude(Double longitude) {
+  public void setLongitude(@javax.annotation.Nonnull Double longitude) {
     this.longitude = longitude;
   }
 
 
-  public PositionReport latitude(Double latitude) {
-    
+  public PositionReport latitude(@javax.annotation.Nonnull Double latitude) {
     this.latitude = latitude;
     return this;
   }
 
-   /**
+  /**
    * Get latitude
    * @return latitude
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLatitude() {
     return latitude;
   }
 
-
-  public void setLatitude(Double latitude) {
+  public void setLatitude(@javax.annotation.Nonnull Double latitude) {
     this.latitude = latitude;
   }
 
 
-  public PositionReport cog(Double cog) {
-    
+  public PositionReport cog(@javax.annotation.Nonnull Double cog) {
     this.cog = cog;
     return this;
   }
 
-   /**
+  /**
    * Get cog
    * @return cog
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getCog() {
     return cog;
   }
 
-
-  public void setCog(Double cog) {
+  public void setCog(@javax.annotation.Nonnull Double cog) {
     this.cog = cog;
   }
 
 
-  public PositionReport trueHeading(Integer trueHeading) {
-    
+  public PositionReport trueHeading(@javax.annotation.Nonnull Integer trueHeading) {
     this.trueHeading = trueHeading;
     return this;
   }
 
-   /**
+  /**
    * Get trueHeading
    * @return trueHeading
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getTrueHeading() {
     return trueHeading;
   }
 
-
-  public void setTrueHeading(Integer trueHeading) {
+  public void setTrueHeading(@javax.annotation.Nonnull Integer trueHeading) {
     this.trueHeading = trueHeading;
   }
 
 
-  public PositionReport timestamp(Integer timestamp) {
-    
+  public PositionReport timestamp(@javax.annotation.Nonnull Integer timestamp) {
     this.timestamp = timestamp;
     return this;
   }
 
-   /**
+  /**
    * Get timestamp
    * @return timestamp
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getTimestamp() {
     return timestamp;
   }
 
-
-  public void setTimestamp(Integer timestamp) {
+  public void setTimestamp(@javax.annotation.Nonnull Integer timestamp) {
     this.timestamp = timestamp;
   }
 
 
-  public PositionReport specialManoeuvreIndicator(Integer specialManoeuvreIndicator) {
-    
+  public PositionReport specialManoeuvreIndicator(@javax.annotation.Nonnull Integer specialManoeuvreIndicator) {
     this.specialManoeuvreIndicator = specialManoeuvreIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get specialManoeuvreIndicator
    * @return specialManoeuvreIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpecialManoeuvreIndicator() {
     return specialManoeuvreIndicator;
   }
 
-
-  public void setSpecialManoeuvreIndicator(Integer specialManoeuvreIndicator) {
+  public void setSpecialManoeuvreIndicator(@javax.annotation.Nonnull Integer specialManoeuvreIndicator) {
     this.specialManoeuvreIndicator = specialManoeuvreIndicator;
   }
 
 
-  public PositionReport spare(Integer spare) {
-    
+  public PositionReport spare(@javax.annotation.Nonnull Integer spare) {
     this.spare = spare;
     return this;
   }
 
-   /**
+  /**
    * Get spare
    * @return spare
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare() {
     return spare;
   }
 
-
-  public void setSpare(Integer spare) {
+  public void setSpare(@javax.annotation.Nonnull Integer spare) {
     this.spare = spare;
   }
 
 
-  public PositionReport raim(Boolean raim) {
-    
+  public PositionReport raim(@javax.annotation.Nonnull Boolean raim) {
     this.raim = raim;
     return this;
   }
 
-   /**
+  /**
    * Get raim
    * @return raim
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getRaim() {
     return raim;
   }
 
-
-  public void setRaim(Boolean raim) {
+  public void setRaim(@javax.annotation.Nonnull Boolean raim) {
     this.raim = raim;
   }
 
 
-  public PositionReport communicationState(Integer communicationState) {
-    
+  public PositionReport communicationState(@javax.annotation.Nonnull Integer communicationState) {
     this.communicationState = communicationState;
     return this;
   }
 
-   /**
+  /**
    * Get communicationState
    * @return communicationState
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getCommunicationState() {
     return communicationState;
   }
 
-
-  public void setCommunicationState(Integer communicationState) {
+  public void setCommunicationState(@javax.annotation.Nonnull Integer communicationState) {
     this.communicationState = communicationState;
   }
 
@@ -575,10 +526,7 @@ public class PositionReport {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -587,75 +535,40 @@ public class PositionReport {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MessageID");
-    openapiFields.add("RepeatIndicator");
-    openapiFields.add("UserID");
-    openapiFields.add("Valid");
-    openapiFields.add("NavigationalStatus");
-    openapiFields.add("RateOfTurn");
-    openapiFields.add("Sog");
-    openapiFields.add("PositionAccuracy");
-    openapiFields.add("Longitude");
-    openapiFields.add("Latitude");
-    openapiFields.add("Cog");
-    openapiFields.add("TrueHeading");
-    openapiFields.add("Timestamp");
-    openapiFields.add("SpecialManoeuvreIndicator");
-    openapiFields.add("Spare");
-    openapiFields.add("Raim");
-    openapiFields.add("CommunicationState");
+    openapiFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "NavigationalStatus", "RateOfTurn", "Sog", "PositionAccuracy", "Longitude", "Latitude", "Cog", "TrueHeading", "Timestamp", "SpecialManoeuvreIndicator", "Spare", "Raim", "CommunicationState"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MessageID");
-    openapiRequiredFields.add("RepeatIndicator");
-    openapiRequiredFields.add("UserID");
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("NavigationalStatus");
-    openapiRequiredFields.add("RateOfTurn");
-    openapiRequiredFields.add("Sog");
-    openapiRequiredFields.add("PositionAccuracy");
-    openapiRequiredFields.add("Longitude");
-    openapiRequiredFields.add("Latitude");
-    openapiRequiredFields.add("Cog");
-    openapiRequiredFields.add("TrueHeading");
-    openapiRequiredFields.add("Timestamp");
-    openapiRequiredFields.add("SpecialManoeuvreIndicator");
-    openapiRequiredFields.add("Spare");
-    openapiRequiredFields.add("Raim");
-    openapiRequiredFields.add("CommunicationState");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "NavigationalStatus", "RateOfTurn", "Sog", "PositionAccuracy", "Longitude", "Latitude", "Cog", "TrueHeading", "Timestamp", "SpecialManoeuvreIndicator", "Spare", "Raim", "CommunicationState"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PositionReport
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (PositionReport.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PositionReport is not found in the empty JSON string", PositionReport.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PositionReport
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PositionReport.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PositionReport is not found in the empty JSON string", PositionReport.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!PositionReport.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PositionReport` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PositionReport` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PositionReport.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -678,31 +591,31 @@ public class PositionReport {
 
            @Override
            public PositionReport read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of PositionReport given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PositionReport
-  * @throws IOException if the JSON string is invalid with respect to PositionReport
-  */
+  /**
+   * Create an instance of PositionReport given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PositionReport
+   * @throws IOException if the JSON string is invalid with respect to PositionReport
+   */
   public static PositionReport fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PositionReport.class);
   }
 
- /**
-  * Convert an instance of PositionReport to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PositionReport to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

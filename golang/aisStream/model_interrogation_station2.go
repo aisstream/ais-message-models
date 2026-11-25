@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the InterrogationStation2 type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InterrogationStation2{}
 
 // InterrogationStation2 struct for InterrogationStation2
 type InterrogationStation2 struct {
@@ -23,6 +28,8 @@ type InterrogationStation2 struct {
 	SlotOffset int32 `json:"SlotOffset"`
 	Spare2 int32 `json:"Spare2"`
 }
+
+type _InterrogationStation2 InterrogationStation2
 
 // NewInterrogationStation2 instantiates a new InterrogationStation2 object
 // This constructor will assign default values to properties that have it defined,
@@ -192,26 +199,64 @@ func (o *InterrogationStation2) SetSpare2(v int32) {
 }
 
 func (o InterrogationStation2) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Spare1"] = o.Spare1
-	}
-	if true {
-		toSerialize["StationID"] = o.StationID
-	}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["SlotOffset"] = o.SlotOffset
-	}
-	if true {
-		toSerialize["Spare2"] = o.Spare2
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InterrogationStation2) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Spare1"] = o.Spare1
+	toSerialize["StationID"] = o.StationID
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["SlotOffset"] = o.SlotOffset
+	toSerialize["Spare2"] = o.Spare2
+	return toSerialize, nil
+}
+
+func (o *InterrogationStation2) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"Valid",
+		"Spare1",
+		"StationID",
+		"MessageID",
+		"SlotOffset",
+		"Spare2",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varInterrogationStation2 := _InterrogationStation2{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varInterrogationStation2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InterrogationStation2(varInterrogationStation2)
+
+	return err
 }
 
 type NullableInterrogationStation2 struct {

@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **position_report** | [**PositionReport**](PositionReport.md) |  | [optional] 
@@ -29,8 +30,24 @@ Name | Type | Description | Notes
 **standard_class_b_position_report** | [**StandardClassBPositionReport**](StandardClassBPositionReport.md) |  | [optional] 
 **standard_search_and_rescue_aircraft_report** | [**StandardSearchAndRescueAircraftReport**](StandardSearchAndRescueAircraftReport.md) |  | [optional] 
 **static_data_report** | [**StaticDataReport**](StaticDataReport.md) |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from aisStream.models.ais_stream_message_message import AisStreamMessageMessage
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of AisStreamMessageMessage from a JSON string
+ais_stream_message_message_instance = AisStreamMessageMessage.from_json(json)
+# print the JSON string representation of the object
+print(AisStreamMessageMessage.to_json())
+
+# convert the object into a dict
+ais_stream_message_message_dict = ais_stream_message_message_instance.to_dict()
+# create an instance of AisStreamMessageMessage from a dict
+ais_stream_message_message_from_dict = AisStreamMessageMessage.from_dict(ais_stream_message_message_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

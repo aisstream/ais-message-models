@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { DataLinkManagementMessageData0 } from './DataLinkManagementMessageData0';
+import { DataLinkManagementMessageData0 } from '../models/DataLinkManagementMessageData0';
 import { HttpFile } from '../http/http';
 
 export class DataLinkManagementMessageData {
@@ -20,6 +20,8 @@ export class DataLinkManagementMessageData {
     '_3': DataLinkManagementMessageData0;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -54,4 +56,3 @@ export class DataLinkManagementMessageData {
     public constructor() {
     }
 }
-

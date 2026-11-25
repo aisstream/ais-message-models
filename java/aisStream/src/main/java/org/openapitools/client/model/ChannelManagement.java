@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.client.model.ChannelManagementArea;
 import org.openapitools.client.model.ChannelManagementUnicast;
 
@@ -33,15 +31,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -49,439 +51,391 @@ import org.openapitools.client.JSON;
 /**
  * ChannelManagement
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class ChannelManagement {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nonnull
   private Integer messageID;
 
   public static final String SERIALIZED_NAME_REPEAT_INDICATOR = "RepeatIndicator";
   @SerializedName(SERIALIZED_NAME_REPEAT_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer repeatIndicator;
 
   public static final String SERIALIZED_NAME_USER_I_D = "UserID";
   @SerializedName(SERIALIZED_NAME_USER_I_D)
+  @javax.annotation.Nonnull
   private Integer userID;
 
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_SPARE1 = "Spare1";
   @SerializedName(SERIALIZED_NAME_SPARE1)
+  @javax.annotation.Nonnull
   private Integer spare1;
 
   public static final String SERIALIZED_NAME_CHANNEL_A = "ChannelA";
   @SerializedName(SERIALIZED_NAME_CHANNEL_A)
+  @javax.annotation.Nonnull
   private Integer channelA;
 
   public static final String SERIALIZED_NAME_CHANNEL_B = "ChannelB";
   @SerializedName(SERIALIZED_NAME_CHANNEL_B)
+  @javax.annotation.Nonnull
   private Integer channelB;
 
   public static final String SERIALIZED_NAME_TX_RX_MODE = "TxRxMode";
   @SerializedName(SERIALIZED_NAME_TX_RX_MODE)
+  @javax.annotation.Nonnull
   private Integer txRxMode;
 
   public static final String SERIALIZED_NAME_LOW_POWER = "LowPower";
   @SerializedName(SERIALIZED_NAME_LOW_POWER)
+  @javax.annotation.Nonnull
   private Boolean lowPower;
 
   public static final String SERIALIZED_NAME_AREA = "Area";
   @SerializedName(SERIALIZED_NAME_AREA)
+  @javax.annotation.Nonnull
   private ChannelManagementArea area;
 
   public static final String SERIALIZED_NAME_UNICAST = "Unicast";
   @SerializedName(SERIALIZED_NAME_UNICAST)
+  @javax.annotation.Nonnull
   private ChannelManagementUnicast unicast;
 
   public static final String SERIALIZED_NAME_IS_ADDRESSED = "IsAddressed";
   @SerializedName(SERIALIZED_NAME_IS_ADDRESSED)
+  @javax.annotation.Nonnull
   private Boolean isAddressed;
 
   public static final String SERIALIZED_NAME_BW_A = "BwA";
   @SerializedName(SERIALIZED_NAME_BW_A)
+  @javax.annotation.Nonnull
   private Boolean bwA;
 
   public static final String SERIALIZED_NAME_BW_B = "BwB";
   @SerializedName(SERIALIZED_NAME_BW_B)
+  @javax.annotation.Nonnull
   private Boolean bwB;
 
   public static final String SERIALIZED_NAME_TRANSITIONAL_ZONE_SIZE = "TransitionalZoneSize";
   @SerializedName(SERIALIZED_NAME_TRANSITIONAL_ZONE_SIZE)
+  @javax.annotation.Nonnull
   private Integer transitionalZoneSize;
 
   public static final String SERIALIZED_NAME_SPARE4 = "Spare4";
   @SerializedName(SERIALIZED_NAME_SPARE4)
+  @javax.annotation.Nonnull
   private Integer spare4;
 
-  public ChannelManagement() { 
+  public ChannelManagement() {
   }
 
-  public ChannelManagement messageID(Integer messageID) {
-    
+  public ChannelManagement messageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Get messageID
    * @return messageID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getMessageID() {
     return messageID;
   }
 
-
-  public void setMessageID(Integer messageID) {
+  public void setMessageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
   }
 
 
-  public ChannelManagement repeatIndicator(Integer repeatIndicator) {
-    
+  public ChannelManagement repeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get repeatIndicator
    * @return repeatIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRepeatIndicator() {
     return repeatIndicator;
   }
 
-
-  public void setRepeatIndicator(Integer repeatIndicator) {
+  public void setRepeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
   }
 
 
-  public ChannelManagement userID(Integer userID) {
-    
+  public ChannelManagement userID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
     return this;
   }
 
-   /**
+  /**
    * Get userID
    * @return userID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUserID() {
     return userID;
   }
 
-
-  public void setUserID(Integer userID) {
+  public void setUserID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
   }
 
 
-  public ChannelManagement valid(Boolean valid) {
-    
+  public ChannelManagement valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public ChannelManagement spare1(Integer spare1) {
-    
+  public ChannelManagement spare1(@javax.annotation.Nonnull Integer spare1) {
     this.spare1 = spare1;
     return this;
   }
 
-   /**
+  /**
    * Get spare1
    * @return spare1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare1() {
     return spare1;
   }
 
-
-  public void setSpare1(Integer spare1) {
+  public void setSpare1(@javax.annotation.Nonnull Integer spare1) {
     this.spare1 = spare1;
   }
 
 
-  public ChannelManagement channelA(Integer channelA) {
-    
+  public ChannelManagement channelA(@javax.annotation.Nonnull Integer channelA) {
     this.channelA = channelA;
     return this;
   }
 
-   /**
+  /**
    * Get channelA
    * @return channelA
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getChannelA() {
     return channelA;
   }
 
-
-  public void setChannelA(Integer channelA) {
+  public void setChannelA(@javax.annotation.Nonnull Integer channelA) {
     this.channelA = channelA;
   }
 
 
-  public ChannelManagement channelB(Integer channelB) {
-    
+  public ChannelManagement channelB(@javax.annotation.Nonnull Integer channelB) {
     this.channelB = channelB;
     return this;
   }
 
-   /**
+  /**
    * Get channelB
    * @return channelB
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getChannelB() {
     return channelB;
   }
 
-
-  public void setChannelB(Integer channelB) {
+  public void setChannelB(@javax.annotation.Nonnull Integer channelB) {
     this.channelB = channelB;
   }
 
 
-  public ChannelManagement txRxMode(Integer txRxMode) {
-    
+  public ChannelManagement txRxMode(@javax.annotation.Nonnull Integer txRxMode) {
     this.txRxMode = txRxMode;
     return this;
   }
 
-   /**
+  /**
    * Get txRxMode
    * @return txRxMode
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getTxRxMode() {
     return txRxMode;
   }
 
-
-  public void setTxRxMode(Integer txRxMode) {
+  public void setTxRxMode(@javax.annotation.Nonnull Integer txRxMode) {
     this.txRxMode = txRxMode;
   }
 
 
-  public ChannelManagement lowPower(Boolean lowPower) {
-    
+  public ChannelManagement lowPower(@javax.annotation.Nonnull Boolean lowPower) {
     this.lowPower = lowPower;
     return this;
   }
 
-   /**
+  /**
    * Get lowPower
    * @return lowPower
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getLowPower() {
     return lowPower;
   }
 
-
-  public void setLowPower(Boolean lowPower) {
+  public void setLowPower(@javax.annotation.Nonnull Boolean lowPower) {
     this.lowPower = lowPower;
   }
 
 
-  public ChannelManagement area(ChannelManagementArea area) {
-    
+  public ChannelManagement area(@javax.annotation.Nonnull ChannelManagementArea area) {
     this.area = area;
     return this;
   }
 
-   /**
+  /**
    * Get area
    * @return area
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public ChannelManagementArea getArea() {
     return area;
   }
 
-
-  public void setArea(ChannelManagementArea area) {
+  public void setArea(@javax.annotation.Nonnull ChannelManagementArea area) {
     this.area = area;
   }
 
 
-  public ChannelManagement unicast(ChannelManagementUnicast unicast) {
-    
+  public ChannelManagement unicast(@javax.annotation.Nonnull ChannelManagementUnicast unicast) {
     this.unicast = unicast;
     return this;
   }
 
-   /**
+  /**
    * Get unicast
    * @return unicast
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public ChannelManagementUnicast getUnicast() {
     return unicast;
   }
 
-
-  public void setUnicast(ChannelManagementUnicast unicast) {
+  public void setUnicast(@javax.annotation.Nonnull ChannelManagementUnicast unicast) {
     this.unicast = unicast;
   }
 
 
-  public ChannelManagement isAddressed(Boolean isAddressed) {
-    
+  public ChannelManagement isAddressed(@javax.annotation.Nonnull Boolean isAddressed) {
     this.isAddressed = isAddressed;
     return this;
   }
 
-   /**
+  /**
    * Get isAddressed
    * @return isAddressed
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getIsAddressed() {
     return isAddressed;
   }
 
-
-  public void setIsAddressed(Boolean isAddressed) {
+  public void setIsAddressed(@javax.annotation.Nonnull Boolean isAddressed) {
     this.isAddressed = isAddressed;
   }
 
 
-  public ChannelManagement bwA(Boolean bwA) {
-    
+  public ChannelManagement bwA(@javax.annotation.Nonnull Boolean bwA) {
     this.bwA = bwA;
     return this;
   }
 
-   /**
+  /**
    * Get bwA
    * @return bwA
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getBwA() {
     return bwA;
   }
 
-
-  public void setBwA(Boolean bwA) {
+  public void setBwA(@javax.annotation.Nonnull Boolean bwA) {
     this.bwA = bwA;
   }
 
 
-  public ChannelManagement bwB(Boolean bwB) {
-    
+  public ChannelManagement bwB(@javax.annotation.Nonnull Boolean bwB) {
     this.bwB = bwB;
     return this;
   }
 
-   /**
+  /**
    * Get bwB
    * @return bwB
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getBwB() {
     return bwB;
   }
 
-
-  public void setBwB(Boolean bwB) {
+  public void setBwB(@javax.annotation.Nonnull Boolean bwB) {
     this.bwB = bwB;
   }
 
 
-  public ChannelManagement transitionalZoneSize(Integer transitionalZoneSize) {
-    
+  public ChannelManagement transitionalZoneSize(@javax.annotation.Nonnull Integer transitionalZoneSize) {
     this.transitionalZoneSize = transitionalZoneSize;
     return this;
   }
 
-   /**
+  /**
    * Get transitionalZoneSize
    * @return transitionalZoneSize
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getTransitionalZoneSize() {
     return transitionalZoneSize;
   }
 
-
-  public void setTransitionalZoneSize(Integer transitionalZoneSize) {
+  public void setTransitionalZoneSize(@javax.annotation.Nonnull Integer transitionalZoneSize) {
     this.transitionalZoneSize = transitionalZoneSize;
   }
 
 
-  public ChannelManagement spare4(Integer spare4) {
-    
+  public ChannelManagement spare4(@javax.annotation.Nonnull Integer spare4) {
     this.spare4 = spare4;
     return this;
   }
 
-   /**
+  /**
    * Get spare4
    * @return spare4
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare4() {
     return spare4;
   }
 
-
-  public void setSpare4(Integer spare4) {
+  public void setSpare4(@javax.annotation.Nonnull Integer spare4) {
     this.spare4 = spare4;
   }
 
@@ -548,10 +502,7 @@ public class ChannelManagement {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -560,81 +511,44 @@ public class ChannelManagement {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MessageID");
-    openapiFields.add("RepeatIndicator");
-    openapiFields.add("UserID");
-    openapiFields.add("Valid");
-    openapiFields.add("Spare1");
-    openapiFields.add("ChannelA");
-    openapiFields.add("ChannelB");
-    openapiFields.add("TxRxMode");
-    openapiFields.add("LowPower");
-    openapiFields.add("Area");
-    openapiFields.add("Unicast");
-    openapiFields.add("IsAddressed");
-    openapiFields.add("BwA");
-    openapiFields.add("BwB");
-    openapiFields.add("TransitionalZoneSize");
-    openapiFields.add("Spare4");
+    openapiFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Spare1", "ChannelA", "ChannelB", "TxRxMode", "LowPower", "Area", "Unicast", "IsAddressed", "BwA", "BwB", "TransitionalZoneSize", "Spare4"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MessageID");
-    openapiRequiredFields.add("RepeatIndicator");
-    openapiRequiredFields.add("UserID");
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("Spare1");
-    openapiRequiredFields.add("ChannelA");
-    openapiRequiredFields.add("ChannelB");
-    openapiRequiredFields.add("TxRxMode");
-    openapiRequiredFields.add("LowPower");
-    openapiRequiredFields.add("Area");
-    openapiRequiredFields.add("Unicast");
-    openapiRequiredFields.add("IsAddressed");
-    openapiRequiredFields.add("BwA");
-    openapiRequiredFields.add("BwB");
-    openapiRequiredFields.add("TransitionalZoneSize");
-    openapiRequiredFields.add("Spare4");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Spare1", "ChannelA", "ChannelB", "TxRxMode", "LowPower", "Area", "Unicast", "IsAddressed", "BwA", "BwB", "TransitionalZoneSize", "Spare4"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ChannelManagement
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ChannelManagement.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ChannelManagement is not found in the empty JSON string", ChannelManagement.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ChannelManagement
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ChannelManagement.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ChannelManagement is not found in the empty JSON string", ChannelManagement.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ChannelManagement.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ChannelManagement` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ChannelManagement` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ChannelManagement.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      // validate the optional field `Area`
-      if (jsonObj.getAsJsonObject("Area") != null) {
-        ChannelManagementArea.validateJsonObject(jsonObj.getAsJsonObject("Area"));
-      }
-      // validate the optional field `Unicast`
-      if (jsonObj.getAsJsonObject("Unicast") != null) {
-        ChannelManagementUnicast.validateJsonObject(jsonObj.getAsJsonObject("Unicast"));
-      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `Area`
+      ChannelManagementArea.validateJsonElement(jsonObj.get("Area"));
+      // validate the required field `Unicast`
+      ChannelManagementUnicast.validateJsonElement(jsonObj.get("Unicast"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -657,31 +571,31 @@ public class ChannelManagement {
 
            @Override
            public ChannelManagement read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of ChannelManagement given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ChannelManagement
-  * @throws IOException if the JSON string is invalid with respect to ChannelManagement
-  */
+  /**
+   * Create an instance of ChannelManagement given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ChannelManagement
+   * @throws IOException if the JSON string is invalid with respect to ChannelManagement
+   */
   public static ChannelManagement fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ChannelManagement.class);
   }
 
- /**
-  * Convert an instance of ChannelManagement to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ChannelManagement to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

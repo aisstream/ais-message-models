@@ -14,11 +14,11 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -29,55 +29,55 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(AisMessageTypes.Adapter.class)
 public enum AisMessageTypes {
   
-  POSITIONREPORT("PositionReport"),
+  POSITION_REPORT("PositionReport"),
   
-  UNKNOWNMESSAGE("UnknownMessage"),
+  UNKNOWN_MESSAGE("UnknownMessage"),
   
-  ADDRESSEDSAFETYMESSAGE("AddressedSafetyMessage"),
+  ADDRESSED_SAFETY_MESSAGE("AddressedSafetyMessage"),
   
-  ADDRESSEDBINARYMESSAGE("AddressedBinaryMessage"),
+  ADDRESSED_BINARY_MESSAGE("AddressedBinaryMessage"),
   
-  AIDSTONAVIGATIONREPORT("AidsToNavigationReport"),
+  AIDS_TO_NAVIGATION_REPORT("AidsToNavigationReport"),
   
-  ASSIGNEDMODECOMMAND("AssignedModeCommand"),
+  ASSIGNED_MODE_COMMAND("AssignedModeCommand"),
   
-  BASESTATIONREPORT("BaseStationReport"),
+  BASE_STATION_REPORT("BaseStationReport"),
   
-  BINARYACKNOWLEDGE("BinaryAcknowledge"),
+  BINARY_ACKNOWLEDGE("BinaryAcknowledge"),
   
-  BINARYBROADCASTMESSAGE("BinaryBroadcastMessage"),
+  BINARY_BROADCAST_MESSAGE("BinaryBroadcastMessage"),
   
-  CHANNELMANAGEMENT("ChannelManagement"),
+  CHANNEL_MANAGEMENT("ChannelManagement"),
   
-  COORDINATEDUTCINQUIRY("CoordinatedUTCInquiry"),
+  COORDINATED_UTC_INQUIRY("CoordinatedUTCInquiry"),
   
-  DATALINKMANAGEMENTMESSAGE("DataLinkManagementMessage"),
+  DATA_LINK_MANAGEMENT_MESSAGE("DataLinkManagementMessage"),
   
-  DATALINKMANAGEMENTMESSAGEDATA("DataLinkManagementMessageData"),
+  DATA_LINK_MANAGEMENT_MESSAGE_DATA("DataLinkManagementMessageData"),
   
-  EXTENDEDCLASSBPOSITIONREPORT("ExtendedClassBPositionReport"),
+  EXTENDED_CLASS_B_POSITION_REPORT("ExtendedClassBPositionReport"),
   
-  GROUPASSIGNMENTCOMMAND("GroupAssignmentCommand"),
+  GROUP_ASSIGNMENT_COMMAND("GroupAssignmentCommand"),
   
-  GNSSBROADCASTBINARYMESSAGE("GnssBroadcastBinaryMessage"),
+  GNSS_BROADCAST_BINARY_MESSAGE("GnssBroadcastBinaryMessage"),
   
   INTERROGATION("Interrogation"),
   
-  LONGRANGEAISBROADCASTMESSAGE("LongRangeAisBroadcastMessage"),
+  LONG_RANGE_AIS_BROADCAST_MESSAGE("LongRangeAisBroadcastMessage"),
   
-  MULTISLOTBINARYMESSAGE("MultiSlotBinaryMessage"),
+  MULTI_SLOT_BINARY_MESSAGE("MultiSlotBinaryMessage"),
   
-  SAFETYBROADCASTMESSAGE("SafetyBroadcastMessage"),
+  SAFETY_BROADCAST_MESSAGE("SafetyBroadcastMessage"),
   
-  SHIPSTATICDATA("ShipStaticData"),
+  SHIP_STATIC_DATA("ShipStaticData"),
   
-  SINGLESLOTBINARYMESSAGE("SingleSlotBinaryMessage"),
+  SINGLE_SLOT_BINARY_MESSAGE("SingleSlotBinaryMessage"),
   
-  STANDARDCLASSBPOSITIONREPORT("StandardClassBPositionReport"),
+  STANDARD_CLASS_B_POSITION_REPORT("StandardClassBPositionReport"),
   
-  STANDARDSEARCHANDRESCUEAIRCRAFTREPORT("StandardSearchAndRescueAircraftReport"),
+  STANDARD_SEARCH_AND_RESCUE_AIRCRAFT_REPORT("StandardSearchAndRescueAircraftReport"),
   
-  STATICDATAREPORT("StaticDataReport");
+  STATIC_DATA_REPORT("StaticDataReport");
 
   private String value;
 
@@ -114,6 +114,11 @@ public enum AisMessageTypes {
       String value = jsonReader.nextString();
       return AisMessageTypes.fromValue(value);
     }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    AisMessageTypes.fromValue(value);
   }
 }
 

@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the AssignedModeCommand type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AssignedModeCommand{}
 
 // AssignedModeCommand struct for AssignedModeCommand
 type AssignedModeCommand struct {
@@ -23,6 +28,8 @@ type AssignedModeCommand struct {
 	Spare int32 `json:"Spare"`
 	Commands AssignedModeCommandCommands `json:"Commands"`
 }
+
+type _AssignedModeCommand AssignedModeCommand
 
 // NewAssignedModeCommand instantiates a new AssignedModeCommand object
 // This constructor will assign default values to properties that have it defined,
@@ -192,26 +199,64 @@ func (o *AssignedModeCommand) SetCommands(v AssignedModeCommandCommands) {
 }
 
 func (o AssignedModeCommand) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Spare"] = o.Spare
-	}
-	if true {
-		toSerialize["Commands"] = o.Commands
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AssignedModeCommand) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Spare"] = o.Spare
+	toSerialize["Commands"] = o.Commands
+	return toSerialize, nil
+}
+
+func (o *AssignedModeCommand) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"Spare",
+		"Commands",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAssignedModeCommand := _AssignedModeCommand{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varAssignedModeCommand)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AssignedModeCommand(varAssignedModeCommand)
+
+	return err
 }
 
 type NullableAssignedModeCommand struct {

@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_id** | **int** |  | 
@@ -14,8 +15,24 @@ Name | Type | Description | Notes
 **spare** | **int** |  | 
 **application_id** | [**AddressedBinaryMessageApplicationID**](AddressedBinaryMessageApplicationID.md) |  | 
 **payload** | **str** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from aisStream.models.single_slot_binary_message import SingleSlotBinaryMessage
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of SingleSlotBinaryMessage from a JSON string
+single_slot_binary_message_instance = SingleSlotBinaryMessage.from_json(json)
+# print the JSON string representation of the object
+print(SingleSlotBinaryMessage.to_json())
+
+# convert the object into a dict
+single_slot_binary_message_dict = single_slot_binary_message_instance.to_dict()
+# create an instance of SingleSlotBinaryMessage from a dict
+single_slot_binary_message_from_dict = SingleSlotBinaryMessage.from_dict(single_slot_binary_message_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

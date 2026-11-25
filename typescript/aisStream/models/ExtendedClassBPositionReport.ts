@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { ShipStaticDataDimension } from './ShipStaticDataDimension';
+import { ShipStaticDataDimension } from '../models/ShipStaticDataDimension';
 import { HttpFile } from '../http/http';
 
 export class ExtendedClassBPositionReport {
@@ -37,6 +37,8 @@ export class ExtendedClassBPositionReport {
     'spare3': number;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -173,4 +175,3 @@ export class ExtendedClassBPositionReport {
     public constructor() {
     }
 }
-

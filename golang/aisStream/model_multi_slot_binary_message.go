@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the MultiSlotBinaryMessage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MultiSlotBinaryMessage{}
 
 // MultiSlotBinaryMessage struct for MultiSlotBinaryMessage
 type MultiSlotBinaryMessage struct {
@@ -30,6 +35,8 @@ type MultiSlotBinaryMessage struct {
 	CommunicationStateIsItdma bool `json:"CommunicationStateIsItdma"`
 	CommunicationState int32 `json:"CommunicationState"`
 }
+
+type _MultiSlotBinaryMessage MultiSlotBinaryMessage
 
 // NewMultiSlotBinaryMessage instantiates a new MultiSlotBinaryMessage object
 // This constructor will assign default values to properties that have it defined,
@@ -374,47 +381,78 @@ func (o *MultiSlotBinaryMessage) SetCommunicationState(v int32) {
 }
 
 func (o MultiSlotBinaryMessage) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["DestinationIDValid"] = o.DestinationIDValid
-	}
-	if true {
-		toSerialize["ApplicationIDValid"] = o.ApplicationIDValid
-	}
-	if true {
-		toSerialize["DestinationID"] = o.DestinationID
-	}
-	if true {
-		toSerialize["Spare1"] = o.Spare1
-	}
-	if true {
-		toSerialize["ApplicationID"] = o.ApplicationID
-	}
-	if true {
-		toSerialize["Payload"] = o.Payload
-	}
-	if true {
-		toSerialize["Spare2"] = o.Spare2
-	}
-	if true {
-		toSerialize["CommunicationStateIsItdma"] = o.CommunicationStateIsItdma
-	}
-	if true {
-		toSerialize["CommunicationState"] = o.CommunicationState
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MultiSlotBinaryMessage) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["DestinationIDValid"] = o.DestinationIDValid
+	toSerialize["ApplicationIDValid"] = o.ApplicationIDValid
+	toSerialize["DestinationID"] = o.DestinationID
+	toSerialize["Spare1"] = o.Spare1
+	toSerialize["ApplicationID"] = o.ApplicationID
+	toSerialize["Payload"] = o.Payload
+	toSerialize["Spare2"] = o.Spare2
+	toSerialize["CommunicationStateIsItdma"] = o.CommunicationStateIsItdma
+	toSerialize["CommunicationState"] = o.CommunicationState
+	return toSerialize, nil
+}
+
+func (o *MultiSlotBinaryMessage) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"DestinationIDValid",
+		"ApplicationIDValid",
+		"DestinationID",
+		"Spare1",
+		"ApplicationID",
+		"Payload",
+		"Spare2",
+		"CommunicationStateIsItdma",
+		"CommunicationState",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varMultiSlotBinaryMessage := _MultiSlotBinaryMessage{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varMultiSlotBinaryMessage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MultiSlotBinaryMessage(varMultiSlotBinaryMessage)
+
+	return err
 }
 
 type NullableMultiSlotBinaryMessage struct {

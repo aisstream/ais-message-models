@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_id** | **int** |  | 
@@ -20,8 +21,24 @@ Name | Type | Description | Notes
 **reporting_interval** | **int** |  | 
 **quiet_time** | **int** |  | 
 **spare3** | **int** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from aisStream.models.group_assignment_command import GroupAssignmentCommand
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of GroupAssignmentCommand from a JSON string
+group_assignment_command_instance = GroupAssignmentCommand.from_json(json)
+# print the JSON string representation of the object
+print(GroupAssignmentCommand.to_json())
+
+# convert the object into a dict
+group_assignment_command_dict = group_assignment_command_instance.to_dict()
+# create an instance of GroupAssignmentCommand from a dict
+group_assignment_command_from_dict = GroupAssignmentCommand.from_dict(group_assignment_command_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

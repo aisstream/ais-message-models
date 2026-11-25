@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-import { StaticDataReportReportA } from './StaticDataReportReportA';
-import { StaticDataReportReportB } from './StaticDataReportReportB';
+import { StaticDataReportReportA } from '../models/StaticDataReportReportA';
+import { StaticDataReportReportB } from '../models/StaticDataReportReportB';
 import { HttpFile } from '../http/http';
 
 export class StaticDataReport {
@@ -25,6 +25,8 @@ export class StaticDataReport {
     'reportB': StaticDataReportReportB;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -83,4 +85,3 @@ export class StaticDataReport {
     public constructor() {
     }
 }
-

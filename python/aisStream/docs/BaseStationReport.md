@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_id** | **int** |  | 
@@ -22,8 +23,24 @@ Name | Type | Description | Notes
 **spare** | **int** |  | 
 **raim** | **bool** |  | 
 **communication_state** | **int** |  | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from aisStream.models.base_station_report import BaseStationReport
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of BaseStationReport from a JSON string
+base_station_report_instance = BaseStationReport.from_json(json)
+# print the JSON string representation of the object
+print(BaseStationReport.to_json())
+
+# convert the object into a dict
+base_station_report_dict = base_station_report_instance.to_dict()
+# create an instance of BaseStationReport from a dict
+base_station_report_from_dict = BaseStationReport.from_dict(base_station_report_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

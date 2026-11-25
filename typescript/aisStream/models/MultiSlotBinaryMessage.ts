@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { AddressedBinaryMessageApplicationID } from './AddressedBinaryMessageApplicationID';
+import { AddressedBinaryMessageApplicationID } from '../models/AddressedBinaryMessageApplicationID';
 import { HttpFile } from '../http/http';
 
 export class MultiSlotBinaryMessage {
@@ -29,6 +29,8 @@ export class MultiSlotBinaryMessage {
     'communicationState': number;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -117,4 +119,3 @@ export class MultiSlotBinaryMessage {
     public constructor() {
     }
 }
-

@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-import { ChannelManagementArea } from './ChannelManagementArea';
-import { ChannelManagementUnicast } from './ChannelManagementUnicast';
+import { ChannelManagementArea } from '../models/ChannelManagementArea';
+import { ChannelManagementUnicast } from '../models/ChannelManagementUnicast';
 import { HttpFile } from '../http/http';
 
 export class ChannelManagement {
@@ -33,6 +33,8 @@ export class ChannelManagement {
     'spare4': number;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -139,4 +141,3 @@ export class ChannelManagement {
     public constructor() {
     }
 }
-

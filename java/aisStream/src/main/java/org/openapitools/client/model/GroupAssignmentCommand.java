@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,15 +29,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -47,439 +49,391 @@ import org.openapitools.client.JSON;
 /**
  * GroupAssignmentCommand
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class GroupAssignmentCommand {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nonnull
   private Integer messageID;
 
   public static final String SERIALIZED_NAME_REPEAT_INDICATOR = "RepeatIndicator";
   @SerializedName(SERIALIZED_NAME_REPEAT_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer repeatIndicator;
 
   public static final String SERIALIZED_NAME_USER_I_D = "UserID";
   @SerializedName(SERIALIZED_NAME_USER_I_D)
+  @javax.annotation.Nonnull
   private Integer userID;
 
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_SPARE1 = "Spare1";
   @SerializedName(SERIALIZED_NAME_SPARE1)
+  @javax.annotation.Nonnull
   private Integer spare1;
 
   public static final String SERIALIZED_NAME_LONGITUDE1 = "Longitude1";
   @SerializedName(SERIALIZED_NAME_LONGITUDE1)
+  @javax.annotation.Nonnull
   private Double longitude1;
 
   public static final String SERIALIZED_NAME_LATITUDE1 = "Latitude1";
   @SerializedName(SERIALIZED_NAME_LATITUDE1)
+  @javax.annotation.Nonnull
   private Double latitude1;
 
   public static final String SERIALIZED_NAME_LONGITUDE2 = "Longitude2";
   @SerializedName(SERIALIZED_NAME_LONGITUDE2)
+  @javax.annotation.Nonnull
   private Double longitude2;
 
   public static final String SERIALIZED_NAME_LATITUDE2 = "Latitude2";
   @SerializedName(SERIALIZED_NAME_LATITUDE2)
+  @javax.annotation.Nonnull
   private Double latitude2;
 
   public static final String SERIALIZED_NAME_STATION_TYPE = "StationType";
   @SerializedName(SERIALIZED_NAME_STATION_TYPE)
+  @javax.annotation.Nonnull
   private Integer stationType;
 
   public static final String SERIALIZED_NAME_SHIP_TYPE = "ShipType";
   @SerializedName(SERIALIZED_NAME_SHIP_TYPE)
+  @javax.annotation.Nonnull
   private Integer shipType;
 
   public static final String SERIALIZED_NAME_SPARE2 = "Spare2";
   @SerializedName(SERIALIZED_NAME_SPARE2)
+  @javax.annotation.Nonnull
   private Integer spare2;
 
   public static final String SERIALIZED_NAME_TX_RX_MODE = "TxRxMode";
   @SerializedName(SERIALIZED_NAME_TX_RX_MODE)
+  @javax.annotation.Nonnull
   private Integer txRxMode;
 
   public static final String SERIALIZED_NAME_REPORTING_INTERVAL = "ReportingInterval";
   @SerializedName(SERIALIZED_NAME_REPORTING_INTERVAL)
+  @javax.annotation.Nonnull
   private Integer reportingInterval;
 
   public static final String SERIALIZED_NAME_QUIET_TIME = "QuietTime";
   @SerializedName(SERIALIZED_NAME_QUIET_TIME)
+  @javax.annotation.Nonnull
   private Integer quietTime;
 
   public static final String SERIALIZED_NAME_SPARE3 = "Spare3";
   @SerializedName(SERIALIZED_NAME_SPARE3)
+  @javax.annotation.Nonnull
   private Integer spare3;
 
-  public GroupAssignmentCommand() { 
+  public GroupAssignmentCommand() {
   }
 
-  public GroupAssignmentCommand messageID(Integer messageID) {
-    
+  public GroupAssignmentCommand messageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Get messageID
    * @return messageID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getMessageID() {
     return messageID;
   }
 
-
-  public void setMessageID(Integer messageID) {
+  public void setMessageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
   }
 
 
-  public GroupAssignmentCommand repeatIndicator(Integer repeatIndicator) {
-    
+  public GroupAssignmentCommand repeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get repeatIndicator
    * @return repeatIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRepeatIndicator() {
     return repeatIndicator;
   }
 
-
-  public void setRepeatIndicator(Integer repeatIndicator) {
+  public void setRepeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
   }
 
 
-  public GroupAssignmentCommand userID(Integer userID) {
-    
+  public GroupAssignmentCommand userID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
     return this;
   }
 
-   /**
+  /**
    * Get userID
    * @return userID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUserID() {
     return userID;
   }
 
-
-  public void setUserID(Integer userID) {
+  public void setUserID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
   }
 
 
-  public GroupAssignmentCommand valid(Boolean valid) {
-    
+  public GroupAssignmentCommand valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public GroupAssignmentCommand spare1(Integer spare1) {
-    
+  public GroupAssignmentCommand spare1(@javax.annotation.Nonnull Integer spare1) {
     this.spare1 = spare1;
     return this;
   }
 
-   /**
+  /**
    * Get spare1
    * @return spare1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare1() {
     return spare1;
   }
 
-
-  public void setSpare1(Integer spare1) {
+  public void setSpare1(@javax.annotation.Nonnull Integer spare1) {
     this.spare1 = spare1;
   }
 
 
-  public GroupAssignmentCommand longitude1(Double longitude1) {
-    
+  public GroupAssignmentCommand longitude1(@javax.annotation.Nonnull Double longitude1) {
     this.longitude1 = longitude1;
     return this;
   }
 
-   /**
+  /**
    * Get longitude1
    * @return longitude1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLongitude1() {
     return longitude1;
   }
 
-
-  public void setLongitude1(Double longitude1) {
+  public void setLongitude1(@javax.annotation.Nonnull Double longitude1) {
     this.longitude1 = longitude1;
   }
 
 
-  public GroupAssignmentCommand latitude1(Double latitude1) {
-    
+  public GroupAssignmentCommand latitude1(@javax.annotation.Nonnull Double latitude1) {
     this.latitude1 = latitude1;
     return this;
   }
 
-   /**
+  /**
    * Get latitude1
    * @return latitude1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLatitude1() {
     return latitude1;
   }
 
-
-  public void setLatitude1(Double latitude1) {
+  public void setLatitude1(@javax.annotation.Nonnull Double latitude1) {
     this.latitude1 = latitude1;
   }
 
 
-  public GroupAssignmentCommand longitude2(Double longitude2) {
-    
+  public GroupAssignmentCommand longitude2(@javax.annotation.Nonnull Double longitude2) {
     this.longitude2 = longitude2;
     return this;
   }
 
-   /**
+  /**
    * Get longitude2
    * @return longitude2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLongitude2() {
     return longitude2;
   }
 
-
-  public void setLongitude2(Double longitude2) {
+  public void setLongitude2(@javax.annotation.Nonnull Double longitude2) {
     this.longitude2 = longitude2;
   }
 
 
-  public GroupAssignmentCommand latitude2(Double latitude2) {
-    
+  public GroupAssignmentCommand latitude2(@javax.annotation.Nonnull Double latitude2) {
     this.latitude2 = latitude2;
     return this;
   }
 
-   /**
+  /**
    * Get latitude2
    * @return latitude2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLatitude2() {
     return latitude2;
   }
 
-
-  public void setLatitude2(Double latitude2) {
+  public void setLatitude2(@javax.annotation.Nonnull Double latitude2) {
     this.latitude2 = latitude2;
   }
 
 
-  public GroupAssignmentCommand stationType(Integer stationType) {
-    
+  public GroupAssignmentCommand stationType(@javax.annotation.Nonnull Integer stationType) {
     this.stationType = stationType;
     return this;
   }
 
-   /**
+  /**
    * Get stationType
    * @return stationType
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getStationType() {
     return stationType;
   }
 
-
-  public void setStationType(Integer stationType) {
+  public void setStationType(@javax.annotation.Nonnull Integer stationType) {
     this.stationType = stationType;
   }
 
 
-  public GroupAssignmentCommand shipType(Integer shipType) {
-    
+  public GroupAssignmentCommand shipType(@javax.annotation.Nonnull Integer shipType) {
     this.shipType = shipType;
     return this;
   }
 
-   /**
+  /**
    * Get shipType
    * @return shipType
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getShipType() {
     return shipType;
   }
 
-
-  public void setShipType(Integer shipType) {
+  public void setShipType(@javax.annotation.Nonnull Integer shipType) {
     this.shipType = shipType;
   }
 
 
-  public GroupAssignmentCommand spare2(Integer spare2) {
-    
+  public GroupAssignmentCommand spare2(@javax.annotation.Nonnull Integer spare2) {
     this.spare2 = spare2;
     return this;
   }
 
-   /**
+  /**
    * Get spare2
    * @return spare2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare2() {
     return spare2;
   }
 
-
-  public void setSpare2(Integer spare2) {
+  public void setSpare2(@javax.annotation.Nonnull Integer spare2) {
     this.spare2 = spare2;
   }
 
 
-  public GroupAssignmentCommand txRxMode(Integer txRxMode) {
-    
+  public GroupAssignmentCommand txRxMode(@javax.annotation.Nonnull Integer txRxMode) {
     this.txRxMode = txRxMode;
     return this;
   }
 
-   /**
+  /**
    * Get txRxMode
    * @return txRxMode
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getTxRxMode() {
     return txRxMode;
   }
 
-
-  public void setTxRxMode(Integer txRxMode) {
+  public void setTxRxMode(@javax.annotation.Nonnull Integer txRxMode) {
     this.txRxMode = txRxMode;
   }
 
 
-  public GroupAssignmentCommand reportingInterval(Integer reportingInterval) {
-    
+  public GroupAssignmentCommand reportingInterval(@javax.annotation.Nonnull Integer reportingInterval) {
     this.reportingInterval = reportingInterval;
     return this;
   }
 
-   /**
+  /**
    * Get reportingInterval
    * @return reportingInterval
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getReportingInterval() {
     return reportingInterval;
   }
 
-
-  public void setReportingInterval(Integer reportingInterval) {
+  public void setReportingInterval(@javax.annotation.Nonnull Integer reportingInterval) {
     this.reportingInterval = reportingInterval;
   }
 
 
-  public GroupAssignmentCommand quietTime(Integer quietTime) {
-    
+  public GroupAssignmentCommand quietTime(@javax.annotation.Nonnull Integer quietTime) {
     this.quietTime = quietTime;
     return this;
   }
 
-   /**
+  /**
    * Get quietTime
    * @return quietTime
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getQuietTime() {
     return quietTime;
   }
 
-
-  public void setQuietTime(Integer quietTime) {
+  public void setQuietTime(@javax.annotation.Nonnull Integer quietTime) {
     this.quietTime = quietTime;
   }
 
 
-  public GroupAssignmentCommand spare3(Integer spare3) {
-    
+  public GroupAssignmentCommand spare3(@javax.annotation.Nonnull Integer spare3) {
     this.spare3 = spare3;
     return this;
   }
 
-   /**
+  /**
    * Get spare3
    * @return spare3
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare3() {
     return spare3;
   }
 
-
-  public void setSpare3(Integer spare3) {
+  public void setSpare3(@javax.annotation.Nonnull Integer spare3) {
     this.spare3 = spare3;
   }
 
@@ -546,10 +500,7 @@ public class GroupAssignmentCommand {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -558,73 +509,40 @@ public class GroupAssignmentCommand {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MessageID");
-    openapiFields.add("RepeatIndicator");
-    openapiFields.add("UserID");
-    openapiFields.add("Valid");
-    openapiFields.add("Spare1");
-    openapiFields.add("Longitude1");
-    openapiFields.add("Latitude1");
-    openapiFields.add("Longitude2");
-    openapiFields.add("Latitude2");
-    openapiFields.add("StationType");
-    openapiFields.add("ShipType");
-    openapiFields.add("Spare2");
-    openapiFields.add("TxRxMode");
-    openapiFields.add("ReportingInterval");
-    openapiFields.add("QuietTime");
-    openapiFields.add("Spare3");
+    openapiFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Spare1", "Longitude1", "Latitude1", "Longitude2", "Latitude2", "StationType", "ShipType", "Spare2", "TxRxMode", "ReportingInterval", "QuietTime", "Spare3"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MessageID");
-    openapiRequiredFields.add("RepeatIndicator");
-    openapiRequiredFields.add("UserID");
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("Spare1");
-    openapiRequiredFields.add("Longitude1");
-    openapiRequiredFields.add("Latitude1");
-    openapiRequiredFields.add("Longitude2");
-    openapiRequiredFields.add("Latitude2");
-    openapiRequiredFields.add("StationType");
-    openapiRequiredFields.add("ShipType");
-    openapiRequiredFields.add("Spare2");
-    openapiRequiredFields.add("TxRxMode");
-    openapiRequiredFields.add("ReportingInterval");
-    openapiRequiredFields.add("QuietTime");
-    openapiRequiredFields.add("Spare3");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Spare1", "Longitude1", "Latitude1", "Longitude2", "Latitude2", "StationType", "ShipType", "Spare2", "TxRxMode", "ReportingInterval", "QuietTime", "Spare3"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GroupAssignmentCommand
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (GroupAssignmentCommand.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GroupAssignmentCommand is not found in the empty JSON string", GroupAssignmentCommand.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to GroupAssignmentCommand
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!GroupAssignmentCommand.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GroupAssignmentCommand is not found in the empty JSON string", GroupAssignmentCommand.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GroupAssignmentCommand.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupAssignmentCommand` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GroupAssignmentCommand` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : GroupAssignmentCommand.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -647,31 +565,31 @@ public class GroupAssignmentCommand {
 
            @Override
            public GroupAssignmentCommand read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of GroupAssignmentCommand given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GroupAssignmentCommand
-  * @throws IOException if the JSON string is invalid with respect to GroupAssignmentCommand
-  */
+  /**
+   * Create an instance of GroupAssignmentCommand given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of GroupAssignmentCommand
+   * @throws IOException if the JSON string is invalid with respect to GroupAssignmentCommand
+   */
   public static GroupAssignmentCommand fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, GroupAssignmentCommand.class);
   }
 
- /**
-  * Convert an instance of GroupAssignmentCommand to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of GroupAssignmentCommand to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AisStreamMessageMessage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AisStreamMessageMessage{}
+
 // AisStreamMessageMessage struct for AisStreamMessageMessage
 type AisStreamMessageMessage struct {
 	PositionReport *PositionReport `json:"PositionReport,omitempty"`
@@ -62,7 +65,7 @@ func NewAisStreamMessageMessageWithDefaults() *AisStreamMessageMessage {
 
 // GetPositionReport returns the PositionReport field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetPositionReport() PositionReport {
-	if o == nil || o.PositionReport == nil {
+	if o == nil || IsNil(o.PositionReport) {
 		var ret PositionReport
 		return ret
 	}
@@ -72,7 +75,7 @@ func (o *AisStreamMessageMessage) GetPositionReport() PositionReport {
 // GetPositionReportOk returns a tuple with the PositionReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetPositionReportOk() (*PositionReport, bool) {
-	if o == nil || o.PositionReport == nil {
+	if o == nil || IsNil(o.PositionReport) {
 		return nil, false
 	}
 	return o.PositionReport, true
@@ -80,7 +83,7 @@ func (o *AisStreamMessageMessage) GetPositionReportOk() (*PositionReport, bool) 
 
 // HasPositionReport returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasPositionReport() bool {
-	if o != nil && o.PositionReport != nil {
+	if o != nil && !IsNil(o.PositionReport) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *AisStreamMessageMessage) SetPositionReport(v PositionReport) {
 
 // GetUnknownMessage returns the UnknownMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetUnknownMessage() UnknownMessage {
-	if o == nil || o.UnknownMessage == nil {
+	if o == nil || IsNil(o.UnknownMessage) {
 		var ret UnknownMessage
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *AisStreamMessageMessage) GetUnknownMessage() UnknownMessage {
 // GetUnknownMessageOk returns a tuple with the UnknownMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetUnknownMessageOk() (*UnknownMessage, bool) {
-	if o == nil || o.UnknownMessage == nil {
+	if o == nil || IsNil(o.UnknownMessage) {
 		return nil, false
 	}
 	return o.UnknownMessage, true
@@ -112,7 +115,7 @@ func (o *AisStreamMessageMessage) GetUnknownMessageOk() (*UnknownMessage, bool) 
 
 // HasUnknownMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasUnknownMessage() bool {
-	if o != nil && o.UnknownMessage != nil {
+	if o != nil && !IsNil(o.UnknownMessage) {
 		return true
 	}
 
@@ -126,7 +129,7 @@ func (o *AisStreamMessageMessage) SetUnknownMessage(v UnknownMessage) {
 
 // GetAddressedSafetyMessage returns the AddressedSafetyMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetAddressedSafetyMessage() AddressedSafetyMessage {
-	if o == nil || o.AddressedSafetyMessage == nil {
+	if o == nil || IsNil(o.AddressedSafetyMessage) {
 		var ret AddressedSafetyMessage
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *AisStreamMessageMessage) GetAddressedSafetyMessage() AddressedSafetyMes
 // GetAddressedSafetyMessageOk returns a tuple with the AddressedSafetyMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetAddressedSafetyMessageOk() (*AddressedSafetyMessage, bool) {
-	if o == nil || o.AddressedSafetyMessage == nil {
+	if o == nil || IsNil(o.AddressedSafetyMessage) {
 		return nil, false
 	}
 	return o.AddressedSafetyMessage, true
@@ -144,7 +147,7 @@ func (o *AisStreamMessageMessage) GetAddressedSafetyMessageOk() (*AddressedSafet
 
 // HasAddressedSafetyMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasAddressedSafetyMessage() bool {
-	if o != nil && o.AddressedSafetyMessage != nil {
+	if o != nil && !IsNil(o.AddressedSafetyMessage) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *AisStreamMessageMessage) SetAddressedSafetyMessage(v AddressedSafetyMes
 
 // GetAddressedBinaryMessage returns the AddressedBinaryMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetAddressedBinaryMessage() AddressedBinaryMessage {
-	if o == nil || o.AddressedBinaryMessage == nil {
+	if o == nil || IsNil(o.AddressedBinaryMessage) {
 		var ret AddressedBinaryMessage
 		return ret
 	}
@@ -168,7 +171,7 @@ func (o *AisStreamMessageMessage) GetAddressedBinaryMessage() AddressedBinaryMes
 // GetAddressedBinaryMessageOk returns a tuple with the AddressedBinaryMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetAddressedBinaryMessageOk() (*AddressedBinaryMessage, bool) {
-	if o == nil || o.AddressedBinaryMessage == nil {
+	if o == nil || IsNil(o.AddressedBinaryMessage) {
 		return nil, false
 	}
 	return o.AddressedBinaryMessage, true
@@ -176,7 +179,7 @@ func (o *AisStreamMessageMessage) GetAddressedBinaryMessageOk() (*AddressedBinar
 
 // HasAddressedBinaryMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasAddressedBinaryMessage() bool {
-	if o != nil && o.AddressedBinaryMessage != nil {
+	if o != nil && !IsNil(o.AddressedBinaryMessage) {
 		return true
 	}
 
@@ -190,7 +193,7 @@ func (o *AisStreamMessageMessage) SetAddressedBinaryMessage(v AddressedBinaryMes
 
 // GetAidsToNavigationReport returns the AidsToNavigationReport field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetAidsToNavigationReport() AidsToNavigationReport {
-	if o == nil || o.AidsToNavigationReport == nil {
+	if o == nil || IsNil(o.AidsToNavigationReport) {
 		var ret AidsToNavigationReport
 		return ret
 	}
@@ -200,7 +203,7 @@ func (o *AisStreamMessageMessage) GetAidsToNavigationReport() AidsToNavigationRe
 // GetAidsToNavigationReportOk returns a tuple with the AidsToNavigationReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetAidsToNavigationReportOk() (*AidsToNavigationReport, bool) {
-	if o == nil || o.AidsToNavigationReport == nil {
+	if o == nil || IsNil(o.AidsToNavigationReport) {
 		return nil, false
 	}
 	return o.AidsToNavigationReport, true
@@ -208,7 +211,7 @@ func (o *AisStreamMessageMessage) GetAidsToNavigationReportOk() (*AidsToNavigati
 
 // HasAidsToNavigationReport returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasAidsToNavigationReport() bool {
-	if o != nil && o.AidsToNavigationReport != nil {
+	if o != nil && !IsNil(o.AidsToNavigationReport) {
 		return true
 	}
 
@@ -222,7 +225,7 @@ func (o *AisStreamMessageMessage) SetAidsToNavigationReport(v AidsToNavigationRe
 
 // GetAssignedModeCommand returns the AssignedModeCommand field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetAssignedModeCommand() AssignedModeCommand {
-	if o == nil || o.AssignedModeCommand == nil {
+	if o == nil || IsNil(o.AssignedModeCommand) {
 		var ret AssignedModeCommand
 		return ret
 	}
@@ -232,7 +235,7 @@ func (o *AisStreamMessageMessage) GetAssignedModeCommand() AssignedModeCommand {
 // GetAssignedModeCommandOk returns a tuple with the AssignedModeCommand field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetAssignedModeCommandOk() (*AssignedModeCommand, bool) {
-	if o == nil || o.AssignedModeCommand == nil {
+	if o == nil || IsNil(o.AssignedModeCommand) {
 		return nil, false
 	}
 	return o.AssignedModeCommand, true
@@ -240,7 +243,7 @@ func (o *AisStreamMessageMessage) GetAssignedModeCommandOk() (*AssignedModeComma
 
 // HasAssignedModeCommand returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasAssignedModeCommand() bool {
-	if o != nil && o.AssignedModeCommand != nil {
+	if o != nil && !IsNil(o.AssignedModeCommand) {
 		return true
 	}
 
@@ -254,7 +257,7 @@ func (o *AisStreamMessageMessage) SetAssignedModeCommand(v AssignedModeCommand) 
 
 // GetBaseStationReport returns the BaseStationReport field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetBaseStationReport() BaseStationReport {
-	if o == nil || o.BaseStationReport == nil {
+	if o == nil || IsNil(o.BaseStationReport) {
 		var ret BaseStationReport
 		return ret
 	}
@@ -264,7 +267,7 @@ func (o *AisStreamMessageMessage) GetBaseStationReport() BaseStationReport {
 // GetBaseStationReportOk returns a tuple with the BaseStationReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetBaseStationReportOk() (*BaseStationReport, bool) {
-	if o == nil || o.BaseStationReport == nil {
+	if o == nil || IsNil(o.BaseStationReport) {
 		return nil, false
 	}
 	return o.BaseStationReport, true
@@ -272,7 +275,7 @@ func (o *AisStreamMessageMessage) GetBaseStationReportOk() (*BaseStationReport, 
 
 // HasBaseStationReport returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasBaseStationReport() bool {
-	if o != nil && o.BaseStationReport != nil {
+	if o != nil && !IsNil(o.BaseStationReport) {
 		return true
 	}
 
@@ -286,7 +289,7 @@ func (o *AisStreamMessageMessage) SetBaseStationReport(v BaseStationReport) {
 
 // GetBinaryAcknowledge returns the BinaryAcknowledge field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetBinaryAcknowledge() BinaryAcknowledge {
-	if o == nil || o.BinaryAcknowledge == nil {
+	if o == nil || IsNil(o.BinaryAcknowledge) {
 		var ret BinaryAcknowledge
 		return ret
 	}
@@ -296,7 +299,7 @@ func (o *AisStreamMessageMessage) GetBinaryAcknowledge() BinaryAcknowledge {
 // GetBinaryAcknowledgeOk returns a tuple with the BinaryAcknowledge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetBinaryAcknowledgeOk() (*BinaryAcknowledge, bool) {
-	if o == nil || o.BinaryAcknowledge == nil {
+	if o == nil || IsNil(o.BinaryAcknowledge) {
 		return nil, false
 	}
 	return o.BinaryAcknowledge, true
@@ -304,7 +307,7 @@ func (o *AisStreamMessageMessage) GetBinaryAcknowledgeOk() (*BinaryAcknowledge, 
 
 // HasBinaryAcknowledge returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasBinaryAcknowledge() bool {
-	if o != nil && o.BinaryAcknowledge != nil {
+	if o != nil && !IsNil(o.BinaryAcknowledge) {
 		return true
 	}
 
@@ -318,7 +321,7 @@ func (o *AisStreamMessageMessage) SetBinaryAcknowledge(v BinaryAcknowledge) {
 
 // GetBinaryBroadcastMessage returns the BinaryBroadcastMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetBinaryBroadcastMessage() BinaryBroadcastMessage {
-	if o == nil || o.BinaryBroadcastMessage == nil {
+	if o == nil || IsNil(o.BinaryBroadcastMessage) {
 		var ret BinaryBroadcastMessage
 		return ret
 	}
@@ -328,7 +331,7 @@ func (o *AisStreamMessageMessage) GetBinaryBroadcastMessage() BinaryBroadcastMes
 // GetBinaryBroadcastMessageOk returns a tuple with the BinaryBroadcastMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetBinaryBroadcastMessageOk() (*BinaryBroadcastMessage, bool) {
-	if o == nil || o.BinaryBroadcastMessage == nil {
+	if o == nil || IsNil(o.BinaryBroadcastMessage) {
 		return nil, false
 	}
 	return o.BinaryBroadcastMessage, true
@@ -336,7 +339,7 @@ func (o *AisStreamMessageMessage) GetBinaryBroadcastMessageOk() (*BinaryBroadcas
 
 // HasBinaryBroadcastMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasBinaryBroadcastMessage() bool {
-	if o != nil && o.BinaryBroadcastMessage != nil {
+	if o != nil && !IsNil(o.BinaryBroadcastMessage) {
 		return true
 	}
 
@@ -350,7 +353,7 @@ func (o *AisStreamMessageMessage) SetBinaryBroadcastMessage(v BinaryBroadcastMes
 
 // GetChannelManagement returns the ChannelManagement field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetChannelManagement() ChannelManagement {
-	if o == nil || o.ChannelManagement == nil {
+	if o == nil || IsNil(o.ChannelManagement) {
 		var ret ChannelManagement
 		return ret
 	}
@@ -360,7 +363,7 @@ func (o *AisStreamMessageMessage) GetChannelManagement() ChannelManagement {
 // GetChannelManagementOk returns a tuple with the ChannelManagement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetChannelManagementOk() (*ChannelManagement, bool) {
-	if o == nil || o.ChannelManagement == nil {
+	if o == nil || IsNil(o.ChannelManagement) {
 		return nil, false
 	}
 	return o.ChannelManagement, true
@@ -368,7 +371,7 @@ func (o *AisStreamMessageMessage) GetChannelManagementOk() (*ChannelManagement, 
 
 // HasChannelManagement returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasChannelManagement() bool {
-	if o != nil && o.ChannelManagement != nil {
+	if o != nil && !IsNil(o.ChannelManagement) {
 		return true
 	}
 
@@ -382,7 +385,7 @@ func (o *AisStreamMessageMessage) SetChannelManagement(v ChannelManagement) {
 
 // GetCoordinatedUTCInquiry returns the CoordinatedUTCInquiry field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetCoordinatedUTCInquiry() CoordinatedUTCInquiry {
-	if o == nil || o.CoordinatedUTCInquiry == nil {
+	if o == nil || IsNil(o.CoordinatedUTCInquiry) {
 		var ret CoordinatedUTCInquiry
 		return ret
 	}
@@ -392,7 +395,7 @@ func (o *AisStreamMessageMessage) GetCoordinatedUTCInquiry() CoordinatedUTCInqui
 // GetCoordinatedUTCInquiryOk returns a tuple with the CoordinatedUTCInquiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetCoordinatedUTCInquiryOk() (*CoordinatedUTCInquiry, bool) {
-	if o == nil || o.CoordinatedUTCInquiry == nil {
+	if o == nil || IsNil(o.CoordinatedUTCInquiry) {
 		return nil, false
 	}
 	return o.CoordinatedUTCInquiry, true
@@ -400,7 +403,7 @@ func (o *AisStreamMessageMessage) GetCoordinatedUTCInquiryOk() (*CoordinatedUTCI
 
 // HasCoordinatedUTCInquiry returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasCoordinatedUTCInquiry() bool {
-	if o != nil && o.CoordinatedUTCInquiry != nil {
+	if o != nil && !IsNil(o.CoordinatedUTCInquiry) {
 		return true
 	}
 
@@ -414,7 +417,7 @@ func (o *AisStreamMessageMessage) SetCoordinatedUTCInquiry(v CoordinatedUTCInqui
 
 // GetDataLinkManagementMessage returns the DataLinkManagementMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetDataLinkManagementMessage() DataLinkManagementMessage {
-	if o == nil || o.DataLinkManagementMessage == nil {
+	if o == nil || IsNil(o.DataLinkManagementMessage) {
 		var ret DataLinkManagementMessage
 		return ret
 	}
@@ -424,7 +427,7 @@ func (o *AisStreamMessageMessage) GetDataLinkManagementMessage() DataLinkManagem
 // GetDataLinkManagementMessageOk returns a tuple with the DataLinkManagementMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetDataLinkManagementMessageOk() (*DataLinkManagementMessage, bool) {
-	if o == nil || o.DataLinkManagementMessage == nil {
+	if o == nil || IsNil(o.DataLinkManagementMessage) {
 		return nil, false
 	}
 	return o.DataLinkManagementMessage, true
@@ -432,7 +435,7 @@ func (o *AisStreamMessageMessage) GetDataLinkManagementMessageOk() (*DataLinkMan
 
 // HasDataLinkManagementMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasDataLinkManagementMessage() bool {
-	if o != nil && o.DataLinkManagementMessage != nil {
+	if o != nil && !IsNil(o.DataLinkManagementMessage) {
 		return true
 	}
 
@@ -446,7 +449,7 @@ func (o *AisStreamMessageMessage) SetDataLinkManagementMessage(v DataLinkManagem
 
 // GetDataLinkManagementMessageData returns the DataLinkManagementMessageData field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetDataLinkManagementMessageData() DataLinkManagementMessageData {
-	if o == nil || o.DataLinkManagementMessageData == nil {
+	if o == nil || IsNil(o.DataLinkManagementMessageData) {
 		var ret DataLinkManagementMessageData
 		return ret
 	}
@@ -456,7 +459,7 @@ func (o *AisStreamMessageMessage) GetDataLinkManagementMessageData() DataLinkMan
 // GetDataLinkManagementMessageDataOk returns a tuple with the DataLinkManagementMessageData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetDataLinkManagementMessageDataOk() (*DataLinkManagementMessageData, bool) {
-	if o == nil || o.DataLinkManagementMessageData == nil {
+	if o == nil || IsNil(o.DataLinkManagementMessageData) {
 		return nil, false
 	}
 	return o.DataLinkManagementMessageData, true
@@ -464,7 +467,7 @@ func (o *AisStreamMessageMessage) GetDataLinkManagementMessageDataOk() (*DataLin
 
 // HasDataLinkManagementMessageData returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasDataLinkManagementMessageData() bool {
-	if o != nil && o.DataLinkManagementMessageData != nil {
+	if o != nil && !IsNil(o.DataLinkManagementMessageData) {
 		return true
 	}
 
@@ -478,7 +481,7 @@ func (o *AisStreamMessageMessage) SetDataLinkManagementMessageData(v DataLinkMan
 
 // GetExtendedClassBPositionReport returns the ExtendedClassBPositionReport field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetExtendedClassBPositionReport() ExtendedClassBPositionReport {
-	if o == nil || o.ExtendedClassBPositionReport == nil {
+	if o == nil || IsNil(o.ExtendedClassBPositionReport) {
 		var ret ExtendedClassBPositionReport
 		return ret
 	}
@@ -488,7 +491,7 @@ func (o *AisStreamMessageMessage) GetExtendedClassBPositionReport() ExtendedClas
 // GetExtendedClassBPositionReportOk returns a tuple with the ExtendedClassBPositionReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetExtendedClassBPositionReportOk() (*ExtendedClassBPositionReport, bool) {
-	if o == nil || o.ExtendedClassBPositionReport == nil {
+	if o == nil || IsNil(o.ExtendedClassBPositionReport) {
 		return nil, false
 	}
 	return o.ExtendedClassBPositionReport, true
@@ -496,7 +499,7 @@ func (o *AisStreamMessageMessage) GetExtendedClassBPositionReportOk() (*Extended
 
 // HasExtendedClassBPositionReport returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasExtendedClassBPositionReport() bool {
-	if o != nil && o.ExtendedClassBPositionReport != nil {
+	if o != nil && !IsNil(o.ExtendedClassBPositionReport) {
 		return true
 	}
 
@@ -510,7 +513,7 @@ func (o *AisStreamMessageMessage) SetExtendedClassBPositionReport(v ExtendedClas
 
 // GetGnssBroadcastBinaryMessage returns the GnssBroadcastBinaryMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetGnssBroadcastBinaryMessage() GnssBroadcastBinaryMessage {
-	if o == nil || o.GnssBroadcastBinaryMessage == nil {
+	if o == nil || IsNil(o.GnssBroadcastBinaryMessage) {
 		var ret GnssBroadcastBinaryMessage
 		return ret
 	}
@@ -520,7 +523,7 @@ func (o *AisStreamMessageMessage) GetGnssBroadcastBinaryMessage() GnssBroadcastB
 // GetGnssBroadcastBinaryMessageOk returns a tuple with the GnssBroadcastBinaryMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetGnssBroadcastBinaryMessageOk() (*GnssBroadcastBinaryMessage, bool) {
-	if o == nil || o.GnssBroadcastBinaryMessage == nil {
+	if o == nil || IsNil(o.GnssBroadcastBinaryMessage) {
 		return nil, false
 	}
 	return o.GnssBroadcastBinaryMessage, true
@@ -528,7 +531,7 @@ func (o *AisStreamMessageMessage) GetGnssBroadcastBinaryMessageOk() (*GnssBroadc
 
 // HasGnssBroadcastBinaryMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasGnssBroadcastBinaryMessage() bool {
-	if o != nil && o.GnssBroadcastBinaryMessage != nil {
+	if o != nil && !IsNil(o.GnssBroadcastBinaryMessage) {
 		return true
 	}
 
@@ -542,7 +545,7 @@ func (o *AisStreamMessageMessage) SetGnssBroadcastBinaryMessage(v GnssBroadcastB
 
 // GetGroupAssignmentCommand returns the GroupAssignmentCommand field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetGroupAssignmentCommand() GroupAssignmentCommand {
-	if o == nil || o.GroupAssignmentCommand == nil {
+	if o == nil || IsNil(o.GroupAssignmentCommand) {
 		var ret GroupAssignmentCommand
 		return ret
 	}
@@ -552,7 +555,7 @@ func (o *AisStreamMessageMessage) GetGroupAssignmentCommand() GroupAssignmentCom
 // GetGroupAssignmentCommandOk returns a tuple with the GroupAssignmentCommand field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetGroupAssignmentCommandOk() (*GroupAssignmentCommand, bool) {
-	if o == nil || o.GroupAssignmentCommand == nil {
+	if o == nil || IsNil(o.GroupAssignmentCommand) {
 		return nil, false
 	}
 	return o.GroupAssignmentCommand, true
@@ -560,7 +563,7 @@ func (o *AisStreamMessageMessage) GetGroupAssignmentCommandOk() (*GroupAssignmen
 
 // HasGroupAssignmentCommand returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasGroupAssignmentCommand() bool {
-	if o != nil && o.GroupAssignmentCommand != nil {
+	if o != nil && !IsNil(o.GroupAssignmentCommand) {
 		return true
 	}
 
@@ -574,7 +577,7 @@ func (o *AisStreamMessageMessage) SetGroupAssignmentCommand(v GroupAssignmentCom
 
 // GetInterrogation returns the Interrogation field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetInterrogation() Interrogation {
-	if o == nil || o.Interrogation == nil {
+	if o == nil || IsNil(o.Interrogation) {
 		var ret Interrogation
 		return ret
 	}
@@ -584,7 +587,7 @@ func (o *AisStreamMessageMessage) GetInterrogation() Interrogation {
 // GetInterrogationOk returns a tuple with the Interrogation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetInterrogationOk() (*Interrogation, bool) {
-	if o == nil || o.Interrogation == nil {
+	if o == nil || IsNil(o.Interrogation) {
 		return nil, false
 	}
 	return o.Interrogation, true
@@ -592,7 +595,7 @@ func (o *AisStreamMessageMessage) GetInterrogationOk() (*Interrogation, bool) {
 
 // HasInterrogation returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasInterrogation() bool {
-	if o != nil && o.Interrogation != nil {
+	if o != nil && !IsNil(o.Interrogation) {
 		return true
 	}
 
@@ -606,7 +609,7 @@ func (o *AisStreamMessageMessage) SetInterrogation(v Interrogation) {
 
 // GetLongRangeAisBroadcastMessage returns the LongRangeAisBroadcastMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetLongRangeAisBroadcastMessage() LongRangeAisBroadcastMessage {
-	if o == nil || o.LongRangeAisBroadcastMessage == nil {
+	if o == nil || IsNil(o.LongRangeAisBroadcastMessage) {
 		var ret LongRangeAisBroadcastMessage
 		return ret
 	}
@@ -616,7 +619,7 @@ func (o *AisStreamMessageMessage) GetLongRangeAisBroadcastMessage() LongRangeAis
 // GetLongRangeAisBroadcastMessageOk returns a tuple with the LongRangeAisBroadcastMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetLongRangeAisBroadcastMessageOk() (*LongRangeAisBroadcastMessage, bool) {
-	if o == nil || o.LongRangeAisBroadcastMessage == nil {
+	if o == nil || IsNil(o.LongRangeAisBroadcastMessage) {
 		return nil, false
 	}
 	return o.LongRangeAisBroadcastMessage, true
@@ -624,7 +627,7 @@ func (o *AisStreamMessageMessage) GetLongRangeAisBroadcastMessageOk() (*LongRang
 
 // HasLongRangeAisBroadcastMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasLongRangeAisBroadcastMessage() bool {
-	if o != nil && o.LongRangeAisBroadcastMessage != nil {
+	if o != nil && !IsNil(o.LongRangeAisBroadcastMessage) {
 		return true
 	}
 
@@ -638,7 +641,7 @@ func (o *AisStreamMessageMessage) SetLongRangeAisBroadcastMessage(v LongRangeAis
 
 // GetMultiSlotBinaryMessage returns the MultiSlotBinaryMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetMultiSlotBinaryMessage() MultiSlotBinaryMessage {
-	if o == nil || o.MultiSlotBinaryMessage == nil {
+	if o == nil || IsNil(o.MultiSlotBinaryMessage) {
 		var ret MultiSlotBinaryMessage
 		return ret
 	}
@@ -648,7 +651,7 @@ func (o *AisStreamMessageMessage) GetMultiSlotBinaryMessage() MultiSlotBinaryMes
 // GetMultiSlotBinaryMessageOk returns a tuple with the MultiSlotBinaryMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetMultiSlotBinaryMessageOk() (*MultiSlotBinaryMessage, bool) {
-	if o == nil || o.MultiSlotBinaryMessage == nil {
+	if o == nil || IsNil(o.MultiSlotBinaryMessage) {
 		return nil, false
 	}
 	return o.MultiSlotBinaryMessage, true
@@ -656,7 +659,7 @@ func (o *AisStreamMessageMessage) GetMultiSlotBinaryMessageOk() (*MultiSlotBinar
 
 // HasMultiSlotBinaryMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasMultiSlotBinaryMessage() bool {
-	if o != nil && o.MultiSlotBinaryMessage != nil {
+	if o != nil && !IsNil(o.MultiSlotBinaryMessage) {
 		return true
 	}
 
@@ -670,7 +673,7 @@ func (o *AisStreamMessageMessage) SetMultiSlotBinaryMessage(v MultiSlotBinaryMes
 
 // GetSafetyBroadcastMessage returns the SafetyBroadcastMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetSafetyBroadcastMessage() SafetyBroadcastMessage {
-	if o == nil || o.SafetyBroadcastMessage == nil {
+	if o == nil || IsNil(o.SafetyBroadcastMessage) {
 		var ret SafetyBroadcastMessage
 		return ret
 	}
@@ -680,7 +683,7 @@ func (o *AisStreamMessageMessage) GetSafetyBroadcastMessage() SafetyBroadcastMes
 // GetSafetyBroadcastMessageOk returns a tuple with the SafetyBroadcastMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetSafetyBroadcastMessageOk() (*SafetyBroadcastMessage, bool) {
-	if o == nil || o.SafetyBroadcastMessage == nil {
+	if o == nil || IsNil(o.SafetyBroadcastMessage) {
 		return nil, false
 	}
 	return o.SafetyBroadcastMessage, true
@@ -688,7 +691,7 @@ func (o *AisStreamMessageMessage) GetSafetyBroadcastMessageOk() (*SafetyBroadcas
 
 // HasSafetyBroadcastMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasSafetyBroadcastMessage() bool {
-	if o != nil && o.SafetyBroadcastMessage != nil {
+	if o != nil && !IsNil(o.SafetyBroadcastMessage) {
 		return true
 	}
 
@@ -702,7 +705,7 @@ func (o *AisStreamMessageMessage) SetSafetyBroadcastMessage(v SafetyBroadcastMes
 
 // GetShipStaticData returns the ShipStaticData field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetShipStaticData() ShipStaticData {
-	if o == nil || o.ShipStaticData == nil {
+	if o == nil || IsNil(o.ShipStaticData) {
 		var ret ShipStaticData
 		return ret
 	}
@@ -712,7 +715,7 @@ func (o *AisStreamMessageMessage) GetShipStaticData() ShipStaticData {
 // GetShipStaticDataOk returns a tuple with the ShipStaticData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetShipStaticDataOk() (*ShipStaticData, bool) {
-	if o == nil || o.ShipStaticData == nil {
+	if o == nil || IsNil(o.ShipStaticData) {
 		return nil, false
 	}
 	return o.ShipStaticData, true
@@ -720,7 +723,7 @@ func (o *AisStreamMessageMessage) GetShipStaticDataOk() (*ShipStaticData, bool) 
 
 // HasShipStaticData returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasShipStaticData() bool {
-	if o != nil && o.ShipStaticData != nil {
+	if o != nil && !IsNil(o.ShipStaticData) {
 		return true
 	}
 
@@ -734,7 +737,7 @@ func (o *AisStreamMessageMessage) SetShipStaticData(v ShipStaticData) {
 
 // GetSingleSlotBinaryMessage returns the SingleSlotBinaryMessage field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetSingleSlotBinaryMessage() SingleSlotBinaryMessage {
-	if o == nil || o.SingleSlotBinaryMessage == nil {
+	if o == nil || IsNil(o.SingleSlotBinaryMessage) {
 		var ret SingleSlotBinaryMessage
 		return ret
 	}
@@ -744,7 +747,7 @@ func (o *AisStreamMessageMessage) GetSingleSlotBinaryMessage() SingleSlotBinaryM
 // GetSingleSlotBinaryMessageOk returns a tuple with the SingleSlotBinaryMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetSingleSlotBinaryMessageOk() (*SingleSlotBinaryMessage, bool) {
-	if o == nil || o.SingleSlotBinaryMessage == nil {
+	if o == nil || IsNil(o.SingleSlotBinaryMessage) {
 		return nil, false
 	}
 	return o.SingleSlotBinaryMessage, true
@@ -752,7 +755,7 @@ func (o *AisStreamMessageMessage) GetSingleSlotBinaryMessageOk() (*SingleSlotBin
 
 // HasSingleSlotBinaryMessage returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasSingleSlotBinaryMessage() bool {
-	if o != nil && o.SingleSlotBinaryMessage != nil {
+	if o != nil && !IsNil(o.SingleSlotBinaryMessage) {
 		return true
 	}
 
@@ -766,7 +769,7 @@ func (o *AisStreamMessageMessage) SetSingleSlotBinaryMessage(v SingleSlotBinaryM
 
 // GetStandardClassBPositionReport returns the StandardClassBPositionReport field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetStandardClassBPositionReport() StandardClassBPositionReport {
-	if o == nil || o.StandardClassBPositionReport == nil {
+	if o == nil || IsNil(o.StandardClassBPositionReport) {
 		var ret StandardClassBPositionReport
 		return ret
 	}
@@ -776,7 +779,7 @@ func (o *AisStreamMessageMessage) GetStandardClassBPositionReport() StandardClas
 // GetStandardClassBPositionReportOk returns a tuple with the StandardClassBPositionReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetStandardClassBPositionReportOk() (*StandardClassBPositionReport, bool) {
-	if o == nil || o.StandardClassBPositionReport == nil {
+	if o == nil || IsNil(o.StandardClassBPositionReport) {
 		return nil, false
 	}
 	return o.StandardClassBPositionReport, true
@@ -784,7 +787,7 @@ func (o *AisStreamMessageMessage) GetStandardClassBPositionReportOk() (*Standard
 
 // HasStandardClassBPositionReport returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasStandardClassBPositionReport() bool {
-	if o != nil && o.StandardClassBPositionReport != nil {
+	if o != nil && !IsNil(o.StandardClassBPositionReport) {
 		return true
 	}
 
@@ -798,7 +801,7 @@ func (o *AisStreamMessageMessage) SetStandardClassBPositionReport(v StandardClas
 
 // GetStandardSearchAndRescueAircraftReport returns the StandardSearchAndRescueAircraftReport field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetStandardSearchAndRescueAircraftReport() StandardSearchAndRescueAircraftReport {
-	if o == nil || o.StandardSearchAndRescueAircraftReport == nil {
+	if o == nil || IsNil(o.StandardSearchAndRescueAircraftReport) {
 		var ret StandardSearchAndRescueAircraftReport
 		return ret
 	}
@@ -808,7 +811,7 @@ func (o *AisStreamMessageMessage) GetStandardSearchAndRescueAircraftReport() Sta
 // GetStandardSearchAndRescueAircraftReportOk returns a tuple with the StandardSearchAndRescueAircraftReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetStandardSearchAndRescueAircraftReportOk() (*StandardSearchAndRescueAircraftReport, bool) {
-	if o == nil || o.StandardSearchAndRescueAircraftReport == nil {
+	if o == nil || IsNil(o.StandardSearchAndRescueAircraftReport) {
 		return nil, false
 	}
 	return o.StandardSearchAndRescueAircraftReport, true
@@ -816,7 +819,7 @@ func (o *AisStreamMessageMessage) GetStandardSearchAndRescueAircraftReportOk() (
 
 // HasStandardSearchAndRescueAircraftReport returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasStandardSearchAndRescueAircraftReport() bool {
-	if o != nil && o.StandardSearchAndRescueAircraftReport != nil {
+	if o != nil && !IsNil(o.StandardSearchAndRescueAircraftReport) {
 		return true
 	}
 
@@ -830,7 +833,7 @@ func (o *AisStreamMessageMessage) SetStandardSearchAndRescueAircraftReport(v Sta
 
 // GetStaticDataReport returns the StaticDataReport field value if set, zero value otherwise.
 func (o *AisStreamMessageMessage) GetStaticDataReport() StaticDataReport {
-	if o == nil || o.StaticDataReport == nil {
+	if o == nil || IsNil(o.StaticDataReport) {
 		var ret StaticDataReport
 		return ret
 	}
@@ -840,7 +843,7 @@ func (o *AisStreamMessageMessage) GetStaticDataReport() StaticDataReport {
 // GetStaticDataReportOk returns a tuple with the StaticDataReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AisStreamMessageMessage) GetStaticDataReportOk() (*StaticDataReport, bool) {
-	if o == nil || o.StaticDataReport == nil {
+	if o == nil || IsNil(o.StaticDataReport) {
 		return nil, false
 	}
 	return o.StaticDataReport, true
@@ -848,7 +851,7 @@ func (o *AisStreamMessageMessage) GetStaticDataReportOk() (*StaticDataReport, bo
 
 // HasStaticDataReport returns a boolean if a field has been set.
 func (o *AisStreamMessageMessage) HasStaticDataReport() bool {
-	if o != nil && o.StaticDataReport != nil {
+	if o != nil && !IsNil(o.StaticDataReport) {
 		return true
 	}
 
@@ -861,83 +864,91 @@ func (o *AisStreamMessageMessage) SetStaticDataReport(v StaticDataReport) {
 }
 
 func (o AisStreamMessageMessage) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.PositionReport != nil {
-		toSerialize["PositionReport"] = o.PositionReport
-	}
-	if o.UnknownMessage != nil {
-		toSerialize["UnknownMessage"] = o.UnknownMessage
-	}
-	if o.AddressedSafetyMessage != nil {
-		toSerialize["AddressedSafetyMessage"] = o.AddressedSafetyMessage
-	}
-	if o.AddressedBinaryMessage != nil {
-		toSerialize["AddressedBinaryMessage"] = o.AddressedBinaryMessage
-	}
-	if o.AidsToNavigationReport != nil {
-		toSerialize["AidsToNavigationReport"] = o.AidsToNavigationReport
-	}
-	if o.AssignedModeCommand != nil {
-		toSerialize["AssignedModeCommand"] = o.AssignedModeCommand
-	}
-	if o.BaseStationReport != nil {
-		toSerialize["BaseStationReport"] = o.BaseStationReport
-	}
-	if o.BinaryAcknowledge != nil {
-		toSerialize["BinaryAcknowledge"] = o.BinaryAcknowledge
-	}
-	if o.BinaryBroadcastMessage != nil {
-		toSerialize["BinaryBroadcastMessage"] = o.BinaryBroadcastMessage
-	}
-	if o.ChannelManagement != nil {
-		toSerialize["ChannelManagement"] = o.ChannelManagement
-	}
-	if o.CoordinatedUTCInquiry != nil {
-		toSerialize["CoordinatedUTCInquiry"] = o.CoordinatedUTCInquiry
-	}
-	if o.DataLinkManagementMessage != nil {
-		toSerialize["DataLinkManagementMessage"] = o.DataLinkManagementMessage
-	}
-	if o.DataLinkManagementMessageData != nil {
-		toSerialize["DataLinkManagementMessageData"] = o.DataLinkManagementMessageData
-	}
-	if o.ExtendedClassBPositionReport != nil {
-		toSerialize["ExtendedClassBPositionReport"] = o.ExtendedClassBPositionReport
-	}
-	if o.GnssBroadcastBinaryMessage != nil {
-		toSerialize["GnssBroadcastBinaryMessage"] = o.GnssBroadcastBinaryMessage
-	}
-	if o.GroupAssignmentCommand != nil {
-		toSerialize["GroupAssignmentCommand"] = o.GroupAssignmentCommand
-	}
-	if o.Interrogation != nil {
-		toSerialize["Interrogation"] = o.Interrogation
-	}
-	if o.LongRangeAisBroadcastMessage != nil {
-		toSerialize["LongRangeAisBroadcastMessage"] = o.LongRangeAisBroadcastMessage
-	}
-	if o.MultiSlotBinaryMessage != nil {
-		toSerialize["MultiSlotBinaryMessage"] = o.MultiSlotBinaryMessage
-	}
-	if o.SafetyBroadcastMessage != nil {
-		toSerialize["SafetyBroadcastMessage"] = o.SafetyBroadcastMessage
-	}
-	if o.ShipStaticData != nil {
-		toSerialize["ShipStaticData"] = o.ShipStaticData
-	}
-	if o.SingleSlotBinaryMessage != nil {
-		toSerialize["SingleSlotBinaryMessage"] = o.SingleSlotBinaryMessage
-	}
-	if o.StandardClassBPositionReport != nil {
-		toSerialize["StandardClassBPositionReport"] = o.StandardClassBPositionReport
-	}
-	if o.StandardSearchAndRescueAircraftReport != nil {
-		toSerialize["StandardSearchAndRescueAircraftReport"] = o.StandardSearchAndRescueAircraftReport
-	}
-	if o.StaticDataReport != nil {
-		toSerialize["StaticDataReport"] = o.StaticDataReport
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AisStreamMessageMessage) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.PositionReport) {
+		toSerialize["PositionReport"] = o.PositionReport
+	}
+	if !IsNil(o.UnknownMessage) {
+		toSerialize["UnknownMessage"] = o.UnknownMessage
+	}
+	if !IsNil(o.AddressedSafetyMessage) {
+		toSerialize["AddressedSafetyMessage"] = o.AddressedSafetyMessage
+	}
+	if !IsNil(o.AddressedBinaryMessage) {
+		toSerialize["AddressedBinaryMessage"] = o.AddressedBinaryMessage
+	}
+	if !IsNil(o.AidsToNavigationReport) {
+		toSerialize["AidsToNavigationReport"] = o.AidsToNavigationReport
+	}
+	if !IsNil(o.AssignedModeCommand) {
+		toSerialize["AssignedModeCommand"] = o.AssignedModeCommand
+	}
+	if !IsNil(o.BaseStationReport) {
+		toSerialize["BaseStationReport"] = o.BaseStationReport
+	}
+	if !IsNil(o.BinaryAcknowledge) {
+		toSerialize["BinaryAcknowledge"] = o.BinaryAcknowledge
+	}
+	if !IsNil(o.BinaryBroadcastMessage) {
+		toSerialize["BinaryBroadcastMessage"] = o.BinaryBroadcastMessage
+	}
+	if !IsNil(o.ChannelManagement) {
+		toSerialize["ChannelManagement"] = o.ChannelManagement
+	}
+	if !IsNil(o.CoordinatedUTCInquiry) {
+		toSerialize["CoordinatedUTCInquiry"] = o.CoordinatedUTCInquiry
+	}
+	if !IsNil(o.DataLinkManagementMessage) {
+		toSerialize["DataLinkManagementMessage"] = o.DataLinkManagementMessage
+	}
+	if !IsNil(o.DataLinkManagementMessageData) {
+		toSerialize["DataLinkManagementMessageData"] = o.DataLinkManagementMessageData
+	}
+	if !IsNil(o.ExtendedClassBPositionReport) {
+		toSerialize["ExtendedClassBPositionReport"] = o.ExtendedClassBPositionReport
+	}
+	if !IsNil(o.GnssBroadcastBinaryMessage) {
+		toSerialize["GnssBroadcastBinaryMessage"] = o.GnssBroadcastBinaryMessage
+	}
+	if !IsNil(o.GroupAssignmentCommand) {
+		toSerialize["GroupAssignmentCommand"] = o.GroupAssignmentCommand
+	}
+	if !IsNil(o.Interrogation) {
+		toSerialize["Interrogation"] = o.Interrogation
+	}
+	if !IsNil(o.LongRangeAisBroadcastMessage) {
+		toSerialize["LongRangeAisBroadcastMessage"] = o.LongRangeAisBroadcastMessage
+	}
+	if !IsNil(o.MultiSlotBinaryMessage) {
+		toSerialize["MultiSlotBinaryMessage"] = o.MultiSlotBinaryMessage
+	}
+	if !IsNil(o.SafetyBroadcastMessage) {
+		toSerialize["SafetyBroadcastMessage"] = o.SafetyBroadcastMessage
+	}
+	if !IsNil(o.ShipStaticData) {
+		toSerialize["ShipStaticData"] = o.ShipStaticData
+	}
+	if !IsNil(o.SingleSlotBinaryMessage) {
+		toSerialize["SingleSlotBinaryMessage"] = o.SingleSlotBinaryMessage
+	}
+	if !IsNil(o.StandardClassBPositionReport) {
+		toSerialize["StandardClassBPositionReport"] = o.StandardClassBPositionReport
+	}
+	if !IsNil(o.StandardSearchAndRescueAircraftReport) {
+		toSerialize["StandardSearchAndRescueAircraftReport"] = o.StandardSearchAndRescueAircraftReport
+	}
+	if !IsNil(o.StaticDataReport) {
+		toSerialize["StaticDataReport"] = o.StaticDataReport
+	}
+	return toSerialize, nil
 }
 
 type NullableAisStreamMessageMessage struct {

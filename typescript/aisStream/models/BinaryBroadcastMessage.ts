@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { AddressedBinaryMessageApplicationID } from './AddressedBinaryMessageApplicationID';
+import { AddressedBinaryMessageApplicationID } from '../models/AddressedBinaryMessageApplicationID';
 import { HttpFile } from '../http/http';
 
 export class BinaryBroadcastMessage {
@@ -23,6 +23,8 @@ export class BinaryBroadcastMessage {
     'binaryData': string;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -75,4 +77,3 @@ export class BinaryBroadcastMessage {
     public constructor() {
     }
 }
-

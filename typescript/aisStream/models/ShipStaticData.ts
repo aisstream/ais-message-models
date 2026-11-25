@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-import { ShipStaticDataDimension } from './ShipStaticDataDimension';
-import { ShipStaticDataEta } from './ShipStaticDataEta';
+import { ShipStaticDataDimension } from '../models/ShipStaticDataDimension';
+import { ShipStaticDataEta } from '../models/ShipStaticDataEta';
 import { HttpFile } from '../http/http';
 
 export class ShipStaticData {
@@ -33,6 +33,8 @@ export class ShipStaticData {
     'spare': boolean;
 
     static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
@@ -139,4 +141,3 @@ export class ShipStaticData {
     public constructor() {
     }
 }
-

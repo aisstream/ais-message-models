@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the AddressedBinaryMessageApplicationID type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddressedBinaryMessageApplicationID{}
 
 // AddressedBinaryMessageApplicationID struct for AddressedBinaryMessageApplicationID
 type AddressedBinaryMessageApplicationID struct {
@@ -20,6 +25,8 @@ type AddressedBinaryMessageApplicationID struct {
 	DesignatedAreaCode int32 `json:"DesignatedAreaCode"`
 	FunctionIdentifier int32 `json:"FunctionIdentifier"`
 }
+
+type _AddressedBinaryMessageApplicationID AddressedBinaryMessageApplicationID
 
 // NewAddressedBinaryMessageApplicationID instantiates a new AddressedBinaryMessageApplicationID object
 // This constructor will assign default values to properties that have it defined,
@@ -114,17 +121,58 @@ func (o *AddressedBinaryMessageApplicationID) SetFunctionIdentifier(v int32) {
 }
 
 func (o AddressedBinaryMessageApplicationID) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["DesignatedAreaCode"] = o.DesignatedAreaCode
-	}
-	if true {
-		toSerialize["FunctionIdentifier"] = o.FunctionIdentifier
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddressedBinaryMessageApplicationID) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["Valid"] = o.Valid
+	toSerialize["DesignatedAreaCode"] = o.DesignatedAreaCode
+	toSerialize["FunctionIdentifier"] = o.FunctionIdentifier
+	return toSerialize, nil
+}
+
+func (o *AddressedBinaryMessageApplicationID) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"Valid",
+		"DesignatedAreaCode",
+		"FunctionIdentifier",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddressedBinaryMessageApplicationID := _AddressedBinaryMessageApplicationID{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varAddressedBinaryMessageApplicationID)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddressedBinaryMessageApplicationID(varAddressedBinaryMessageApplicationID)
+
+	return err
 }
 
 type NullableAddressedBinaryMessageApplicationID struct {

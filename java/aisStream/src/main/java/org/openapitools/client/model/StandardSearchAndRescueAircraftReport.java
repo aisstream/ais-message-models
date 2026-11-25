@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,15 +29,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -47,520 +49,463 @@ import org.openapitools.client.JSON;
 /**
  * StandardSearchAndRescueAircraftReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class StandardSearchAndRescueAircraftReport {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nonnull
   private Integer messageID;
 
   public static final String SERIALIZED_NAME_REPEAT_INDICATOR = "RepeatIndicator";
   @SerializedName(SERIALIZED_NAME_REPEAT_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer repeatIndicator;
 
   public static final String SERIALIZED_NAME_USER_I_D = "UserID";
   @SerializedName(SERIALIZED_NAME_USER_I_D)
+  @javax.annotation.Nonnull
   private Integer userID;
 
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_ALTITUDE = "Altitude";
   @SerializedName(SERIALIZED_NAME_ALTITUDE)
+  @javax.annotation.Nonnull
   private Integer altitude;
 
   public static final String SERIALIZED_NAME_SOG = "Sog";
   @SerializedName(SERIALIZED_NAME_SOG)
+  @javax.annotation.Nonnull
   private Double sog;
 
   public static final String SERIALIZED_NAME_POSITION_ACCURACY = "PositionAccuracy";
   @SerializedName(SERIALIZED_NAME_POSITION_ACCURACY)
+  @javax.annotation.Nonnull
   private Boolean positionAccuracy;
 
   public static final String SERIALIZED_NAME_LONGITUDE = "Longitude";
   @SerializedName(SERIALIZED_NAME_LONGITUDE)
+  @javax.annotation.Nonnull
   private Double longitude;
 
   public static final String SERIALIZED_NAME_LATITUDE = "Latitude";
   @SerializedName(SERIALIZED_NAME_LATITUDE)
+  @javax.annotation.Nonnull
   private Double latitude;
 
   public static final String SERIALIZED_NAME_COG = "Cog";
   @SerializedName(SERIALIZED_NAME_COG)
+  @javax.annotation.Nonnull
   private Double cog;
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "Timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
+  @javax.annotation.Nonnull
   private Integer timestamp;
 
   public static final String SERIALIZED_NAME_ALT_FROM_BARO = "AltFromBaro";
   @SerializedName(SERIALIZED_NAME_ALT_FROM_BARO)
+  @javax.annotation.Nonnull
   private Boolean altFromBaro;
 
   public static final String SERIALIZED_NAME_SPARE1 = "Spare1";
   @SerializedName(SERIALIZED_NAME_SPARE1)
+  @javax.annotation.Nonnull
   private Integer spare1;
 
   public static final String SERIALIZED_NAME_DTE = "Dte";
   @SerializedName(SERIALIZED_NAME_DTE)
+  @javax.annotation.Nonnull
   private Boolean dte;
 
   public static final String SERIALIZED_NAME_SPARE2 = "Spare2";
   @SerializedName(SERIALIZED_NAME_SPARE2)
+  @javax.annotation.Nonnull
   private Integer spare2;
 
   public static final String SERIALIZED_NAME_ASSIGNED_MODE = "AssignedMode";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_MODE)
+  @javax.annotation.Nonnull
   private Boolean assignedMode;
 
   public static final String SERIALIZED_NAME_RAIM = "Raim";
   @SerializedName(SERIALIZED_NAME_RAIM)
+  @javax.annotation.Nonnull
   private Boolean raim;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_STATE_IS_ITDMA = "CommunicationStateIsItdma";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_STATE_IS_ITDMA)
+  @javax.annotation.Nonnull
   private Boolean communicationStateIsItdma;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_STATE = "CommunicationState";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_STATE)
+  @javax.annotation.Nonnull
   private Integer communicationState;
 
-  public StandardSearchAndRescueAircraftReport() { 
+  public StandardSearchAndRescueAircraftReport() {
   }
 
-  public StandardSearchAndRescueAircraftReport messageID(Integer messageID) {
-    
+  public StandardSearchAndRescueAircraftReport messageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Get messageID
    * @return messageID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getMessageID() {
     return messageID;
   }
 
-
-  public void setMessageID(Integer messageID) {
+  public void setMessageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
   }
 
 
-  public StandardSearchAndRescueAircraftReport repeatIndicator(Integer repeatIndicator) {
-    
+  public StandardSearchAndRescueAircraftReport repeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get repeatIndicator
    * @return repeatIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRepeatIndicator() {
     return repeatIndicator;
   }
 
-
-  public void setRepeatIndicator(Integer repeatIndicator) {
+  public void setRepeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
   }
 
 
-  public StandardSearchAndRescueAircraftReport userID(Integer userID) {
-    
+  public StandardSearchAndRescueAircraftReport userID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
     return this;
   }
 
-   /**
+  /**
    * Get userID
    * @return userID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUserID() {
     return userID;
   }
 
-
-  public void setUserID(Integer userID) {
+  public void setUserID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
   }
 
 
-  public StandardSearchAndRescueAircraftReport valid(Boolean valid) {
-    
+  public StandardSearchAndRescueAircraftReport valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public StandardSearchAndRescueAircraftReport altitude(Integer altitude) {
-    
+  public StandardSearchAndRescueAircraftReport altitude(@javax.annotation.Nonnull Integer altitude) {
     this.altitude = altitude;
     return this;
   }
 
-   /**
+  /**
    * Get altitude
    * @return altitude
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getAltitude() {
     return altitude;
   }
 
-
-  public void setAltitude(Integer altitude) {
+  public void setAltitude(@javax.annotation.Nonnull Integer altitude) {
     this.altitude = altitude;
   }
 
 
-  public StandardSearchAndRescueAircraftReport sog(Double sog) {
-    
+  public StandardSearchAndRescueAircraftReport sog(@javax.annotation.Nonnull Double sog) {
     this.sog = sog;
     return this;
   }
 
-   /**
+  /**
    * Get sog
    * @return sog
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getSog() {
     return sog;
   }
 
-
-  public void setSog(Double sog) {
+  public void setSog(@javax.annotation.Nonnull Double sog) {
     this.sog = sog;
   }
 
 
-  public StandardSearchAndRescueAircraftReport positionAccuracy(Boolean positionAccuracy) {
-    
+  public StandardSearchAndRescueAircraftReport positionAccuracy(@javax.annotation.Nonnull Boolean positionAccuracy) {
     this.positionAccuracy = positionAccuracy;
     return this;
   }
 
-   /**
+  /**
    * Get positionAccuracy
    * @return positionAccuracy
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getPositionAccuracy() {
     return positionAccuracy;
   }
 
-
-  public void setPositionAccuracy(Boolean positionAccuracy) {
+  public void setPositionAccuracy(@javax.annotation.Nonnull Boolean positionAccuracy) {
     this.positionAccuracy = positionAccuracy;
   }
 
 
-  public StandardSearchAndRescueAircraftReport longitude(Double longitude) {
-    
+  public StandardSearchAndRescueAircraftReport longitude(@javax.annotation.Nonnull Double longitude) {
     this.longitude = longitude;
     return this;
   }
 
-   /**
+  /**
    * Get longitude
    * @return longitude
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLongitude() {
     return longitude;
   }
 
-
-  public void setLongitude(Double longitude) {
+  public void setLongitude(@javax.annotation.Nonnull Double longitude) {
     this.longitude = longitude;
   }
 
 
-  public StandardSearchAndRescueAircraftReport latitude(Double latitude) {
-    
+  public StandardSearchAndRescueAircraftReport latitude(@javax.annotation.Nonnull Double latitude) {
     this.latitude = latitude;
     return this;
   }
 
-   /**
+  /**
    * Get latitude
    * @return latitude
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLatitude() {
     return latitude;
   }
 
-
-  public void setLatitude(Double latitude) {
+  public void setLatitude(@javax.annotation.Nonnull Double latitude) {
     this.latitude = latitude;
   }
 
 
-  public StandardSearchAndRescueAircraftReport cog(Double cog) {
-    
+  public StandardSearchAndRescueAircraftReport cog(@javax.annotation.Nonnull Double cog) {
     this.cog = cog;
     return this;
   }
 
-   /**
+  /**
    * Get cog
    * @return cog
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getCog() {
     return cog;
   }
 
-
-  public void setCog(Double cog) {
+  public void setCog(@javax.annotation.Nonnull Double cog) {
     this.cog = cog;
   }
 
 
-  public StandardSearchAndRescueAircraftReport timestamp(Integer timestamp) {
-    
+  public StandardSearchAndRescueAircraftReport timestamp(@javax.annotation.Nonnull Integer timestamp) {
     this.timestamp = timestamp;
     return this;
   }
 
-   /**
+  /**
    * Get timestamp
    * @return timestamp
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getTimestamp() {
     return timestamp;
   }
 
-
-  public void setTimestamp(Integer timestamp) {
+  public void setTimestamp(@javax.annotation.Nonnull Integer timestamp) {
     this.timestamp = timestamp;
   }
 
 
-  public StandardSearchAndRescueAircraftReport altFromBaro(Boolean altFromBaro) {
-    
+  public StandardSearchAndRescueAircraftReport altFromBaro(@javax.annotation.Nonnull Boolean altFromBaro) {
     this.altFromBaro = altFromBaro;
     return this;
   }
 
-   /**
+  /**
    * Get altFromBaro
    * @return altFromBaro
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getAltFromBaro() {
     return altFromBaro;
   }
 
-
-  public void setAltFromBaro(Boolean altFromBaro) {
+  public void setAltFromBaro(@javax.annotation.Nonnull Boolean altFromBaro) {
     this.altFromBaro = altFromBaro;
   }
 
 
-  public StandardSearchAndRescueAircraftReport spare1(Integer spare1) {
-    
+  public StandardSearchAndRescueAircraftReport spare1(@javax.annotation.Nonnull Integer spare1) {
     this.spare1 = spare1;
     return this;
   }
 
-   /**
+  /**
    * Get spare1
    * @return spare1
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare1() {
     return spare1;
   }
 
-
-  public void setSpare1(Integer spare1) {
+  public void setSpare1(@javax.annotation.Nonnull Integer spare1) {
     this.spare1 = spare1;
   }
 
 
-  public StandardSearchAndRescueAircraftReport dte(Boolean dte) {
-    
+  public StandardSearchAndRescueAircraftReport dte(@javax.annotation.Nonnull Boolean dte) {
     this.dte = dte;
     return this;
   }
 
-   /**
+  /**
    * Get dte
    * @return dte
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getDte() {
     return dte;
   }
 
-
-  public void setDte(Boolean dte) {
+  public void setDte(@javax.annotation.Nonnull Boolean dte) {
     this.dte = dte;
   }
 
 
-  public StandardSearchAndRescueAircraftReport spare2(Integer spare2) {
-    
+  public StandardSearchAndRescueAircraftReport spare2(@javax.annotation.Nonnull Integer spare2) {
     this.spare2 = spare2;
     return this;
   }
 
-   /**
+  /**
    * Get spare2
    * @return spare2
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare2() {
     return spare2;
   }
 
-
-  public void setSpare2(Integer spare2) {
+  public void setSpare2(@javax.annotation.Nonnull Integer spare2) {
     this.spare2 = spare2;
   }
 
 
-  public StandardSearchAndRescueAircraftReport assignedMode(Boolean assignedMode) {
-    
+  public StandardSearchAndRescueAircraftReport assignedMode(@javax.annotation.Nonnull Boolean assignedMode) {
     this.assignedMode = assignedMode;
     return this;
   }
 
-   /**
+  /**
    * Get assignedMode
    * @return assignedMode
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getAssignedMode() {
     return assignedMode;
   }
 
-
-  public void setAssignedMode(Boolean assignedMode) {
+  public void setAssignedMode(@javax.annotation.Nonnull Boolean assignedMode) {
     this.assignedMode = assignedMode;
   }
 
 
-  public StandardSearchAndRescueAircraftReport raim(Boolean raim) {
-    
+  public StandardSearchAndRescueAircraftReport raim(@javax.annotation.Nonnull Boolean raim) {
     this.raim = raim;
     return this;
   }
 
-   /**
+  /**
    * Get raim
    * @return raim
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getRaim() {
     return raim;
   }
 
-
-  public void setRaim(Boolean raim) {
+  public void setRaim(@javax.annotation.Nonnull Boolean raim) {
     this.raim = raim;
   }
 
 
-  public StandardSearchAndRescueAircraftReport communicationStateIsItdma(Boolean communicationStateIsItdma) {
-    
+  public StandardSearchAndRescueAircraftReport communicationStateIsItdma(@javax.annotation.Nonnull Boolean communicationStateIsItdma) {
     this.communicationStateIsItdma = communicationStateIsItdma;
     return this;
   }
 
-   /**
+  /**
    * Get communicationStateIsItdma
    * @return communicationStateIsItdma
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getCommunicationStateIsItdma() {
     return communicationStateIsItdma;
   }
 
-
-  public void setCommunicationStateIsItdma(Boolean communicationStateIsItdma) {
+  public void setCommunicationStateIsItdma(@javax.annotation.Nonnull Boolean communicationStateIsItdma) {
     this.communicationStateIsItdma = communicationStateIsItdma;
   }
 
 
-  public StandardSearchAndRescueAircraftReport communicationState(Integer communicationState) {
-    
+  public StandardSearchAndRescueAircraftReport communicationState(@javax.annotation.Nonnull Integer communicationState) {
     this.communicationState = communicationState;
     return this;
   }
 
-   /**
+  /**
    * Get communicationState
    * @return communicationState
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getCommunicationState() {
     return communicationState;
   }
 
-
-  public void setCommunicationState(Integer communicationState) {
+  public void setCommunicationState(@javax.annotation.Nonnull Integer communicationState) {
     this.communicationState = communicationState;
   }
 
@@ -633,10 +578,7 @@ public class StandardSearchAndRescueAircraftReport {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -645,79 +587,40 @@ public class StandardSearchAndRescueAircraftReport {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MessageID");
-    openapiFields.add("RepeatIndicator");
-    openapiFields.add("UserID");
-    openapiFields.add("Valid");
-    openapiFields.add("Altitude");
-    openapiFields.add("Sog");
-    openapiFields.add("PositionAccuracy");
-    openapiFields.add("Longitude");
-    openapiFields.add("Latitude");
-    openapiFields.add("Cog");
-    openapiFields.add("Timestamp");
-    openapiFields.add("AltFromBaro");
-    openapiFields.add("Spare1");
-    openapiFields.add("Dte");
-    openapiFields.add("Spare2");
-    openapiFields.add("AssignedMode");
-    openapiFields.add("Raim");
-    openapiFields.add("CommunicationStateIsItdma");
-    openapiFields.add("CommunicationState");
+    openapiFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Altitude", "Sog", "PositionAccuracy", "Longitude", "Latitude", "Cog", "Timestamp", "AltFromBaro", "Spare1", "Dte", "Spare2", "AssignedMode", "Raim", "CommunicationStateIsItdma", "CommunicationState"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MessageID");
-    openapiRequiredFields.add("RepeatIndicator");
-    openapiRequiredFields.add("UserID");
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("Altitude");
-    openapiRequiredFields.add("Sog");
-    openapiRequiredFields.add("PositionAccuracy");
-    openapiRequiredFields.add("Longitude");
-    openapiRequiredFields.add("Latitude");
-    openapiRequiredFields.add("Cog");
-    openapiRequiredFields.add("Timestamp");
-    openapiRequiredFields.add("AltFromBaro");
-    openapiRequiredFields.add("Spare1");
-    openapiRequiredFields.add("Dte");
-    openapiRequiredFields.add("Spare2");
-    openapiRequiredFields.add("AssignedMode");
-    openapiRequiredFields.add("Raim");
-    openapiRequiredFields.add("CommunicationStateIsItdma");
-    openapiRequiredFields.add("CommunicationState");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "Altitude", "Sog", "PositionAccuracy", "Longitude", "Latitude", "Cog", "Timestamp", "AltFromBaro", "Spare1", "Dte", "Spare2", "AssignedMode", "Raim", "CommunicationStateIsItdma", "CommunicationState"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StandardSearchAndRescueAircraftReport
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (StandardSearchAndRescueAircraftReport.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StandardSearchAndRescueAircraftReport is not found in the empty JSON string", StandardSearchAndRescueAircraftReport.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StandardSearchAndRescueAircraftReport
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StandardSearchAndRescueAircraftReport.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in StandardSearchAndRescueAircraftReport is not found in the empty JSON string", StandardSearchAndRescueAircraftReport.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!StandardSearchAndRescueAircraftReport.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StandardSearchAndRescueAircraftReport` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `StandardSearchAndRescueAircraftReport` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : StandardSearchAndRescueAircraftReport.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -740,31 +643,31 @@ public class StandardSearchAndRescueAircraftReport {
 
            @Override
            public StandardSearchAndRescueAircraftReport read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of StandardSearchAndRescueAircraftReport given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StandardSearchAndRescueAircraftReport
-  * @throws IOException if the JSON string is invalid with respect to StandardSearchAndRescueAircraftReport
-  */
+  /**
+   * Create an instance of StandardSearchAndRescueAircraftReport given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StandardSearchAndRescueAircraftReport
+   * @throws IOException if the JSON string is invalid with respect to StandardSearchAndRescueAircraftReport
+   */
   public static StandardSearchAndRescueAircraftReport fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StandardSearchAndRescueAircraftReport.class);
   }
 
- /**
-  * Convert an instance of StandardSearchAndRescueAircraftReport to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StandardSearchAndRescueAircraftReport to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

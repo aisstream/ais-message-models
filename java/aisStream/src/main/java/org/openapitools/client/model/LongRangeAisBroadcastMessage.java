@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,15 +29,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -47,358 +49,319 @@ import org.openapitools.client.JSON;
 /**
  * LongRangeAisBroadcastMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class LongRangeAisBroadcastMessage {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nonnull
   private Integer messageID;
 
   public static final String SERIALIZED_NAME_REPEAT_INDICATOR = "RepeatIndicator";
   @SerializedName(SERIALIZED_NAME_REPEAT_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer repeatIndicator;
 
   public static final String SERIALIZED_NAME_USER_I_D = "UserID";
   @SerializedName(SERIALIZED_NAME_USER_I_D)
+  @javax.annotation.Nonnull
   private Integer userID;
 
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_POSITION_ACCURACY = "PositionAccuracy";
   @SerializedName(SERIALIZED_NAME_POSITION_ACCURACY)
+  @javax.annotation.Nonnull
   private Boolean positionAccuracy;
 
   public static final String SERIALIZED_NAME_RAIM = "Raim";
   @SerializedName(SERIALIZED_NAME_RAIM)
+  @javax.annotation.Nonnull
   private Boolean raim;
 
   public static final String SERIALIZED_NAME_NAVIGATIONAL_STATUS = "NavigationalStatus";
   @SerializedName(SERIALIZED_NAME_NAVIGATIONAL_STATUS)
+  @javax.annotation.Nonnull
   private Integer navigationalStatus;
 
   public static final String SERIALIZED_NAME_LONGITUDE = "Longitude";
   @SerializedName(SERIALIZED_NAME_LONGITUDE)
+  @javax.annotation.Nonnull
   private Double longitude;
 
   public static final String SERIALIZED_NAME_LATITUDE = "Latitude";
   @SerializedName(SERIALIZED_NAME_LATITUDE)
+  @javax.annotation.Nonnull
   private Double latitude;
 
   public static final String SERIALIZED_NAME_SOG = "Sog";
   @SerializedName(SERIALIZED_NAME_SOG)
+  @javax.annotation.Nonnull
   private Double sog;
 
   public static final String SERIALIZED_NAME_COG = "Cog";
   @SerializedName(SERIALIZED_NAME_COG)
+  @javax.annotation.Nonnull
   private Double cog;
 
   public static final String SERIALIZED_NAME_POSITION_LATENCY = "PositionLatency";
   @SerializedName(SERIALIZED_NAME_POSITION_LATENCY)
+  @javax.annotation.Nonnull
   private Boolean positionLatency;
 
   public static final String SERIALIZED_NAME_SPARE = "Spare";
   @SerializedName(SERIALIZED_NAME_SPARE)
+  @javax.annotation.Nonnull
   private Boolean spare;
 
-  public LongRangeAisBroadcastMessage() { 
+  public LongRangeAisBroadcastMessage() {
   }
 
-  public LongRangeAisBroadcastMessage messageID(Integer messageID) {
-    
+  public LongRangeAisBroadcastMessage messageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Get messageID
    * @return messageID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getMessageID() {
     return messageID;
   }
 
-
-  public void setMessageID(Integer messageID) {
+  public void setMessageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
   }
 
 
-  public LongRangeAisBroadcastMessage repeatIndicator(Integer repeatIndicator) {
-    
+  public LongRangeAisBroadcastMessage repeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get repeatIndicator
    * @return repeatIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRepeatIndicator() {
     return repeatIndicator;
   }
 
-
-  public void setRepeatIndicator(Integer repeatIndicator) {
+  public void setRepeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
   }
 
 
-  public LongRangeAisBroadcastMessage userID(Integer userID) {
-    
+  public LongRangeAisBroadcastMessage userID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
     return this;
   }
 
-   /**
+  /**
    * Get userID
    * @return userID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUserID() {
     return userID;
   }
 
-
-  public void setUserID(Integer userID) {
+  public void setUserID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
   }
 
 
-  public LongRangeAisBroadcastMessage valid(Boolean valid) {
-    
+  public LongRangeAisBroadcastMessage valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public LongRangeAisBroadcastMessage positionAccuracy(Boolean positionAccuracy) {
-    
+  public LongRangeAisBroadcastMessage positionAccuracy(@javax.annotation.Nonnull Boolean positionAccuracy) {
     this.positionAccuracy = positionAccuracy;
     return this;
   }
 
-   /**
+  /**
    * Get positionAccuracy
    * @return positionAccuracy
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getPositionAccuracy() {
     return positionAccuracy;
   }
 
-
-  public void setPositionAccuracy(Boolean positionAccuracy) {
+  public void setPositionAccuracy(@javax.annotation.Nonnull Boolean positionAccuracy) {
     this.positionAccuracy = positionAccuracy;
   }
 
 
-  public LongRangeAisBroadcastMessage raim(Boolean raim) {
-    
+  public LongRangeAisBroadcastMessage raim(@javax.annotation.Nonnull Boolean raim) {
     this.raim = raim;
     return this;
   }
 
-   /**
+  /**
    * Get raim
    * @return raim
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getRaim() {
     return raim;
   }
 
-
-  public void setRaim(Boolean raim) {
+  public void setRaim(@javax.annotation.Nonnull Boolean raim) {
     this.raim = raim;
   }
 
 
-  public LongRangeAisBroadcastMessage navigationalStatus(Integer navigationalStatus) {
-    
+  public LongRangeAisBroadcastMessage navigationalStatus(@javax.annotation.Nonnull Integer navigationalStatus) {
     this.navigationalStatus = navigationalStatus;
     return this;
   }
 
-   /**
+  /**
    * Get navigationalStatus
    * @return navigationalStatus
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getNavigationalStatus() {
     return navigationalStatus;
   }
 
-
-  public void setNavigationalStatus(Integer navigationalStatus) {
+  public void setNavigationalStatus(@javax.annotation.Nonnull Integer navigationalStatus) {
     this.navigationalStatus = navigationalStatus;
   }
 
 
-  public LongRangeAisBroadcastMessage longitude(Double longitude) {
-    
+  public LongRangeAisBroadcastMessage longitude(@javax.annotation.Nonnull Double longitude) {
     this.longitude = longitude;
     return this;
   }
 
-   /**
+  /**
    * Get longitude
    * @return longitude
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLongitude() {
     return longitude;
   }
 
-
-  public void setLongitude(Double longitude) {
+  public void setLongitude(@javax.annotation.Nonnull Double longitude) {
     this.longitude = longitude;
   }
 
 
-  public LongRangeAisBroadcastMessage latitude(Double latitude) {
-    
+  public LongRangeAisBroadcastMessage latitude(@javax.annotation.Nonnull Double latitude) {
     this.latitude = latitude;
     return this;
   }
 
-   /**
+  /**
    * Get latitude
    * @return latitude
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLatitude() {
     return latitude;
   }
 
-
-  public void setLatitude(Double latitude) {
+  public void setLatitude(@javax.annotation.Nonnull Double latitude) {
     this.latitude = latitude;
   }
 
 
-  public LongRangeAisBroadcastMessage sog(Double sog) {
-    
+  public LongRangeAisBroadcastMessage sog(@javax.annotation.Nonnull Double sog) {
     this.sog = sog;
     return this;
   }
 
-   /**
+  /**
    * Get sog
    * @return sog
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getSog() {
     return sog;
   }
 
-
-  public void setSog(Double sog) {
+  public void setSog(@javax.annotation.Nonnull Double sog) {
     this.sog = sog;
   }
 
 
-  public LongRangeAisBroadcastMessage cog(Double cog) {
-    
+  public LongRangeAisBroadcastMessage cog(@javax.annotation.Nonnull Double cog) {
     this.cog = cog;
     return this;
   }
 
-   /**
+  /**
    * Get cog
    * @return cog
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getCog() {
     return cog;
   }
 
-
-  public void setCog(Double cog) {
+  public void setCog(@javax.annotation.Nonnull Double cog) {
     this.cog = cog;
   }
 
 
-  public LongRangeAisBroadcastMessage positionLatency(Boolean positionLatency) {
-    
+  public LongRangeAisBroadcastMessage positionLatency(@javax.annotation.Nonnull Boolean positionLatency) {
     this.positionLatency = positionLatency;
     return this;
   }
 
-   /**
+  /**
    * Get positionLatency
    * @return positionLatency
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getPositionLatency() {
     return positionLatency;
   }
 
-
-  public void setPositionLatency(Boolean positionLatency) {
+  public void setPositionLatency(@javax.annotation.Nonnull Boolean positionLatency) {
     this.positionLatency = positionLatency;
   }
 
 
-  public LongRangeAisBroadcastMessage spare(Boolean spare) {
-    
+  public LongRangeAisBroadcastMessage spare(@javax.annotation.Nonnull Boolean spare) {
     this.spare = spare;
     return this;
   }
 
-   /**
+  /**
    * Get spare
    * @return spare
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getSpare() {
     return spare;
   }
 
-
-  public void setSpare(Boolean spare) {
+  public void setSpare(@javax.annotation.Nonnull Boolean spare) {
     this.spare = spare;
   }
 
@@ -459,10 +422,7 @@ public class LongRangeAisBroadcastMessage {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -471,67 +431,40 @@ public class LongRangeAisBroadcastMessage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MessageID");
-    openapiFields.add("RepeatIndicator");
-    openapiFields.add("UserID");
-    openapiFields.add("Valid");
-    openapiFields.add("PositionAccuracy");
-    openapiFields.add("Raim");
-    openapiFields.add("NavigationalStatus");
-    openapiFields.add("Longitude");
-    openapiFields.add("Latitude");
-    openapiFields.add("Sog");
-    openapiFields.add("Cog");
-    openapiFields.add("PositionLatency");
-    openapiFields.add("Spare");
+    openapiFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "PositionAccuracy", "Raim", "NavigationalStatus", "Longitude", "Latitude", "Sog", "Cog", "PositionLatency", "Spare"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MessageID");
-    openapiRequiredFields.add("RepeatIndicator");
-    openapiRequiredFields.add("UserID");
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("PositionAccuracy");
-    openapiRequiredFields.add("Raim");
-    openapiRequiredFields.add("NavigationalStatus");
-    openapiRequiredFields.add("Longitude");
-    openapiRequiredFields.add("Latitude");
-    openapiRequiredFields.add("Sog");
-    openapiRequiredFields.add("Cog");
-    openapiRequiredFields.add("PositionLatency");
-    openapiRequiredFields.add("Spare");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "PositionAccuracy", "Raim", "NavigationalStatus", "Longitude", "Latitude", "Sog", "Cog", "PositionLatency", "Spare"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to LongRangeAisBroadcastMessage
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (LongRangeAisBroadcastMessage.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in LongRangeAisBroadcastMessage is not found in the empty JSON string", LongRangeAisBroadcastMessage.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to LongRangeAisBroadcastMessage
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!LongRangeAisBroadcastMessage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in LongRangeAisBroadcastMessage is not found in the empty JSON string", LongRangeAisBroadcastMessage.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!LongRangeAisBroadcastMessage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `LongRangeAisBroadcastMessage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `LongRangeAisBroadcastMessage` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : LongRangeAisBroadcastMessage.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -554,31 +487,31 @@ public class LongRangeAisBroadcastMessage {
 
            @Override
            public LongRangeAisBroadcastMessage read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of LongRangeAisBroadcastMessage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LongRangeAisBroadcastMessage
-  * @throws IOException if the JSON string is invalid with respect to LongRangeAisBroadcastMessage
-  */
+  /**
+   * Create an instance of LongRangeAisBroadcastMessage given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of LongRangeAisBroadcastMessage
+   * @throws IOException if the JSON string is invalid with respect to LongRangeAisBroadcastMessage
+   */
   public static LongRangeAisBroadcastMessage fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LongRangeAisBroadcastMessage.class);
   }
 
- /**
-  * Convert an instance of LongRangeAisBroadcastMessage to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of LongRangeAisBroadcastMessage to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

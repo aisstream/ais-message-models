@@ -14,15 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,15 +29,19 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -47,493 +49,439 @@ import org.openapitools.client.JSON;
 /**
  * BaseStationReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-27T20:57:25.293422-07:00[America/Vancouver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class BaseStationReport {
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nonnull
   private Integer messageID;
 
   public static final String SERIALIZED_NAME_REPEAT_INDICATOR = "RepeatIndicator";
   @SerializedName(SERIALIZED_NAME_REPEAT_INDICATOR)
+  @javax.annotation.Nonnull
   private Integer repeatIndicator;
 
   public static final String SERIALIZED_NAME_USER_I_D = "UserID";
   @SerializedName(SERIALIZED_NAME_USER_I_D)
+  @javax.annotation.Nonnull
   private Integer userID;
 
   public static final String SERIALIZED_NAME_VALID = "Valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nonnull
   private Boolean valid;
 
   public static final String SERIALIZED_NAME_UTC_YEAR = "UtcYear";
   @SerializedName(SERIALIZED_NAME_UTC_YEAR)
+  @javax.annotation.Nonnull
   private Integer utcYear;
 
   public static final String SERIALIZED_NAME_UTC_MONTH = "UtcMonth";
   @SerializedName(SERIALIZED_NAME_UTC_MONTH)
+  @javax.annotation.Nonnull
   private Integer utcMonth;
 
   public static final String SERIALIZED_NAME_UTC_DAY = "UtcDay";
   @SerializedName(SERIALIZED_NAME_UTC_DAY)
+  @javax.annotation.Nonnull
   private Integer utcDay;
 
   public static final String SERIALIZED_NAME_UTC_HOUR = "UtcHour";
   @SerializedName(SERIALIZED_NAME_UTC_HOUR)
+  @javax.annotation.Nonnull
   private Integer utcHour;
 
   public static final String SERIALIZED_NAME_UTC_MINUTE = "UtcMinute";
   @SerializedName(SERIALIZED_NAME_UTC_MINUTE)
+  @javax.annotation.Nonnull
   private Integer utcMinute;
 
   public static final String SERIALIZED_NAME_UTC_SECOND = "UtcSecond";
   @SerializedName(SERIALIZED_NAME_UTC_SECOND)
+  @javax.annotation.Nonnull
   private Integer utcSecond;
 
   public static final String SERIALIZED_NAME_POSITION_ACCURACY = "PositionAccuracy";
   @SerializedName(SERIALIZED_NAME_POSITION_ACCURACY)
+  @javax.annotation.Nonnull
   private Boolean positionAccuracy;
 
   public static final String SERIALIZED_NAME_LONGITUDE = "Longitude";
   @SerializedName(SERIALIZED_NAME_LONGITUDE)
+  @javax.annotation.Nonnull
   private Double longitude;
 
   public static final String SERIALIZED_NAME_LATITUDE = "Latitude";
   @SerializedName(SERIALIZED_NAME_LATITUDE)
+  @javax.annotation.Nonnull
   private Double latitude;
 
   public static final String SERIALIZED_NAME_FIX_TYPE = "FixType";
   @SerializedName(SERIALIZED_NAME_FIX_TYPE)
+  @javax.annotation.Nonnull
   private Integer fixType;
 
   public static final String SERIALIZED_NAME_LONG_RANGE_ENABLE = "LongRangeEnable";
   @SerializedName(SERIALIZED_NAME_LONG_RANGE_ENABLE)
+  @javax.annotation.Nonnull
   private Boolean longRangeEnable;
 
   public static final String SERIALIZED_NAME_SPARE = "Spare";
   @SerializedName(SERIALIZED_NAME_SPARE)
+  @javax.annotation.Nonnull
   private Integer spare;
 
   public static final String SERIALIZED_NAME_RAIM = "Raim";
   @SerializedName(SERIALIZED_NAME_RAIM)
+  @javax.annotation.Nonnull
   private Boolean raim;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_STATE = "CommunicationState";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_STATE)
+  @javax.annotation.Nonnull
   private Integer communicationState;
 
-  public BaseStationReport() { 
+  public BaseStationReport() {
   }
 
-  public BaseStationReport messageID(Integer messageID) {
-    
+  public BaseStationReport messageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Get messageID
    * @return messageID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getMessageID() {
     return messageID;
   }
 
-
-  public void setMessageID(Integer messageID) {
+  public void setMessageID(@javax.annotation.Nonnull Integer messageID) {
     this.messageID = messageID;
   }
 
 
-  public BaseStationReport repeatIndicator(Integer repeatIndicator) {
-    
+  public BaseStationReport repeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
     return this;
   }
 
-   /**
+  /**
    * Get repeatIndicator
    * @return repeatIndicator
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getRepeatIndicator() {
     return repeatIndicator;
   }
 
-
-  public void setRepeatIndicator(Integer repeatIndicator) {
+  public void setRepeatIndicator(@javax.annotation.Nonnull Integer repeatIndicator) {
     this.repeatIndicator = repeatIndicator;
   }
 
 
-  public BaseStationReport userID(Integer userID) {
-    
+  public BaseStationReport userID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
     return this;
   }
 
-   /**
+  /**
    * Get userID
    * @return userID
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUserID() {
     return userID;
   }
 
-
-  public void setUserID(Integer userID) {
+  public void setUserID(@javax.annotation.Nonnull Integer userID) {
     this.userID = userID;
   }
 
 
-  public BaseStationReport valid(Boolean valid) {
-    
+  public BaseStationReport valid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Get valid
    * @return valid
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getValid() {
     return valid;
   }
 
-
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nonnull Boolean valid) {
     this.valid = valid;
   }
 
 
-  public BaseStationReport utcYear(Integer utcYear) {
-    
+  public BaseStationReport utcYear(@javax.annotation.Nonnull Integer utcYear) {
     this.utcYear = utcYear;
     return this;
   }
 
-   /**
+  /**
    * Get utcYear
    * @return utcYear
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUtcYear() {
     return utcYear;
   }
 
-
-  public void setUtcYear(Integer utcYear) {
+  public void setUtcYear(@javax.annotation.Nonnull Integer utcYear) {
     this.utcYear = utcYear;
   }
 
 
-  public BaseStationReport utcMonth(Integer utcMonth) {
-    
+  public BaseStationReport utcMonth(@javax.annotation.Nonnull Integer utcMonth) {
     this.utcMonth = utcMonth;
     return this;
   }
 
-   /**
+  /**
    * Get utcMonth
    * @return utcMonth
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUtcMonth() {
     return utcMonth;
   }
 
-
-  public void setUtcMonth(Integer utcMonth) {
+  public void setUtcMonth(@javax.annotation.Nonnull Integer utcMonth) {
     this.utcMonth = utcMonth;
   }
 
 
-  public BaseStationReport utcDay(Integer utcDay) {
-    
+  public BaseStationReport utcDay(@javax.annotation.Nonnull Integer utcDay) {
     this.utcDay = utcDay;
     return this;
   }
 
-   /**
+  /**
    * Get utcDay
    * @return utcDay
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUtcDay() {
     return utcDay;
   }
 
-
-  public void setUtcDay(Integer utcDay) {
+  public void setUtcDay(@javax.annotation.Nonnull Integer utcDay) {
     this.utcDay = utcDay;
   }
 
 
-  public BaseStationReport utcHour(Integer utcHour) {
-    
+  public BaseStationReport utcHour(@javax.annotation.Nonnull Integer utcHour) {
     this.utcHour = utcHour;
     return this;
   }
 
-   /**
+  /**
    * Get utcHour
    * @return utcHour
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUtcHour() {
     return utcHour;
   }
 
-
-  public void setUtcHour(Integer utcHour) {
+  public void setUtcHour(@javax.annotation.Nonnull Integer utcHour) {
     this.utcHour = utcHour;
   }
 
 
-  public BaseStationReport utcMinute(Integer utcMinute) {
-    
+  public BaseStationReport utcMinute(@javax.annotation.Nonnull Integer utcMinute) {
     this.utcMinute = utcMinute;
     return this;
   }
 
-   /**
+  /**
    * Get utcMinute
    * @return utcMinute
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUtcMinute() {
     return utcMinute;
   }
 
-
-  public void setUtcMinute(Integer utcMinute) {
+  public void setUtcMinute(@javax.annotation.Nonnull Integer utcMinute) {
     this.utcMinute = utcMinute;
   }
 
 
-  public BaseStationReport utcSecond(Integer utcSecond) {
-    
+  public BaseStationReport utcSecond(@javax.annotation.Nonnull Integer utcSecond) {
     this.utcSecond = utcSecond;
     return this;
   }
 
-   /**
+  /**
    * Get utcSecond
    * @return utcSecond
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getUtcSecond() {
     return utcSecond;
   }
 
-
-  public void setUtcSecond(Integer utcSecond) {
+  public void setUtcSecond(@javax.annotation.Nonnull Integer utcSecond) {
     this.utcSecond = utcSecond;
   }
 
 
-  public BaseStationReport positionAccuracy(Boolean positionAccuracy) {
-    
+  public BaseStationReport positionAccuracy(@javax.annotation.Nonnull Boolean positionAccuracy) {
     this.positionAccuracy = positionAccuracy;
     return this;
   }
 
-   /**
+  /**
    * Get positionAccuracy
    * @return positionAccuracy
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getPositionAccuracy() {
     return positionAccuracy;
   }
 
-
-  public void setPositionAccuracy(Boolean positionAccuracy) {
+  public void setPositionAccuracy(@javax.annotation.Nonnull Boolean positionAccuracy) {
     this.positionAccuracy = positionAccuracy;
   }
 
 
-  public BaseStationReport longitude(Double longitude) {
-    
+  public BaseStationReport longitude(@javax.annotation.Nonnull Double longitude) {
     this.longitude = longitude;
     return this;
   }
 
-   /**
+  /**
    * Get longitude
    * @return longitude
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLongitude() {
     return longitude;
   }
 
-
-  public void setLongitude(Double longitude) {
+  public void setLongitude(@javax.annotation.Nonnull Double longitude) {
     this.longitude = longitude;
   }
 
 
-  public BaseStationReport latitude(Double latitude) {
-    
+  public BaseStationReport latitude(@javax.annotation.Nonnull Double latitude) {
     this.latitude = latitude;
     return this;
   }
 
-   /**
+  /**
    * Get latitude
    * @return latitude
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Double getLatitude() {
     return latitude;
   }
 
-
-  public void setLatitude(Double latitude) {
+  public void setLatitude(@javax.annotation.Nonnull Double latitude) {
     this.latitude = latitude;
   }
 
 
-  public BaseStationReport fixType(Integer fixType) {
-    
+  public BaseStationReport fixType(@javax.annotation.Nonnull Integer fixType) {
     this.fixType = fixType;
     return this;
   }
 
-   /**
+  /**
    * Get fixType
    * @return fixType
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getFixType() {
     return fixType;
   }
 
-
-  public void setFixType(Integer fixType) {
+  public void setFixType(@javax.annotation.Nonnull Integer fixType) {
     this.fixType = fixType;
   }
 
 
-  public BaseStationReport longRangeEnable(Boolean longRangeEnable) {
-    
+  public BaseStationReport longRangeEnable(@javax.annotation.Nonnull Boolean longRangeEnable) {
     this.longRangeEnable = longRangeEnable;
     return this;
   }
 
-   /**
+  /**
    * Get longRangeEnable
    * @return longRangeEnable
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getLongRangeEnable() {
     return longRangeEnable;
   }
 
-
-  public void setLongRangeEnable(Boolean longRangeEnable) {
+  public void setLongRangeEnable(@javax.annotation.Nonnull Boolean longRangeEnable) {
     this.longRangeEnable = longRangeEnable;
   }
 
 
-  public BaseStationReport spare(Integer spare) {
-    
+  public BaseStationReport spare(@javax.annotation.Nonnull Integer spare) {
     this.spare = spare;
     return this;
   }
 
-   /**
+  /**
    * Get spare
    * @return spare
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getSpare() {
     return spare;
   }
 
-
-  public void setSpare(Integer spare) {
+  public void setSpare(@javax.annotation.Nonnull Integer spare) {
     this.spare = spare;
   }
 
 
-  public BaseStationReport raim(Boolean raim) {
-    
+  public BaseStationReport raim(@javax.annotation.Nonnull Boolean raim) {
     this.raim = raim;
     return this;
   }
 
-   /**
+  /**
    * Get raim
    * @return raim
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Boolean getRaim() {
     return raim;
   }
 
-
-  public void setRaim(Boolean raim) {
+  public void setRaim(@javax.annotation.Nonnull Boolean raim) {
     this.raim = raim;
   }
 
 
-  public BaseStationReport communicationState(Integer communicationState) {
-    
+  public BaseStationReport communicationState(@javax.annotation.Nonnull Integer communicationState) {
     this.communicationState = communicationState;
     return this;
   }
 
-   /**
+  /**
    * Get communicationState
    * @return communicationState
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Integer getCommunicationState() {
     return communicationState;
   }
 
-
-  public void setCommunicationState(Integer communicationState) {
+  public void setCommunicationState(@javax.annotation.Nonnull Integer communicationState) {
     this.communicationState = communicationState;
   }
 
@@ -604,10 +552,7 @@ public class BaseStationReport {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -616,77 +561,40 @@ public class BaseStationReport {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MessageID");
-    openapiFields.add("RepeatIndicator");
-    openapiFields.add("UserID");
-    openapiFields.add("Valid");
-    openapiFields.add("UtcYear");
-    openapiFields.add("UtcMonth");
-    openapiFields.add("UtcDay");
-    openapiFields.add("UtcHour");
-    openapiFields.add("UtcMinute");
-    openapiFields.add("UtcSecond");
-    openapiFields.add("PositionAccuracy");
-    openapiFields.add("Longitude");
-    openapiFields.add("Latitude");
-    openapiFields.add("FixType");
-    openapiFields.add("LongRangeEnable");
-    openapiFields.add("Spare");
-    openapiFields.add("Raim");
-    openapiFields.add("CommunicationState");
+    openapiFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "UtcYear", "UtcMonth", "UtcDay", "UtcHour", "UtcMinute", "UtcSecond", "PositionAccuracy", "Longitude", "Latitude", "FixType", "LongRangeEnable", "Spare", "Raim", "CommunicationState"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MessageID");
-    openapiRequiredFields.add("RepeatIndicator");
-    openapiRequiredFields.add("UserID");
-    openapiRequiredFields.add("Valid");
-    openapiRequiredFields.add("UtcYear");
-    openapiRequiredFields.add("UtcMonth");
-    openapiRequiredFields.add("UtcDay");
-    openapiRequiredFields.add("UtcHour");
-    openapiRequiredFields.add("UtcMinute");
-    openapiRequiredFields.add("UtcSecond");
-    openapiRequiredFields.add("PositionAccuracy");
-    openapiRequiredFields.add("Longitude");
-    openapiRequiredFields.add("Latitude");
-    openapiRequiredFields.add("FixType");
-    openapiRequiredFields.add("LongRangeEnable");
-    openapiRequiredFields.add("Spare");
-    openapiRequiredFields.add("Raim");
-    openapiRequiredFields.add("CommunicationState");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MessageID", "RepeatIndicator", "UserID", "Valid", "UtcYear", "UtcMonth", "UtcDay", "UtcHour", "UtcMinute", "UtcSecond", "PositionAccuracy", "Longitude", "Latitude", "FixType", "LongRangeEnable", "Spare", "Raim", "CommunicationState"));
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to BaseStationReport
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (BaseStationReport.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BaseStationReport is not found in the empty JSON string", BaseStationReport.openapiRequiredFields.toString()));
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BaseStationReport
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!BaseStationReport.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in BaseStationReport is not found in the empty JSON string", BaseStationReport.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!BaseStationReport.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BaseStationReport` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `BaseStationReport` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : BaseStationReport.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -709,31 +617,31 @@ public class BaseStationReport {
 
            @Override
            public BaseStationReport read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of BaseStationReport given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BaseStationReport
-  * @throws IOException if the JSON string is invalid with respect to BaseStationReport
-  */
+  /**
+   * Create an instance of BaseStationReport given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BaseStationReport
+   * @throws IOException if the JSON string is invalid with respect to BaseStationReport
+   */
   public static BaseStationReport fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BaseStationReport.class);
   }
 
- /**
-  * Convert an instance of BaseStationReport to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BaseStationReport to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

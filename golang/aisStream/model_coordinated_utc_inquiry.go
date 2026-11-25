@@ -12,7 +12,12 @@ package aisStream
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
+
+// checks if the CoordinatedUTCInquiry type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CoordinatedUTCInquiry{}
 
 // CoordinatedUTCInquiry struct for CoordinatedUTCInquiry
 type CoordinatedUTCInquiry struct {
@@ -24,6 +29,8 @@ type CoordinatedUTCInquiry struct {
 	DestinationID int32 `json:"DestinationID"`
 	Spare2 int32 `json:"Spare2"`
 }
+
+type _CoordinatedUTCInquiry CoordinatedUTCInquiry
 
 // NewCoordinatedUTCInquiry instantiates a new CoordinatedUTCInquiry object
 // This constructor will assign default values to properties that have it defined,
@@ -218,29 +225,66 @@ func (o *CoordinatedUTCInquiry) SetSpare2(v int32) {
 }
 
 func (o CoordinatedUTCInquiry) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["MessageID"] = o.MessageID
-	}
-	if true {
-		toSerialize["RepeatIndicator"] = o.RepeatIndicator
-	}
-	if true {
-		toSerialize["UserID"] = o.UserID
-	}
-	if true {
-		toSerialize["Valid"] = o.Valid
-	}
-	if true {
-		toSerialize["Spare1"] = o.Spare1
-	}
-	if true {
-		toSerialize["DestinationID"] = o.DestinationID
-	}
-	if true {
-		toSerialize["Spare2"] = o.Spare2
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CoordinatedUTCInquiry) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["MessageID"] = o.MessageID
+	toSerialize["RepeatIndicator"] = o.RepeatIndicator
+	toSerialize["UserID"] = o.UserID
+	toSerialize["Valid"] = o.Valid
+	toSerialize["Spare1"] = o.Spare1
+	toSerialize["DestinationID"] = o.DestinationID
+	toSerialize["Spare2"] = o.Spare2
+	return toSerialize, nil
+}
+
+func (o *CoordinatedUTCInquiry) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"MessageID",
+		"RepeatIndicator",
+		"UserID",
+		"Valid",
+		"Spare1",
+		"DestinationID",
+		"Spare2",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCoordinatedUTCInquiry := _CoordinatedUTCInquiry{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varCoordinatedUTCInquiry)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CoordinatedUTCInquiry(varCoordinatedUTCInquiry)
+
+	return err
 }
 
 type NullableCoordinatedUTCInquiry struct {
