@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * AssignedModeCommandCommands
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:48:34.277853468+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-25T18:49:51.158965607+13:00[Pacific/Auckland]", comments = "Generator version: 7.27.0")
 public class AssignedModeCommandCommands {
   public static final String SERIALIZED_NAME_0 = "0";
   @SerializedName(SERIALIZED_NAME_0)

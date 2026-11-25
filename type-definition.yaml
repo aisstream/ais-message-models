@@ -1518,3 +1518,19 @@ components:
       properties:
         Error:
           type: string
+
+    SubscriptionConfirmation:
+      required:
+        - MessageType
+        - Message
+      properties:
+        MessageType:
+          type: string
+          enum: [SubscriptionConfirmation]
+        Message:
+          type: object
+          required:
+            - CompressionEnabled
+          properties:
+            CompressionEnabled:
+              type: boolean

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 Cargo.toml
 README.md
@@ -46,6 +45,8 @@ docs/StandardSearchAndRescueAircraftReport.md
 docs/StaticDataReport.md
 docs/StaticDataReportReportA.md
 docs/StaticDataReportReportB.md
+docs/SubscriptionConfirmation.md
+docs/SubscriptionConfirmationMessage.md
 docs/SubscriptionMessage.md
 docs/UnknownMessage.md
 git_push.sh
@@ -96,5 +97,7 @@ src/models/standard_search_and_rescue_aircraft_report.rs
 src/models/static_data_report.rs
 src/models/static_data_report_report_a.rs
 src/models/static_data_report_report_b.rs
+src/models/subscription_confirmation.rs
+src/models/subscription_confirmation_message.rs
 src/models/subscription_message.rs
 src/models/unknown_message.rs

@@ -73,6 +73,8 @@ Class | Method | HTTP request | Description
  - [StaticDataReport](docs/StaticDataReport.md)
  - [StaticDataReportReportA](docs/StaticDataReportReportA.md)
  - [StaticDataReportReportB](docs/StaticDataReportReportB.md)
+ - [SubscriptionConfirmation](docs/SubscriptionConfirmation.md)
+ - [SubscriptionConfirmationMessage](docs/SubscriptionConfirmationMessage.md)
  - [SubscriptionMessage](docs/SubscriptionMessage.md)
  - [UnknownMessage](docs/UnknownMessage.md)
 
